@@ -1,0 +1,38 @@
+// Cores
+$primary-color: #006635;
+$secondary-color: #cae098;
+$danger-color: #e74c3c;
+$background-color: #d9d9d9;
+$font-color: #fff;
+$secondary-font-color: #000;
+
+// Tamanhos de fonte
+$font-size-xsmall: 12px;
+$font-size-small: 14px;
+$font-size-base: 16px;
+$font-size-medium: 20px;
+$font-size-large: 30px;
+$font-size-xlarge: 70px;
+
+// Tamanhos de line height
+$line-height-font-size-xsmall: 16px;
+$line-height-font-size-small: 18px;
+$line-height-font-size-base: 20px;
+$line-height-font-size-medium: 24px;
+$line-height-font-size-large: 37px;
+$line-height-font-size-xlarge: 86px;
+
+// Slider
+$gradient-start: rgba(0, 0, 0, 1);
+$gradient-end: rgba(0, 0, 0, 0);
+
+// Containers
+@media (min-width: 1200px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1240px;
+    }
+}
