@@ -3,6 +3,7 @@
 <!-- Contents -->
 
 <?php get_template_part('content/slider'); ?>
+<?php get_template_part('content/nossos-servicos'); ?>
 
 <!-- Fim Contents -->
 

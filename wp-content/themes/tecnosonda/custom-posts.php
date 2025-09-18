@@ -160,37 +160,37 @@ function create_sobre_nos_post_type() {
 }
 add_action( 'init', 'create_sobre_nos_post_type' );
 
-// Serviços
-function create_servicos_post_type() {
+// Nossos Serviços
+function create_nossos_servicos_post_type() {
     $args = array(
         'labels' => array(
-            'name'               => 'Serviços',
-            'singular_name'      => 'Serviços',
+            'name'               => 'Nossos Serviços',
+            'singular_name'      => 'Nossos Serviços',
             'add_new'            => 'Adicionar Novo',
             'add_new_item'       => 'Adicionar Novo',
-            'edit_item'          => 'Editar Serviços',
-            'new_item'           => 'Novo Serviços',
-            'view_item'          => 'Ver Serviços',
+            'edit_item'          => 'Editar Nossos Serviços',
+            'new_item'           => 'Novo Nossos Serviços',
+            'view_item'          => 'Ver Nossos Serviços',
             'search_items'       => 'Procurar',
-            'not_found'          => 'Nenhum Serviços encontrado',
-            'not_found_in_trash' => 'Nenhum Serviços encontrado na lixeira',
+            'not_found'          => 'Nenhum Nossos Serviços encontrado',
+            'not_found_in_trash' => 'Nenhum Nossos Serviços encontrado na lixeira',
             'all_items'          => 'Todos',
-            'archives'           => 'Arquivos de Serviços',
-            'attributes'         => 'Atributos de Serviços',
-            'insert_into_item'   => 'Inserir no Serviços',
-            'uploaded_to_this_item' => 'Carregado para este Serviços',
-            'filter_items_list'  => 'Filtrar lista de Serviços',
+            'archives'           => 'Arquivos de Nossos Serviços',
+            'attributes'         => 'Atributos de Nossos Serviços',
+            'insert_into_item'   => 'Inserir no Nossos Serviços',
+            'uploaded_to_this_item' => 'Carregado para este Nossos Serviços',
+            'filter_items_list'  => 'Filtrar lista de Nossos Serviços',
         ),
         'public' => true,
         'has_archive' => true,
         'menu_icon' => 'dashicons-clipboard',
-        'supports' => array( 'title' ),
-        'rewrite' => array( 'slug' => 'servicos' ), 
+        'supports' => array( 'title', 'editor', 'thumbnail' ),
+        'rewrite' => array( 'slug' => 'nossos_servicos' ), 
     );
 
-    register_post_type( 'servicos', $args );
+    register_post_type( 'nossos_servicos', $args );
 }
-add_action( 'init', 'create_servicos_post_type' );
+add_action( 'init', 'create_nossos_servicos_post_type' );
 
 // Clientes
 function create_clientes_post_type() {

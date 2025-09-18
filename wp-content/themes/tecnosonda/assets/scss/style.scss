@@ -10,7 +10,13 @@
 * {
     font-family: "Montserrat", sans-serif;
 }
-
+h2 {
+    font-size: variables.$font-size-large;
+    font-weight: bold;
+    span {
+        font-weight: bold;
+    }
+}
 .container-fluid {
     padding-left: 0;
     padding-right: 0;
@@ -138,6 +144,37 @@
         text-decoration: none;
         &:hover {
             color: variables.$font-color;
+        }
+    }
+}
+.controls-slider {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        border: 1px solid variables.$primary-color;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        transition: all ease 0.3s;
+        svg {
+            path {
+                fill: variables.$primary-color;
+                transition: all ease 0.3s;
+            }
+        }
+        &:hover {
+            background: variables.$primary-color;
+            svg {
+                path {
+                    fill: variables.$font-color;
+                }
+            }
         }
     }
 }

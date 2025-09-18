@@ -55,6 +55,9 @@ if (!defined('ABSPATH')) exit;
                     <span id="icon-menu-bottom"></span>
                 </div>
             </div>
-       </div> 
+        </div> 
+        <div id="div-search">
+            <input type="text" name="search" id="input-search" placeholder="Buscar...">
+        </div>
     </div>
 </header>

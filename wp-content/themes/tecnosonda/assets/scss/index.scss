@@ -1,6 +1,7 @@
 @use "variables";
 
 #slider-topo {
+    margin-bottom: 0;
     width: 100%;
     .slider-item {
         img,
@@ -16,7 +17,6 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
         .slider-text {
             width: 30%;
             h2 {
@@ -36,6 +36,125 @@
         }
         a {
             margin-top: 20px;
+        }
+    }
+    .slick-dots {
+        bottom: 5%;
+        right: 5%;
+        width: max-content;
+        li {
+            margin: 0;
+            button {
+                &:before {
+                    content: "";
+                    background: #fff;
+                    color: #fff;
+                    transition: all ease 0.3s;
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                    width: 15px;
+                    height: 15px;
+                    opacity: 1;
+                }
+            }
+            &.slick-active {
+                button {
+                    &:before {
+                        border-color: #a4c659;
+                    }
+                }
+            }
+        }
+    }
+}
+#nossos-servicos {
+    background: #d9d9d9;
+    padding: 80px 0;
+    .title {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        border-left: 5px solid variables.$primary-color;
+        padding-left: 50px;
+        height: 90px;
+        span {
+            color: variables.$primary-color;
+        }
+        p {
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+    }
+    #slider-nossos-servicos {
+        padding-top: 60px;
+        overflow: hidden;
+        .row {
+            flex-wrap: nowrap;
+            gap: 15px;
+            padding-left: 15px;
+            padding-right: 100px;
+            overflow: auto;
+            &::-webkit-scrollbar {
+                width: 8px;
+                height: 8px;
+                background: transparent;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: rgba(0, 0, 0, 0);
+                border-radius: 4px;
+            }
+            .item {
+                display: flex;
+                justify-content: space-between;
+                background-color: #fff;
+                padding: 0;
+                border-radius: 5px;
+                width: 450px;
+                .left-title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100px;
+                    writing-mode: sideways-lr;
+                    text-orientation: mixed;
+                    line-height: 1.1;
+                    white-space: nowrap;
+                    h3 {
+                        color: #dbdbdb;
+                        opacity: 0.35;
+                        font-weight: bold;
+                        padding: 15px 0;
+                        margin: 0;
+                    }
+                }
+                .content-item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    gap: 20px;
+                    padding-bottom: 25px;
+                    img {
+                        max-width: 100%;
+                        border-radius: 0 5px 0 0;
+                    }
+                    h3 {
+                        font-size: variables.$font-size-medium;
+                        font-weight: bold;
+                    }
+                    h4 {
+                        font-size: variables.$font-size-base;
+                    }
+                    a {
+                        width: max-content;
+                        min-width: 140px;
+                        &:hover {
+                            background-color: #000;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
         }
     }
 }

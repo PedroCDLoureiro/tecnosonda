@@ -7,67 +7,100 @@ header {
     transform: translateX(-50%);
     width: 100%;
     border-bottom: 1px solid #ffffff30;
-    .menu-header,
-    .logo {
-        display: flex;
-        align-items: center;
-    }
-    .menu-header {
-        justify-content: flex-end;
-        #btn-header-orcamento {
-            margin-right: 15px;
-        }
-        #icon-search {
-            cursor: pointer;
-            width: 20px;
-            border-right: 1px solid #ffffff30;
-            padding: 30px 25px 30px 0;
-            box-sizing: content-box;
-        }
-        #secondary-menu-header {
+    .container {
+        position: relative;
+        .menu-header,
+        .logo {
             display: flex;
             align-items: center;
-            nav {
-                margin: 0 15px;
-            }
         }
-        #icon-menu {
-            position: relative;
-            width: 30px;
-            height: 10px;
-            margin-left: 25px;
-            cursor: pointer;
-            #icon-menu-top,
-            #icon-menu-bottom {
-                &:before {
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    height: 2px;
-                    background-color: #fff;
+        .menu-header {
+            justify-content: flex-end;
+            #btn-header-orcamento {
+                margin-right: 15px;
+            }
+            #icon-search {
+                width: 20px;
+                border-right: 1px solid #ffffff30;
+                padding: 30px 25px 30px 0;
+                box-sizing: content-box;
+                svg {
+                    cursor: pointer;
                     transition: all ease 0.3s;
+                    &:hover {
+                        transform: scale(1.2);
+                    }
                 }
             }
-            #icon-menu-top {
-                &:before {
-                    top: 0;
+            #secondary-menu-header {
+                display: flex;
+                align-items: center;
+                nav {
+                    margin: 0 15px;
                 }
             }
-            #icon-menu-bottom {
-                &:before {
-                    bottom: 0;
+            #icon-menu {
+                position: relative;
+                width: 30px;
+                height: 10px;
+                margin-left: 25px;
+                cursor: pointer;
+                #icon-menu-top,
+                #icon-menu-bottom {
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 2px;
+                        background-color: #fff;
+                        transition: all ease 0.3s;
+                    }
                 }
-            }
-            &:hover {
                 #icon-menu-top {
                     &:before {
-                        top: -2px;
+                        top: 0;
                     }
                 }
                 #icon-menu-bottom {
                     &:before {
-                        bottom: -2px;
+                        bottom: 0;
                     }
+                }
+                &:hover {
+                    #icon-menu-top {
+                        &:before {
+                            top: -2px;
+                        }
+                    }
+                    #icon-menu-bottom {
+                        &:before {
+                            bottom: -2px;
+                        }
+                    }
+                }
+            }
+        }
+        #div-search {
+            position: absolute;
+            padding: 10px 0;
+            width: 100%;
+            input {
+                color: variables.$primary-color;
+                background: rgba(255, 255, 255, 0.6);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border: none;
+                border-radius: 30px;
+                padding: 0 15px;
+                outline: none;
+                height: 0;
+                width: 100%;
+                transition: all ease 0.3s;
+            }
+            &.active {
+                input {
+                    padding: 5px 15px;
+                    height: 40px;
                 }
             }
         }
