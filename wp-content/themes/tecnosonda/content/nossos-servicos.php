@@ -17,43 +17,78 @@
     </div>
     <div class="container-fluid">
         <div id="slider-nossos-servicos">
-            <div class="row">
+
+            <div class="row row-items-servicos">
                 <?php
-                $args = array(
-                    'post_type' => 'nossos_servicos',
+                $args = [
+                    'post_type'      => 'nossos_servicos',
                     'posts_per_page' => -1,
-                );
+                ];
                 $query = new WP_Query($args);
-                
+
                 if ($query->have_posts()) :
-                    while ($query->have_posts()) : $query->the_post(); ?>
-                    <?php 
-                        $post_url = get_the_permalink(); 
-                        $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'full'); 
-                        $title = get_the_title(); 
-                        $subtitle = get_field('subtitulo_nossos_servicos');
-                    ?>
-                    <div class="item">
-                        <div class="left-title">
-                            <h3>
-                                <?= esc_html($title); ?>
-                            </h3>
+                    while ($query->have_posts()) : $query->the_post();
+                        $post_id   = get_the_ID();
+                        $post_url  = get_the_permalink();
+                        $thumbnail = get_the_post_thumbnail_url($post_id, 'full');
+                        $title     = get_the_title();
+                        $subtitle  = get_field('subtitulo_nossos_servicos');
+                ?>
+                        <!-- Item -->
+                        <div class="item" data-id="<?= $post_id ?>">
+                            <div class="left-title">
+                                <h3><?= esc_html($title); ?></h3>
+                            </div>
+                            <div class="content-item">
+                                <?php if ($thumbnail): ?>
+                                    <img src="<?= esc_url($thumbnail); ?>" alt="<?= esc_attr($title); ?>">
+                                <?php endif; ?>
+                                <div class="titles">
+                                    <h3><?= esc_html($title); ?></h3>
+                                    <?php if ($subtitle): ?>
+                                        <h4><?= esc_html($subtitle); ?></h4>
+                                    <?php endif; ?>
+                                </div>
+                                <span class="btn saiba-mais">Saiba mais</span>
+                            </div>
                         </div>
-                        <div class="content-item">
-                            <?php if ($thumbnail): ?>
-                                <img src="<?= esc_url($thumbnail); ?>" alt="<?= esc_attr($title); ?>">
-                            <?php endif; ?>
-                            <h3><?= esc_html($title); ?></h3>
-                            <?php if ($subtitle): ?>
-                                <h4><?= esc_html($subtitle); ?></h4>
-                            <?php endif; ?>
-                            <a class="btn" href="<?= $post_url ?>">Saiba mais</a>
-                        </div>
-                    </div>
-                <?php endwhile;
-                    wp_reset_postdata();
-                endif; ?>
+                <?php endwhile; endif; ?>
             </div>
         </div>
+    </div>
+    <div class="container py-3">
+        <?php
+        $query->rewind_posts();
+
+        if ($query->have_posts()) :
+            while ($query->have_posts()) : $query->the_post();
+                $post_id = get_the_ID();
+        ?>
+                <!-- Conteúdo -->
+                <div class="content-servico" data-id="<?= $post_id; ?>" style="display:none;">
+                    <?php the_content(); ?>
+
+                    <?php if (have_rows('subservicos')): ?>
+                        <div class="subservicos py-3">
+                            <h2 class="mb-4">Subserviços</h2>
+                            <div class="row">
+                                <?php while (have_rows('subservicos')): the_row();
+                                    $imagem = get_sub_field('imagem_subservico');
+                                    $titulo = get_sub_field('titulo_subservico');
+                                ?>
+                                    <div class="col-2 subservico-item">
+                                        <?php if ($imagem): ?>
+                                            <img src="<?= esc_url($imagem); ?>" alt="<?= esc_attr($titulo); ?>">
+                                        <?php endif; ?>
+                                        <?php if ($titulo): ?>
+                                            <h3><?= esc_html($titulo); ?></h3>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endwhile; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
+        <?php endwhile; endif; wp_reset_postdata(); ?>
     </div>
 </section>

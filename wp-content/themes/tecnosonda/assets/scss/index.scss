@@ -89,7 +89,7 @@
     #slider-nossos-servicos {
         padding-top: 60px;
         overflow: hidden;
-        .row {
+        .row-items-servicos {
             flex-wrap: nowrap;
             gap: 15px;
             padding-left: 15px;
@@ -111,6 +111,8 @@
                 padding: 0;
                 border-radius: 5px;
                 width: 450px;
+                cursor: pointer;
+                transition: all ease 0.3s;
                 .left-title {
                     display: flex;
                     align-items: center;
@@ -145,7 +147,7 @@
                     h4 {
                         font-size: variables.$font-size-base;
                     }
-                    a {
+                    .saiba-mais {
                         width: max-content;
                         min-width: 140px;
                         &:hover {
@@ -154,6 +156,53 @@
                         }
                     }
                 }
+                &.active,
+                &.desactive {
+                    .left-title,
+                    .saiba-mais {
+                        display: none;
+                    }
+                    .content-item {
+                        position: relative;
+                        width: 100%;
+                        padding-bottom: 0;
+                        height: 400px;
+                        img {
+                            border-radius: 5px;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                        .titles {
+                            position: absolute;
+                            left: 5%;
+                            bottom: 10%;
+                            color: #fff;
+                        }
+                    }
+                }
+                &.active {
+                    width: 60%;
+                }
+                &.desactive {
+                    width: 25%;
+                }
+            }
+        }
+    }
+    .content-servico {
+        h2,
+        h3 {
+            font-size: variables.$font-size-base;
+        }
+        .subservico-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+            h3 {
+                margin-bottom: 0;
             }
         }
     }

@@ -43,17 +43,24 @@ function ajustarPadding() {
     var $container = $("#nossos-servicos .container");
     var $containerFluid = $("#nossos-servicos .container-fluid");
 
-    // Pega a padding-left atual do container
     var marginLeft = $container.css("margin-left");
 
-    // Aplica na container-fluid
     $containerFluid.css("padding-left", marginLeft);
 }
 
-// Rodar no load
 ajustarPadding();
 
-// Rodar no resize
 $(window).on("resize", function () {
     ajustarPadding();
+});
+
+$(".row-items-servicos .item").on("click", function () {
+    var id = $(this).data("id");
+
+    $(".row-items-servicos .item").removeClass("active").addClass("desactive");
+
+    $(this).removeClass("desactive").addClass("active");
+
+    $(".content-servico").hide();
+    $('.content-servico[data-id="' + id + '"]').show();
 });
