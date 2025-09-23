@@ -64,3 +64,29 @@ $(".row-items-servicos .item").on("click", function () {
     $(".content-servico").hide();
     $('.content-servico[data-id="' + id + '"]').show();
 });
+
+function initHorizontalScroll(prevBtn, nextBtn, slider) {
+    const $slider = $(slider);
+
+    $(prevBtn).on("click", function () {
+        $slider.animate({ scrollLeft: $slider.scrollLeft() - 300 }, 300);
+    });
+
+    $(nextBtn).on("click", function () {
+        $slider.animate({ scrollLeft: $slider.scrollLeft() + 300 }, 300);
+    });
+}
+initHorizontalScroll(
+    "#prev-nossos-servicos",
+    "#next-nossos-servicos",
+    ".row-items-servicos"
+);
+$(".prev-subservicos").each(function () {
+    let dataId = $(this).data("id");
+
+    initHorizontalScroll(
+        '.prev-subservicos[data-id="' + dataId + '"]',
+        '.next-subservicos[data-id="' + dataId + '"]',
+        '.subservicos-wrapper[data-id="' + dataId + '"]'
+    );
+});

@@ -21,6 +21,7 @@ h2 {
     padding-left: 0;
     padding-right: 0;
 }
+// Botões
 .btn {
     font-size: variables.$font-size-small;
     text-decoration: none;
@@ -61,41 +62,8 @@ h2 {
     background-color: variables.$font-color;
     color: variables.$primary-color;
 }
-.slick-next {
-    background-color: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    transition: all ease 0.3s;
-}
-.slick-next:focus {
-    background-color: #fff;
-    opacity: 1;
-}
-.slick-next:hover {
-    background-color: #fff;
-    opacity: 0.7;
-}
-.slick-prev {
-    display: none;
-}
-.slick-next {
-    right: 5%;
-    z-index: 1;
-}
 
-.slick-next:before {
-    font-family: none;
-    font-size: 30px;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-.slick-next:before {
-    content: "\25B8";
-    color: #006635;
-    left: 54%;
-}
+// Menu header
 .menu {
     margin: 0;
     padding: 0;
@@ -147,6 +115,51 @@ h2 {
         }
     }
 }
+// Arrows slider
+.slick-next,
+.slick-prev {
+    background-color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: all ease 0.3s;
+    z-index: 1;
+}
+.slick-next:focus,
+.slick-prev:focus {
+    background-color: #fff;
+    opacity: 1;
+}
+.slick-next:hover,
+.slick-prev:hover {
+    background-color: #fff;
+    opacity: 0.7;
+}
+.slick-next {
+    right: 5%;
+}
+.slick-prev {
+    left: 5%;
+}
+.slick-next:before,
+.slick-prev:before {
+    font-family: none;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.slick-next:before {
+    content: "\25B8";
+    color: #006635;
+    left: 54%;
+}
+.slick-prev:before {
+    content: "\25C2";
+    color: #006635;
+    left: 46%;
+}
+// Controller slider
 .controls-slider {
     display: flex;
     align-items: center;
@@ -176,5 +189,17 @@ h2 {
                 }
             }
         }
+    }
+}
+// Scrollbar overflow slider
+.scroll-slider {
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0);
+        border-radius: 4px;
     }
 }
