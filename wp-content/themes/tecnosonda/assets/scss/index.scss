@@ -72,23 +72,7 @@
 }
 #nossos-servicos {
     background: #d9d9d9;
-    padding: 80px 0;
-    .title {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        border-left: 5px solid variables.$primary-color;
-        padding-left: 50px;
-        height: 90px;
-        span {
-            color: variables.$primary-color;
-        }
-        p {
-            font-weight: 500;
-            margin-bottom: 0;
-        }
-    }
+    padding: 80px 0 40px 0;
     #slider-nossos-servicos {
         padding-top: 60px;
         overflow: hidden;
@@ -284,5 +268,63 @@
                 }
             }
         }
+    }
+}
+#sobre-anos-mercados {
+    position: relative;
+    background-color: variables.$primary-color;
+    padding: 80px 0 40px 0;
+    z-index: 0;
+    .anos {
+        p {
+            &.anos {
+                font-size: variables.$font-size-large;
+                line-height: variables.$line-height-font-size-large;
+                font-weight: bold;
+                span {
+                    color: variables.$secondary-color;
+                    font-size: variables.$font-size-xlarge;
+                    line-height: variables.$line-height-font-size-xlarge;
+                    font-weight: lighter;
+                }
+            }
+        }
+    }
+    .mercados-de-atuacao {
+        h3 {
+            font-size: variables.$font-size-medium;
+            line-height: variables.$line-height-font-size-medium;
+            font-weight: bold;
+            color: variables.$font-color;
+            span {
+                color: variables.$secondary-color;
+            }
+        }
+        .lista-mercados-de-atuacao {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            .item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                h3 {
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 75%;
+        background: url("../../assets/images/before_sobre_sec1.png") no-repeat
+            left bottom;
+        background-size: contain;
+        z-index: -1;
     }
 }

@@ -1,7 +1,7 @@
 <section id="nossos-servicos">
     <div class="container">
         <div class="row">
-            <div class="col-6 title">
+            <div class="col-6 section-title">
                 <h2>Nossos <span>Serviços</span></h2>
                 <p>Serviços entregados de engenharia</p>
             </div>

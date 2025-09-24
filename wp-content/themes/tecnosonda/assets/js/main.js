@@ -48,8 +48,7 @@ function ajustarPadding() {
     var $container = $("#nossos-servicos .container");
     var $containerFluid = $("#nossos-servicos .container-fluid");
 
-    var marginLeft = $container.css("margin-left");
-
+    var marginLeft = parseInt($container.css("margin-left"), 10) + 12;
     $containerFluid.css("padding-left", marginLeft);
 }
 

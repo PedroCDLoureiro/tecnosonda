@@ -56,11 +56,11 @@ function create_sobre_a_tecnosonda_post_type() {
         'public' => true,
         'has_archive' => true,
         'menu_icon' => 'dashicons-images-alt2',
-        'supports' => array( 'title', 'editor', 'thumbnail' ),
+        'supports' => array( 'title'),
         'rewrite' => array( 'slug' => 'sobre_a_tecnosonda' ), 
     );
 
-    register_post_type( 'secao_sobre_nos', $args );
+    register_post_type( 'sobre_a_tecnosonda', $args );
 }
 add_action( 'init', 'create_sobre_a_tecnosonda_post_type' );
 

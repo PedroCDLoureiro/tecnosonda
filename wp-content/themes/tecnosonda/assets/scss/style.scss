@@ -10,6 +10,10 @@
 * {
     font-family: "Montserrat", sans-serif;
 }
+p {
+    font-size: variables.$font-size-base;
+    line-height: variables.$line-height-font-size-base;
+}
 h2 {
     font-size: variables.$font-size-large;
     font-weight: bold;
@@ -115,6 +119,42 @@ h2 {
         }
     }
 }
+// Titles
+
+.section-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 90px;
+    span {
+        color: variables.$primary-color;
+    }
+    p {
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -30px;
+        width: 5px;
+        height: 100%;
+        background-color: variables.$primary-color;
+    }
+    &.white-title {
+        color: #fff;
+        span {
+            color: variables.$secondary-color;
+        }
+        &::before {
+            background-color: variables.$secondary-color;
+        }
+    }
+}
+
 // Arrows slider
 .slick-next,
 .slick-prev {
