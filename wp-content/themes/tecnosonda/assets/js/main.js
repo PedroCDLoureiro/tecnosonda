@@ -1,3 +1,4 @@
+// Menu header
 $("#icon-menu")
     .off("click")
     .on("click", function () {
@@ -13,12 +14,15 @@ $("#icon-menu")
             });
         }
     });
+
+// Barra busca
 $("#icon-search svg")
     .off("click")
     .on("click", function () {
         $("#div-search").toggleClass("active");
     });
 
+// Tamanho textos cards nossos serviços
 function fitTextToHeight() {
     $(".left-title h3").each(function () {
         var $h3 = $(this);
@@ -39,6 +43,7 @@ function fitTextToHeight() {
 
 $(window).on("load resize", fitTextToHeight);
 
+// Padding container fluid nossos serviços
 function ajustarPadding() {
     var $container = $("#nossos-servicos .container");
     var $containerFluid = $("#nossos-servicos .container-fluid");
@@ -54,6 +59,7 @@ $(window).on("resize", function () {
     ajustarPadding();
 });
 
+// Conteúdo cards nossos serviços
 $(".row-items-servicos .item").on("click", function () {
     var id = $(this).data("id");
 
@@ -65,6 +71,7 @@ $(".row-items-servicos .item").on("click", function () {
     $('.content-servico[data-id="' + id + '"]').show();
 });
 
+// Botões scroll
 function initHorizontalScroll(prevBtn, nextBtn, slider) {
     const $slider = $(slider);
 
@@ -76,11 +83,13 @@ function initHorizontalScroll(prevBtn, nextBtn, slider) {
         $slider.animate({ scrollLeft: $slider.scrollLeft() + 300 }, 300);
     });
 }
+// Scroll nossos serviços
 initHorizontalScroll(
     "#prev-nossos-servicos",
     "#next-nossos-servicos",
     ".row-items-servicos"
 );
+// Scroll subserviços
 $(".prev-subservicos").each(function () {
     let dataId = $(this).data("id");
 
@@ -89,4 +98,47 @@ $(".prev-subservicos").each(function () {
         '.next-subservicos[data-id="' + dataId + '"]',
         '.subservicos-wrapper[data-id="' + dataId + '"]'
     );
+});
+// Scroll cases
+$(".prev-cases").each(function () {
+    let dataId = $(this).data("id");
+
+    initHorizontalScroll(
+        '.prev-cases[data-id="' + dataId + '"]',
+        '.next-cases[data-id="' + dataId + '"]',
+        '.cases-wrapper[data-id="' + dataId + '"]'
+    );
+});
+
+// Modal cases
+$(document).on("click", ".case-item", function () {
+    const postId = $(this).data("id");
+    const indice = $(this).data("indice");
+    const modal = $(`.caseModal[data-id="${postId}"]`);
+    const slider = modal.find(".case-slider");
+
+    modal.fadeIn(() => {
+        $("body").addClass("stop-scroll");
+
+        if (!slider.hasClass("slick-initialized")) {
+            slider.slick({
+                autoplay: false,
+                arrows: true,
+                dots: false,
+                speed: 1000,
+                fade: true,
+                cssEase: "linear",
+            });
+        }
+
+        slider.slick("slickGoTo", indice, true);
+    });
+});
+
+// Fechar modal
+$(document).on("click", ".close-caseModal", function () {
+    const postId = $(this).data("id");
+    const modal = $(`.caseModal[data-id="${postId}"]`);
+    modal.fadeOut();
+    $("body").removeClass("stop-scroll");
 });

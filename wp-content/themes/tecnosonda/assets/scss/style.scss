@@ -203,3 +203,104 @@ h2 {
         border-radius: 4px;
     }
 }
+// Modal case
+.caseModal {
+    width: 100dvw;
+    height: 100dvh;
+    background: #000000b3;
+    .close-caseModal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: -10px;
+        right: -10px;
+        background-color: #fff;
+        z-index: 1;
+        border-radius: 50%;
+        cursor: pointer;
+        svg {
+            fill: variables.$primary-color;
+            width: 14px;
+        }
+    }
+    .modal-content {
+        background: transparent;
+        width: 80dvw;
+        height: 90dvh;
+        left: 10dvw;
+        top: 5dvh;
+        border: none;
+        .modal-body {
+            padding: 0;
+            .case-slider {
+                visibility: hidden;
+                height: 90dvh;
+                .slick-next,
+                .slick-prev {
+                    width: 25px;
+                    height: 25px;
+                }
+                .slick-prev {
+                    left: -12.5px;
+                }
+                .slick-next {
+                    right: -12.5px;
+                }
+                .slick-prev:before {
+                    content: url("data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 640 640%22><path d=%22M164.7 331.3C158.5 325.1 158.5 314.9 164.7 308.7L372.7 100.7C378.9 94.5 389.1 94.5 395.3 100.7C401.5 106.9 401.5 117.1 395.3 123.3L198.6 320L395.3 516.7C401.5 522.9 401.5 533.1 395.3 539.3C389.1 545.5 378.9 545.5 372.7 539.3L164.7 331.3z%22/></svg>");
+                    width: 16px;
+                    height: 35px;
+                    left: 50%;
+                }
+                .slick-next:before {
+                    content: url("data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 640 640%22><path d=%22M475.3 308.7C481.5 314.9 481.5 325.1 475.3 331.3L267.3 539.3C261.1 545.5 250.9 545.5 244.7 539.3C238.5 533.1 238.5 522.9 244.7 516.7L441.4 320L244.7 123.3C238.5 117.1 238.5 106.9 244.7 100.7C250.9 94.5 261.1 94.5 267.3 100.7L475.3 308.7z%22/></svg>");
+                    width: 16px;
+                    height: 35px;
+                    left: 50%;
+                }
+
+                .case-item {
+                    height: 90dvh;
+                    .thumbnail {
+                        object-fit: cover;
+                        object-position: top;
+                        max-height: 80dvh;
+                        border-radius: 5px;
+                    }
+                    .texts {
+                        position: absolute;
+                        left: 2%;
+                        bottom: 0;
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        background-color: #fff;
+                        border-radius: 5px;
+                        padding: 15px;
+                        width: 96%;
+                        h3 {
+                            font-size: variables.$font-size-medium !important;
+                            font-weight: bold;
+                        }
+                        svg {
+                            width: 20px;
+                        }
+                        span {
+                            font-weight: 500;
+                            gap: 8px;
+                        }
+                        .conteudo-case {
+                            font-size: variables.$font-size-small;
+                            line-height: variables.$line-height-font-size-small;
+                        }
+                    }
+                }
+                &.slick-initialized {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
