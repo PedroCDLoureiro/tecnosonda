@@ -175,7 +175,7 @@
         .subservicos-wrapper {
             display: grid;
             grid-auto-flow: column;
-            grid-auto-columns: calc(12.5% + 0.5px);
+            grid-auto-columns: calc(12.4%);
             gap: 60px;
             overflow-x: auto;
             overflow-y: hidden;
@@ -285,7 +285,7 @@
                     color: variables.$secondary-color;
                     font-size: variables.$font-size-xlarge;
                     line-height: variables.$line-height-font-size-xlarge;
-                    font-weight: lighter;
+                    font-weight: 100;
                 }
             }
         }
@@ -310,7 +310,8 @@
                 align-items: center;
                 gap: 15px;
                 h3 {
-                    font-weight: normal;
+                    font-weight: 100;
+                    margin-bottom: 0;
                 }
             }
         }
@@ -326,5 +327,113 @@
             left bottom;
         background-size: contain;
         z-index: -1;
+    }
+}
+#nossos-valores {
+    background-color: #2b4a3b;
+    padding: 40px 0 60px 0;
+    .dados {
+        display: flex;
+        justify-content: space-evenly;
+        h3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: variables.$font-size-xlarge;
+            color: variables.$secondary-color;
+            font-weight: 300;
+            span {
+                font-size: variables.$font-size-medium;
+                font-weight: 100;
+                &::first-line {
+                    color: variables.$font-color;
+                }
+            }
+        }
+    }
+    .missao,
+    .visao,
+    .valores {
+        background-color: rgba(0, 0, 0, 0.22);
+        color: #fff;
+        padding: 30px 40px;
+        border-radius: 5px;
+        flex: 1;
+        h3 {
+            font-size: variables.$font-size-large;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 25px;
+            span {
+                color: variables.$secondary-color;
+            }
+        }
+    }
+    .missao-visao {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 12px;
+    }
+    .nossos-valores {
+        display: flex;
+        .valores {
+            .lista-nossos-valores {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .item {
+                    gap: 10px;
+                    svg {
+                        min-width: 15px;
+                        width: 15px;
+                    }
+                    h4 {
+                        font-size: variables.$font-size-base;
+                        font-weight: lighter;
+                    }
+                }
+            }
+        }
+    }
+    .midia {
+        position: relative;
+        #play-midia {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            border: none;
+            border-radius: 50%;
+            transition: all ease 0.3s;
+            &:before {
+                content: "\25B8";
+                font-size: 35px;
+                color: #006635;
+                position: relative;
+                left: 2px;
+            }
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+#nossos-clientes {
+    background-color: #d9d9d9;
+    padding: 90px 0;
+    .row-items-nossos-clientes {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 8.8%;
+        gap: 16px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
     }
 }

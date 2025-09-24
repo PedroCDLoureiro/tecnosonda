@@ -27,7 +27,7 @@
                             </p>
                         <?php endif; ?>
                         <?php if (have_rows('mercados_de_atuacao')): ?>
-                            <h3 class="mb-4">Mercados de <span>atuação</span></h3>
+                            <h3 class="mb-5">Mercados de <span>atuação</span></h3>
                             <div class="lista-mercados-de-atuacao">
                                     <?php 
                                         while (have_rows('mercados_de_atuacao')): the_row(); 
@@ -48,3 +48,90 @@
         </div>
     </div>
 </section>
+<section id="nossos-valores">
+    <div class="container">
+        <div class="row">
+            <?php 
+                $query->rewind_posts(); 
+                
+                if ($query->have_posts()) :
+                    while ($query->have_posts()) : $query->the_post();
+                    $post_id = get_the_ID();
+                    $anos_de_experiencia = get_field('anos_de_experiencia');
+                    $projetos_executados = get_field('projetos_executados');
+                    $clientes_satisfeitos = get_field('clientes_satisfeitos');
+                    $nossa_missao = get_field('nossa_missao');
+                    $temos_como_visao = get_field('temos_como_visao');
+            ?>
+                <div class="col-12 mb-5 title">
+                    <div class="section-title white-title">
+                        <h2>Sobre A <span>Tecnosonda</span></h2>
+                    </div>
+                </div>
+                <div class="col-12 mb-5 dados">
+                    <h3 class="anos-experiencia">
+                        +<?= $anos_de_experiencia ?>
+                        <span>anos de <br> experiência</span>
+                    </h3>
+                    <h3 class="projetos-executados">
+                        +<?= $projetos_executados ?>
+                        <span>projetos <br> executados</span>
+                    </h3>
+                    <h3 class="clientes-satisfeitos">
+                        +<?= $clientes_satisfeitos ?>
+                        <span>clientes <br> satisfeitos</span>
+                    </h3>
+                </div>
+                <div class="col-md-5 col-12 mb-5 missao-visao">
+                    <div class="missao">
+                        <h3>Nossa <span>missão</span></h3>
+                        <?= $nossa_missao ?>
+                    </div>
+                    <div class="visao">
+                        <h3>Temos como <span>visão</span></h3>
+                        <?= $temos_como_visao ?>
+                    </div>
+                </div>
+                <div class="col-md-7 col-12 mb-5 nossos-valores">
+                    <?php if (have_rows('nossos_valores')): ?>
+                        <div class="valores">
+                            <h3 class="mb-4">Nossos <span>valores</span></h3>
+                            <div class="lista-nossos-valores">
+                                <?php 
+                                    while (have_rows('nossos_valores')): the_row(); 
+                                    $item_nossos_valores = get_sub_field("item_nossos_valores");
+                                ?>
+                                    <div class="d-flex align-items-center item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="11.791" height="10.05" viewBox="0 0 11.791 10.05">
+                                            <path id="icon_valores" data-name="Icon Valores" d="M119.075,1080.594v8.7c5.193,3.885,4.708,4.259,10.05.223v-6.351c-5.6,1.275-7.809-.182-10.049-2.574Z" transform="translate(-1080.594 129.125) rotate(-90)" fill="#cae098" fill-rule="evenodd"/>
+                                        </svg>
+                                        <h4 class="mb-0"><?= $item_nossos_valores; ?></h4>
+                                    </div>
+                                <?php endwhile; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <div class="col-12 midia">
+                    <?php 
+                    $midia = get_field('imagem_video'); 
+
+                    if( $midia ):
+                        if (strpos($midia['mime_type'], 'image') !== false): ?>
+                            <img src="<?php echo esc_url($midia['url']); ?>" alt="<?php echo esc_attr($midia['alt']); ?>" class="img-fluid w-100" />
+                        <?php
+                        elseif (strpos($midia['mime_type'], 'video') !== false): ?>
+                            <video id="video-nossos-valores" class="w-100">
+                                <source src="<?php echo esc_url($midia['url']); ?>" type="<?php echo esc_attr($midia['mime_type']); ?>">
+                                Seu navegador não suporta vídeos.
+                            </video>
+                            <button id="play-midia"></button>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+                <?php endwhile; ?>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+<?php get_template_part('content/nossos-clientes'); ?>

@@ -108,6 +108,12 @@ $(".prev-cases").each(function () {
         '.cases-wrapper[data-id="' + dataId + '"]'
     );
 });
+// Scroll nossos clientes
+initHorizontalScroll(
+    "#prev-nossos-clientes",
+    "#next-nossos-clientes",
+    ".row-items-nossos-clientes"
+);
 
 // Modal cases
 $(document).on("click", ".case-item", function () {
@@ -140,4 +146,23 @@ $(document).on("click", ".close-caseModal", function () {
     const modal = $(`.caseModal[data-id="${postId}"]`);
     modal.fadeOut();
     $("body").removeClass("stop-scroll");
+});
+
+// Vídeo Nossos Valores
+$(document).on("click", "#play-midia", function () {
+    var video = $("#video-nossos-valores").get(0);
+    video.play();
+    $(this).fadeOut();
+});
+
+$(document).on("click", "#video-nossos-valores", function () {
+    var video = $(this).get(0);
+    if (!video.paused) {
+        video.pause();
+        $("#play-midia").fadeIn();
+    }
+});
+
+$("#video-nossos-valores").on("ended", function () {
+    $("#play-midia").fadeIn();
 });

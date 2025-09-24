@@ -192,37 +192,37 @@ function create_nossos_servicos_post_type() {
 }
 add_action( 'init', 'create_nossos_servicos_post_type' );
 
-// Clientes
-function create_clientes_post_type() {
+// Nossos Clientes
+function create_nossos_clientes_post_type() {
     $args = array(
         'labels' => array(
-            'name'               => 'Clientes',
-            'singular_name'      => 'Clientes',
+            'name'               => 'Nossos Clientes',
+            'singular_name'      => 'Nossos Clientes',
             'add_new'            => 'Adicionar Novo',
             'add_new_item'       => 'Adicionar Novo',
-            'edit_item'          => 'Editar Clientes',
-            'new_item'           => 'Novo Clientes',
-            'view_item'          => 'Ver Clientes',
+            'edit_item'          => 'Editar Nossos Clientes',
+            'new_item'           => 'Novo Nossos Clientes',
+            'view_item'          => 'Ver Nossos Clientes',
             'search_items'       => 'Procurar',
-            'not_found'          => 'Nenhum Clientes encontrado',
-            'not_found_in_trash' => 'Nenhum Clientes encontrado na lixeira',
+            'not_found'          => 'Nenhum Nossos Clientes encontrado',
+            'not_found_in_trash' => 'Nenhum Nossos Clientes encontrado na lixeira',
             'all_items'          => 'Todos',
-            'archives'           => 'Arquivos de Clientes',
-            'attributes'         => 'Atributos de Clientes',
-            'insert_into_item'   => 'Inserir no Clientes',
-            'uploaded_to_this_item' => 'Carregado para este Clientes',
-            'filter_items_list'  => 'Filtrar lista de Clientes',
+            'archives'           => 'Arquivos de Nossos Clientes',
+            'attributes'         => 'Atributos de Nossos Clientes',
+            'insert_into_item'   => 'Inserir no Nossos Clientes',
+            'uploaded_to_this_item' => 'Carregado para este Nossos Clientes',
+            'filter_items_list'  => 'Filtrar lista de Nossos Clientes',
         ),
         'public' => true,
         'has_archive' => true,
         'menu_icon' => 'dashicons-clipboard',
         'supports' => array( 'title' ),
-        'rewrite' => array( 'slug' => 'clientes' ), 
+        'rewrite' => array( 'slug' => 'nossos_clientes' ), 
     );
 
-    register_post_type( 'clientes', $args );
+    register_post_type( 'nossos_clientes', $args );
 }
-add_action( 'init', 'create_clientes_post_type' );
+add_action( 'init', 'create_nossos_clientes_post_type' );
 
 // Contato
 function create_page_contato_post_type() {
