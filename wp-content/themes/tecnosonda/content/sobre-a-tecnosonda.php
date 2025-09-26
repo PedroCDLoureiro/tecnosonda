@@ -152,7 +152,7 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div id="slider-sobre-noticias">
+        <div id="slider-sobre-noticias" class="mb-5">
             <div class="row row-items-noticias scroll-slider">
                 <?php
                 $args = [
@@ -188,5 +188,6 @@
                 <?php endwhile; endif; ?>
             </div>
         </div>
+        <a href="<?= WP_URL ?>/noticias" class="btn btn-large secondary-btn">Ver tudo</a>
     </div>
 </section>
