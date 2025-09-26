@@ -437,3 +437,80 @@
         scroll-snap-type: x mandatory;
     }
 }
+#sobre-noticias {
+    background-color: variables.$primary-color;
+    padding: 90px 0;
+    .controls-slider button {
+        border-color: #fff;
+        svg {
+            path {
+                fill: #fff;
+            }
+        }
+        &:hover {
+            background: #fff;
+            svg {
+                path {
+                    fill: variables.$primary-color;
+                }
+            }
+        }
+    }
+    #slider-sobre-noticias {
+        padding-top: 60px;
+        overflow: hidden;
+        .row-items-noticias {
+            flex-wrap: nowrap;
+            gap: 10px;
+            padding-left: 15px;
+            padding-right: 100px;
+            overflow: auto;
+            .item {
+                width: 400px;
+                padding: 0;
+                overflow: hidden;
+                a {
+                    display: flex;
+                    text-decoration: none;
+                    height: 100%;
+                    .content-item {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        padding-bottom: 10px;
+                        gap: 15px;
+                        border-radius: 5px;
+                        background-color: #fff;
+                        figure {
+                            border-radius: 5px;
+                            overflow: hidden;
+                            img {
+                                border-radius: 5px;
+                                transition: all ease 0.3s;
+                            }
+                        }
+                        .texts {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 15px;
+                            padding: 0 30px;
+                            h3 {
+                                font-size: variables.$font-size-base;
+                                line-height: variables.$line-height-font-size-base;
+                                color: variables.$secondary-font-color;
+                            }
+                            span {
+                                color: #b3b3b3;
+                            }
+                        }
+                    }
+                    &:hover {
+                        img {
+                            transform: scale(1.2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

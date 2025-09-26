@@ -45,11 +45,11 @@ $(window).on("load resize", fitTextToHeight);
 
 // Padding container fluid nossos serviços
 function ajustarPadding() {
-    var $container = $("#nossos-servicos .container");
-    var $containerFluid = $("#nossos-servicos .container-fluid");
-
-    var marginLeft = parseInt($container.css("margin-left"), 10) + 12;
-    $containerFluid.css("padding-left", marginLeft);
+    var marginLeft =
+        parseInt($("#nossos-servicos .container").css("margin-left"), 10) + 12;
+    $(
+        "#nossos-servicos .container-fluid, #sobre-noticias .container-fluid"
+    ).css("padding-left", marginLeft);
 }
 
 ajustarPadding();
@@ -113,6 +113,12 @@ initHorizontalScroll(
     "#prev-nossos-clientes",
     "#next-nossos-clientes",
     ".row-items-nossos-clientes"
+);
+// Scroll sobre - notícias
+initHorizontalScroll(
+    "#prev-sobre-noticias",
+    "#next-sobre-noticias",
+    ".row-items-noticias"
 );
 
 // Modal cases
