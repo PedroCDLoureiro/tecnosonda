@@ -64,38 +64,6 @@ function create_sobre_a_tecnosonda_post_type() {
 }
 add_action( 'init', 'create_sobre_a_tecnosonda_post_type' );
 
-// Seção Fale conosco
-function create_secao_fale_conosco_post_type() {
-    $args = array(
-        'labels' => array(
-            'name'               => 'Seção Fale conosco',
-            'singular_name'      => 'Seção Fale conosco',
-            'add_new'            => 'Adicionar Novo',
-            'add_new_item'       => 'Adicionar Novo',
-            'edit_item'          => 'Editar Seção Fale conosco',
-            'new_item'           => 'Novo Seção Fale conosco',
-            'view_item'          => 'Ver Seção Fale conosco',
-            'search_items'       => 'Procurar',
-            'not_found'          => 'Nenhum Seção Fale conosco encontrado',
-            'not_found_in_trash' => 'Nenhum Seção Fale conosco encontrado na lixeira',
-            'all_items'          => 'Todos',
-            'archives'           => 'Arquivos de Seção Fale conosco',
-            'attributes'         => 'Atributos de Seção Fale conosco',
-            'insert_into_item'   => 'Inserir no Seção Fale conosco',
-            'uploaded_to_this_item' => 'Carregado para este Seção Fale conosco',
-            'filter_items_list'  => 'Filtrar lista de Seção Fale conosco',
-        ),
-        'public' => true,
-        'has_archive' => true,
-        'menu_icon' => 'dashicons-images-alt2',
-        'supports' => array( 'title', 'editor', 'thumbnail' ),
-        'rewrite' => array( 'slug' => 'secao_fale_conosco' ), 
-    );
-
-    register_post_type( 'secao_fale_conosco', $args );
-}
-add_action( 'init', 'create_secao_fale_conosco_post_type' );
-
 // Dados Rodapé
 function create_dados_rodape_post_type() {
     $args = array(
@@ -224,37 +192,37 @@ function create_nossos_clientes_post_type() {
 }
 add_action( 'init', 'create_nossos_clientes_post_type' );
 
-// Contato
-function create_page_contato_post_type() {
+// Fale conosco
+function create_fale_conosco_post_type() {
     $args = array(
         'labels' => array(
-            'name'               => 'Página Contato',
-            'singular_name'      => 'Página Contato',
+            'name'               => 'Fale conosco',
+            'singular_name'      => 'Fale conosco',
             'add_new'            => 'Adicionar Novo',
             'add_new_item'       => 'Adicionar Novo',
-            'edit_item'          => 'Editar Página Contato',
-            'new_item'           => 'Novo Página Contato',
-            'view_item'          => 'Ver Página Contato',
+            'edit_item'          => 'Editar Fale conosco',
+            'new_item'           => 'Novo Fale conosco',
+            'view_item'          => 'Ver Fale conosco',
             'search_items'       => 'Procurar',
-            'not_found'          => 'Nenhum Página Contato encontrado',
-            'not_found_in_trash' => 'Nenhum Página Contato encontrado na lixeira',
+            'not_found'          => 'Nenhum Fale conosco encontrado',
+            'not_found_in_trash' => 'Nenhum Fale conosco encontrado na lixeira',
             'all_items'          => 'Todos',
-            'archives'           => 'Arquivos de Página Contato',
-            'attributes'         => 'Atributos de Página Contato',
-            'insert_into_item'   => 'Inserir no Página Contato',
-            'uploaded_to_this_item' => 'Carregado para este Página Contato',
-            'filter_items_list'  => 'Filtrar lista de Página Contato',
+            'archives'           => 'Arquivos de Fale conosco',
+            'attributes'         => 'Atributos de Fale conosco',
+            'insert_into_item'   => 'Inserir no Fale conosco',
+            'uploaded_to_this_item' => 'Carregado para este Fale conosco',
+            'filter_items_list'  => 'Filtrar lista de Fale conosco',
         ),
         'public' => true,
         'has_archive' => true,
         'menu_icon' => 'dashicons-clipboard',
         'supports' => array( 'title' ),
-        'rewrite' => array( 'slug' => 'page_contato' ), 
+        'rewrite' => array( 'slug' => 'fale-conosco' ), 
     );
 
-    register_post_type( 'page_contato', $args );
+    register_post_type( 'fale-conosco', $args );
 }
-add_action( 'init', 'create_page_contato_post_type' );
+add_action( 'init', 'create_fale_conosco_post_type' );
 
 
 ?>
