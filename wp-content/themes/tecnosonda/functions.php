@@ -40,8 +40,8 @@
         echo "<style type=\"text/css\">
                 body.login div#login h1 a {
                 background-image: url(" . get_bloginfo('template_directory') . "/admin/image/logo.png);
-                width: 218px;
-                background-size: 218px 63px;
+                width: 219px;
+                background-size: 219px 74px;
             }</style>";
     }
     add_action('login_head', 'my_login_css');
@@ -81,40 +81,12 @@
         
         register_nav_menus(array(
             'main_menu' => __('Menu Principal', 'text-domain'),
-            'footer_menu' => __('Menu Footer', 'text-domain'),
+            'menu_certificacoes' => __('Menu Certificações', 'text-domain'),
+            'menu_institucional' => __('Menu Institucional', 'text-domain'),
+            'menu_codigo_de_etica' => __('Menu Código de Ética', 'text-domain'),
         ));
     }
     add_action('after_setup_theme', 'theme_setup');
-
-    // URL Portal do cliente
-    function url_portal_do_cliente() {
-        $post = get_page_by_path('dados-rodape', OBJECT, 'dados_rodape');
-    
-        if ($post) {
-            $post_id = $post->ID;
-            return get_field('portal_do_cliente', $post_id);
-        }
-    
-        return null;
-    }
-
-    function atualizar_url_portal_no_menu($items, $args) {
-        
-        if ($args->theme_location === 'main_menu' || $args->theme_location === 'footer_menu') {
-            
-            $url_portal = url_portal_do_cliente();
-            if ($url_portal) {
-                $items = preg_replace(
-                    '/<a href="#">(.*?)Portal do cliente(.*?)<\/a>/',
-                    '<a href="' . esc_url($url_portal) . '">$1Portal do cliente$2</a>',
-                    $items
-                );
-            }
-        }
-    
-        return $items;
-    }
-    add_filter('wp_nav_menu_items', 'atualizar_url_portal_no_menu', 10, 2);
 
     // Blog
    

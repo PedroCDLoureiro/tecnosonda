@@ -1,1 +1,91 @@
 @use "variables";
+
+#footer {
+    padding: 60px 0;
+    h3 {
+        font-size: variables.$font-size-medium;
+        line-height: variables.$line-height-font-size-medium;
+        color: variables.$primary-color;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    a {
+        font-size: variables.$font-size-base;
+        line-height: variables.$line-height-font-size-base;
+        color: variables.$secondary-font-color;
+        width: max-content;
+        text-decoration: none;
+        transition: all ease 0.3s;
+        &:hover {
+            color: variables.$primary-color;
+        }
+    }
+    .logo {
+        .redes-sociais {
+            display: flex;
+            gap: 10px;
+            .linkedin,
+            .instagram {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                transition: all ease 0.3s;
+            }
+            .linkedin {
+                border: 1px solid #007ab9;
+                background-color: #007ab9;
+                &:hover {
+                    background-color: transparent;
+                    svg {
+                        path {
+                            fill: #007ab9;
+                        }
+                    }
+                }
+            }
+            .instagram {
+                border: 1px solid #265d89;
+                background-color: #265d89;
+                &:hover {
+                    background-color: transparent;
+                    svg {
+                        path {
+                            fill: #265d89;
+                        }
+                    }
+                }
+            }
+            a {
+                text-decoration: none;
+                svg {
+                    width: 25px;
+                    path {
+                        transition: all ease 0.3s;
+                    }
+                }
+            }
+        }
+    }
+    .menu {
+        gap: 8px;
+    }
+    .certificacoes {
+        .certificados {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+    }
+    .links {
+        gap: 50px;
+    }
+}
+#copyright {
+    background-color: rgba(0, 0, 0, 0.09);
+    padding: 14px 0;
+    text-align: center;
+    font-size: variables.$font-size-xsmall;
+    line-height: variables.$line-height-font-size-xsmall;
+}
