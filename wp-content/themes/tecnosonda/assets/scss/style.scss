@@ -104,6 +104,7 @@ h2 {
             -webkit-backdrop-filter: blur(20px);
             min-width: 150px;
             width: max-content;
+            z-index: 1;
             li {
                 padding: 5px 20px;
             }

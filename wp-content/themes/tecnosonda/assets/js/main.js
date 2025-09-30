@@ -15,6 +15,20 @@ $("#icon-menu")
         }
     });
 
+$(window).on("scroll", function () {
+    if ($(this).scrollTop() > 100) {
+        $("header").addClass("menu-scroll");
+        $("#btn-header-orcamento")
+            .removeClass("transparent-btn")
+            .addClass("secondary-btn");
+    } else {
+        $("header").removeClass("menu-scroll");
+        $("#btn-header-orcamento")
+            .removeClass("secondary-btn")
+            .addClass("transparent-btn");
+    }
+});
+
 // Barra busca
 $("#icon-search svg")
     .off("click")

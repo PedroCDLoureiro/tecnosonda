@@ -7,6 +7,7 @@ header {
     transform: translateX(-50%);
     width: 100%;
     border-bottom: 1px solid #ffffff30;
+    transition: all ease 0.3s;
     .container {
         position: relative;
         .menu-header,
@@ -101,6 +102,50 @@ header {
                 input {
                     padding: 5px 15px;
                     height: 40px;
+                }
+            }
+        }
+    }
+    &.menu-scroll {
+        position: fixed;
+        top: 0;
+        background-color: #fff;
+        color: variables.$primary-color;
+        z-index: 100;
+        svg {
+            path {
+                fill: variables.$primary-color;
+            }
+        }
+        .container {
+            .menu-header {
+                #icon-search {
+                    border-color: variables.$primary-color;
+                }
+                #icon-menu {
+                    #icon-menu-top,
+                    #icon-menu-bottom {
+                        &:before {
+                            background-color: variables.$primary-color;
+                        }
+                    }
+                }
+                .menu {
+                    li {
+                        .sub-menu {
+                            background: #fff;
+                            backdrop-filter: none;
+                            -webkit-backdrop-filter: none;
+                        }
+                        &.menu-item-has-children {
+                            &::after {
+                                color: variables.$primary-color;
+                            }
+                        }
+                    }
+                    a {
+                        color: variables.$primary-color;
+                    }
                 }
             }
         }
