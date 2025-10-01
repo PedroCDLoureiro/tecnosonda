@@ -96,38 +96,6 @@ function create_dados_rodape_post_type() {
 }
 add_action( 'init', 'create_dados_rodape_post_type' );
 
-// Sobre Nós
-function create_sobre_nos_post_type() {
-    $args = array(
-        'labels' => array(
-            'name'               => 'Sobre Nós',
-            'singular_name'      => 'Sobre Nós',
-            'add_new'            => 'Adicionar Novo',
-            'add_new_item'       => 'Adicionar Novo',
-            'edit_item'          => 'Editar Sobre Nós',
-            'new_item'           => 'Novo Sobre Nós',
-            'view_item'          => 'Ver Sobre Nós',
-            'search_items'       => 'Procurar',
-            'not_found'          => 'Nenhum Sobre Nós encontrado',
-            'not_found_in_trash' => 'Nenhum Sobre Nós encontrado na lixeira',
-            'all_items'          => 'Todos',
-            'archives'           => 'Arquivos de Sobre Nós',
-            'attributes'         => 'Atributos de Sobre Nós',
-            'insert_into_item'   => 'Inserir no Sobre Nós',
-            'uploaded_to_this_item' => 'Carregado para este Sobre Nós',
-            'filter_items_list'  => 'Filtrar lista de Sobre Nós',
-        ),
-        'public' => true,
-        'has_archive' => true,
-        'menu_icon' => 'dashicons-clipboard',
-        'supports' => array( 'title' ),
-        'rewrite' => array( 'slug' => 'sobre_nos' ), 
-    );
-
-    register_post_type( 'sobre_nos', $args );
-}
-add_action( 'init', 'create_sobre_nos_post_type' );
-
 // Nossos Serviços
 function create_nossos_servicos_post_type() {
     $args = array(
@@ -223,6 +191,5 @@ function create_fale_conosco_post_type() {
     register_post_type( 'fale-conosco', $args );
 }
 add_action( 'init', 'create_fale_conosco_post_type' );
-
 
 ?>
