@@ -59,32 +59,48 @@ jQuery(document).ready(function ($) {
     $(window).on("load resize", fitTextToHeight);
 
     // Padding container fluid nossos serviços
-    function ajustarPaddingHome() {
+    function ajustarPadding() {
         var marginLeft =
             parseInt($("#nossos-servicos .container").css("margin-left"), 10) +
             12;
         $(
-            "#nossos-servicos .container-fluid, #sobre-noticias .container-fluid"
+            "#nossos-servicos .container-fluid, #sobre-noticias .container-fluid, #page-nossa-historia .container-marcos"
         ).css("padding-left", marginLeft);
     }
 
-    ajustarPaddingHome();
+    ajustarPadding();
 
     $(window).on("resize", function () {
-        ajustarPaddingHome();
+        ajustarPadding();
     });
 
-    // Padding h1 banner internas
-    function ajustarPaddingInternas() {
+    function ajustarPadding(seletorReferencia, seletorAlvo, offset = 0) {
         var marginLeft =
-            parseInt($("header .container").css("margin-left"), 10) + 12;
-        $("#banner .texts").css("padding-left", marginLeft);
+            parseInt($(seletorReferencia).css("margin-left"), 10) + offset;
+        $(seletorAlvo).css("padding-left", marginLeft);
     }
 
-    ajustarPaddingInternas();
+    function atualizarTodos() {
+        ajustarPadding(
+            "#nossos-servicos .container",
+            "#nossos-servicos .container-fluid, #sobre-noticias .container-fluid",
+            12
+        );
+
+        ajustarPadding("header .container", "#banner .texts", 12);
+
+        ajustarPadding(
+            "#page-nossa-historia .container",
+            "#page-nossa-historia .container-marcos",
+            12
+        );
+    }
+
+    atualizarTodos();
 
     $(window).on("resize", function () {
-        ajustarPaddingInternas();
+        clearTimeout(window._ajusteTimeout);
+        window._ajusteTimeout = setTimeout(atualizarTodos, 100);
     });
 
     // Conteúdo cards nossos serviços
