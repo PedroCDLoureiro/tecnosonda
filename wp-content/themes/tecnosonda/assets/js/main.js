@@ -91,7 +91,7 @@ jQuery(document).ready(function ($) {
 
         ajustarPadding(
             "#page-nossa-historia .container",
-            "#page-nossa-historia .container-marcos",
+            "#page-nossa-historia .marcos",
             12
         );
     }
@@ -118,22 +118,29 @@ jQuery(document).ready(function ($) {
     });
 
     // Botões scroll
-    function initHorizontalScroll(prevBtn, nextBtn, slider) {
+    function initHorizontalScroll(prevBtn, nextBtn, slider, pixelsToScroll) {
         const $slider = $(slider);
 
         $(prevBtn).on("click", function () {
-            $slider.animate({ scrollLeft: $slider.scrollLeft() - 300 }, 300);
+            $slider.animate(
+                { scrollLeft: $slider.scrollLeft() - pixelsToScroll },
+                pixelsToScroll
+            );
         });
 
         $(nextBtn).on("click", function () {
-            $slider.animate({ scrollLeft: $slider.scrollLeft() + 300 }, 300);
+            $slider.animate(
+                { scrollLeft: $slider.scrollLeft() + pixelsToScroll },
+                pixelsToScroll
+            );
         });
     }
     // Scroll nossos serviços
     initHorizontalScroll(
         "#prev-nossos-servicos",
         "#next-nossos-servicos",
-        ".row-items-servicos"
+        ".row-items-servicos",
+        300
     );
     // Scroll subserviços
     $(".prev-subservicos").each(function () {
@@ -142,7 +149,8 @@ jQuery(document).ready(function ($) {
         initHorizontalScroll(
             '.prev-subservicos[data-id="' + dataId + '"]',
             '.next-subservicos[data-id="' + dataId + '"]',
-            '.subservicos-wrapper[data-id="' + dataId + '"]'
+            '.subservicos-wrapper[data-id="' + dataId + '"]',
+            300
         );
     });
     // Scroll cases
@@ -152,20 +160,30 @@ jQuery(document).ready(function ($) {
         initHorizontalScroll(
             '.prev-cases[data-id="' + dataId + '"]',
             '.next-cases[data-id="' + dataId + '"]',
-            '.cases-wrapper[data-id="' + dataId + '"]'
+            '.cases-wrapper[data-id="' + dataId + '"]',
+            300
         );
     });
     // Scroll nossos clientes
     initHorizontalScroll(
         "#prev-nossos-clientes",
         "#next-nossos-clientes",
-        ".row-items-nossos-clientes"
+        ".row-items-nossos-clientes",
+        300
     );
     // Scroll sobre - notícias
     initHorizontalScroll(
         "#prev-sobre-noticias",
         "#next-sobre-noticias",
-        ".row-items-noticias"
+        ".row-items-noticias",
+        300
+    );
+    // Scroll marcos
+    initHorizontalScroll(
+        "#prev-marcos",
+        "#next-marcos",
+        ".marcos-wrapper",
+        600
     );
 
     // Modal cases
@@ -194,9 +212,8 @@ jQuery(document).ready(function ($) {
     });
 
     // Fechar modal
-    $(document).on("click", ".close-caseModal", function () {
-        const postId = $(this).data("id");
-        const modal = $(`.caseModal[data-id="${postId}"]`);
+    $(document).on("click", ".close-modal", function () {
+        const modal = $(".modal");
         modal.fadeOut();
         $("body").removeClass("stop-scroll");
     });

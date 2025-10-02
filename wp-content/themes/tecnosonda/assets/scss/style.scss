@@ -260,6 +260,25 @@ h2 {
             }
         }
     }
+    &.controls-white {
+        button {
+            background: transparent;
+            border: 1px solid #fff;
+            svg {
+                path {
+                    fill: #fff;
+                }
+            }
+            &:hover {
+                background: #fff;
+                svg {
+                    path {
+                        fill: variables.$primary-color;
+                    }
+                }
+            }
+        }
+    }
 }
 // Scrollbar overflow slider
 .scroll-slider {
@@ -278,7 +297,7 @@ h2 {
     width: 100dvw;
     height: 100dvh;
     background: #000000b3;
-    .close-caseModal {
+    .close-modal {
         display: flex;
         justify-content: center;
         align-items: center;
