@@ -27,7 +27,7 @@
     </div>
     
     <?php if (have_rows('marcos_dos_ultimos_anos')): ?>
-        <div class="container-fluid py-5 container-marcos">
+        <div class="container-fluid container-marcos">
             <div class="container mb-5">
                 <div class="d-flex align-items-center justify-content-between top-marcos">
                     <div class="section-title white-title">
@@ -147,5 +147,7 @@
             </div>
         </div>
     <?php endif; ?>
+
+    <?php get_template_part('content/entre-em-contato') ?>
 </section>
 <?php get_footer(); ?>
