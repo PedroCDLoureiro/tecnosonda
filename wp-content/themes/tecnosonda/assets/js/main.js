@@ -224,15 +224,95 @@ jQuery(document).ready(function ($) {
                 slider.slick({
                     autoplay: false,
                     arrows: true,
-                    dots: false,
+                    dots: true,
+                    infinite: false,
                     speed: 1000,
                     fade: true,
                     cssEase: "linear",
+                    customPaging: function (slider, i) {
+                        var thumb = $(slider.$slides[i]).data("thumb");
+                        return (
+                            '<img src="' +
+                            thumb +
+                            '" alt="thumbnail ' +
+                            (i + 1) +
+                            '">'
+                        );
+                    },
                 });
             }
 
             slider.slick("slickGoTo", indice, true);
         });
+    });
+
+    $(document).on("click", ".marcoModal .next-slide", function () {
+        const slider = $(".marcoModal .items-slider");
+
+        if (slider.hasClass("slick-initialized")) {
+            slider.slick("slickNext");
+        }
+    });
+
+    function ajustarTextsEDots() {
+        const $texts = $(".marcoModal .texts");
+        const $dots = $(".marcoModal .slick-dots");
+
+        if ($texts.length && $dots.length) {
+            let maxHeight = 0;
+
+            // Descobre o maior height entre todos os .texts
+            $texts.each(function () {
+                const h = $(this).outerHeight();
+                if (h > maxHeight) maxHeight = h;
+            });
+
+            // Aplica o maior height a todos os .texts
+            $texts.css("height", maxHeight + "px");
+
+            // Ajusta o bottom dos dots
+            $dots.css("bottom", maxHeight + 10 + "px");
+        }
+    }
+
+    // Chamada inicial (após o modal e slider estarem visíveis)
+    $(document).on("click", ".content-marco", function () {
+        const modal = $(".marcoModal");
+
+        modal.fadeIn(() => {
+            $("body").addClass("stop-scroll");
+
+            const slider = modal.find(".items-slider");
+            if (!slider.hasClass("slick-initialized")) {
+                slider.slick({
+                    autoplay: false,
+                    arrows: true,
+                    dots: true,
+                    infinite: false,
+                    speed: 1000,
+                    fade: true,
+                    cssEase: "linear",
+                    customPaging: function (slick, i) {
+                        const thumb = $(slick.$slides[i]).data("thumb");
+                        return (
+                            '<img src="' +
+                            thumb +
+                            '" alt="thumbnail ' +
+                            (i + 1) +
+                            '">'
+                        );
+                    },
+                });
+            }
+
+            // Ajusta textos e dots
+            ajustarTextsEDots();
+        });
+    });
+
+    // Também atualiza no resize da janela
+    $(window).on("resize", function () {
+        ajustarTextsEDots();
     });
 
     // Fechar modal

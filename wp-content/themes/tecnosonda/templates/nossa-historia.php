@@ -92,23 +92,56 @@
                 </span>
                 <div class="modal-body">
                     <div class="items-slider">
-                        <?php while (have_rows('marcos_dos_ultimos_anos')): the_row();
-                            $imagem = get_sub_field('imagem_marco');
-                            $periodo = get_sub_field('periodo_marco');
-                            $texto_completo = get_sub_field('texto_completo_marco');
-                        ?>
-                            <div class="slider-item">
-                                <img src="<?= esc_url($imagem); ?>" alt="<?= esc_attr($periodo); ?>" class="thumbnail w-100">
-                                <div class="texts">
-                                    <div class="d-flex flex-column">
-                                        <h3><?= esc_html($periodo); ?></h3>
-                                    </div>
-                                    <div class="conteudo-item">
-                                        <?= $texto_completo; ?>
+                        <?php if (have_rows('marcos_dos_ultimos_anos')): ?>
+                            <?php 
+                                $periodos = [];
+                                while (have_rows('marcos_dos_ultimos_anos')): the_row();
+                                    $periodos[] = get_sub_field('periodo_marco');
+                                endwhile; 
+                                
+                                reset_rows();
+                            ?>
+
+                            <?php while (have_rows('marcos_dos_ultimos_anos')): the_row(); 
+                                $imagem = get_sub_field('imagem_marco');
+                                $periodo = get_sub_field('periodo_marco');
+                                $texto_completo = get_sub_field('texto_completo_marco');
+                                $itens = get_sub_field('itens_marco');
+
+                                $index = get_row_index() - 1; 
+                                
+                                $proximo_periodo = isset($periodos[$index + 1]) ? $periodos[$index + 1] : null;
+                            ?>
+                                <div class="slider-item" data-thumb="<?= esc_url($imagem); ?>">
+                                    <img src="<?= esc_url($imagem); ?>" alt="<?= esc_attr($periodo); ?>" class="thumbnail w-100">
+                                    <div class="texts">
+                                        <div class="d-flex flex-column itens-marco">
+                                            <h3 class="mb-2"><?= esc_html($periodo); ?></h3>
+                                            <?php if ($itens): ?>
+                                                <?php foreach ($itens as $item): ?>
+                                                    <span class="mt-1">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="11.791" height="10.05" viewBox="0 0 11.791 10.05">
+                                                            <path id="icon_valores" data-name="Icon Valores" d="M119.075,1080.594v8.7c5.193,3.885,4.708,4.259,10.05.223v-6.351c-5.6,1.275-7.809-.182-10.049-2.574Z" transform="translate(-1080.594 129.125) rotate(-90)" fill="#cae098" fill-rule="evenodd"/>
+                                                        </svg>
+                                                        <?= esc_html($item['titulo_item_marco']); ?>
+                                                    </span>
+                                                <?php endforeach; ?>
+                                            <?php endif; ?>
+                                        </div>
+                                        <div class="conteudo-item"><?= $texto_completo; ?></div>
+                                        <?php if ($proximo_periodo): ?>
+                                            <span class="text-end mt-2 next-slide">
+                                                <?= esc_html($proximo_periodo); ?>
+                                                <span class="arrow-next">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#ffffff" d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z"/></svg>
+                                                </span>
+                                            </span>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
-                            </div>
-                        <?php endwhile; ?>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+
                     </div>
                 </div>
             </div>

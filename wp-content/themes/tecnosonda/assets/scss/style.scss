@@ -309,10 +309,18 @@ h2 {
         background-color: #fff;
         z-index: 1;
         border-radius: 50%;
+        transition: all ease 0.3s;
         cursor: pointer;
         svg {
             fill: variables.$primary-color;
             width: 14px;
+            transition: all ease 0.3s;
+        }
+        &:hover {
+            background-color: variables.$primary-color;
+            svg {
+                fill: #fff;
+            }
         }
     }
     .modal-content {
@@ -350,11 +358,15 @@ h2 {
                     height: 35px;
                     left: 50%;
                 }
+                .slick-disabled {
+                    opacity: 0.5;
+                    cursor: default !important;
+                    pointer-events: none;
+                }
                 .slider-item {
                     height: 90dvh;
                     .thumbnail {
                         object-fit: cover;
-                        object-position: top;
                         max-height: 80dvh;
                         border-radius: 5px;
                     }
@@ -387,6 +399,103 @@ h2 {
                 }
                 &.slick-initialized {
                     visibility: visible;
+                }
+            }
+        }
+    }
+    &.marcoModal {
+        .modal-content {
+            width: 60dvw;
+            left: 20dvw;
+            .modal-body {
+                .items-slider {
+                    .slider-item {
+                        .texts {
+                            grid-template-columns: minmax(0, 30%) 1fr;
+                            gap: 0 30px;
+                            padding: 15px 30px 15px 45px;
+                            .itens-marco {
+                                font-size: variables.$font-size-small;
+                                line-height: variables.$line-height-font-size-small;
+                            }
+                            .next-slide {
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-end;
+                                font-size: variables.$font-size-medium;
+                                line-height: variables.$line-height-font-size-medium;
+                                color: #9f9f9f;
+                                font-weight: bold;
+                                grid-column: 2;
+                                grid-row: 2;
+                                cursor: pointer;
+                                transition: all ease 0.3s;
+                                .arrow-next {
+                                    display: inline-flex;
+                                    justify-content: center;
+                                    background-color: #9f9f9f;
+                                    border-radius: 50%;
+                                    width: 25px;
+                                    height: 25px;
+                                    transition: all ease 0.3s;
+                                    svg {
+                                        width: 15px;
+                                    }
+                                }
+                                &:hover {
+                                    color: variables.$primary-color;
+                                    .arrow-next {
+                                        background-color: variables.$primary-color;
+                                    }
+                                }
+                            }
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                left: 30px;
+                                bottom: 0;
+                                background-color: variables.$secondary-color;
+                                width: 1px;
+                                height: 85%;
+                            }
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                left: 25px;
+                                top: calc(15% - 10px);
+                                background-color: variables.$primary-color;
+                                width: 11px;
+                                height: 11px;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                    .slick-dots {
+                        display: flex !important;
+                        justify-content: flex-start;
+                        gap: 10px;
+                        width: 96%;
+                        left: 2%;
+                        li {
+                            width: 60px;
+                            height: 70px;
+                            border-radius: 6px;
+                            overflow: hidden;
+                            margin: 0;
+                            opacity: 0.4;
+                            transition: opacity 0.3s ease;
+                            &.slick-active {
+                                opacity: 1;
+                            }
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: block;
+                            }
+                        }
+                    }
                 }
             }
         }
