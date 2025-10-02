@@ -292,8 +292,8 @@ h2 {
         border-radius: 4px;
     }
 }
-// Modal case
-.caseModal {
+// Modal
+.modal {
     width: 100dvw;
     height: 100dvh;
     background: #000000b3;
@@ -324,7 +324,7 @@ h2 {
         border: none;
         .modal-body {
             padding: 0;
-            .case-slider {
+            .items-slider {
                 visibility: hidden;
                 height: 90dvh;
                 .slick-next,
@@ -350,8 +350,7 @@ h2 {
                     height: 35px;
                     left: 50%;
                 }
-
-                .case-item {
+                .slider-item {
                     height: 90dvh;
                     .thumbnail {
                         object-fit: cover;
@@ -380,7 +379,7 @@ h2 {
                             font-weight: 500;
                             gap: 8px;
                         }
-                        .conteudo-case {
+                        .conteudo-item {
                             font-size: variables.$font-size-small;
                             line-height: variables.$line-height-font-size-small;
                         }

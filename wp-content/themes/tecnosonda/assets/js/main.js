@@ -191,7 +191,31 @@ jQuery(document).ready(function ($) {
         const postId = $(this).data("id");
         const indice = $(this).data("indice");
         const modal = $(`.caseModal[data-id="${postId}"]`);
-        const slider = modal.find(".case-slider");
+        const slider = modal.find(".items-slider");
+
+        modal.fadeIn(() => {
+            $("body").addClass("stop-scroll");
+
+            if (!slider.hasClass("slick-initialized")) {
+                slider.slick({
+                    autoplay: false,
+                    arrows: true,
+                    dots: false,
+                    speed: 1000,
+                    fade: true,
+                    cssEase: "linear",
+                });
+            }
+
+            slider.slick("slickGoTo", indice, true);
+        });
+    });
+
+    // Modal marcos
+    $(document).on("click", ".content-marco", function () {
+        const indice = $(this).data("indice");
+        const modal = $(".marcoModal");
+        const slider = modal.find(".items-slider");
 
         modal.fadeIn(() => {
             $("body").addClass("stop-scroll");
