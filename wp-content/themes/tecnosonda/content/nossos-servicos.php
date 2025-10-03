@@ -62,6 +62,7 @@
         if ($query->have_posts()) :
             while ($query->have_posts()) : $query->the_post();
                 $post_id = get_the_ID();
+                $post_url  = get_the_permalink();
                 $subservicos = get_field('subservicos');
                 $cases = get_field('cases');
         ?>
@@ -187,6 +188,9 @@
                             </div>
                         </div>
                     <?php endif; ?>
+                    <div class="d-flex justify-content-center mt-5 acessar-mais-infos">
+                        <a href="<?= $post_url ?>" class="btn btn-large primary-btn">Acessar mais informações</a>
+                    </div>
                 </div>
         <?php endwhile; endif; wp_reset_postdata(); ?>
     </div>

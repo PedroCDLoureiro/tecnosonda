@@ -24,71 +24,78 @@
             }
         }
     }
+
+    .container-sobre {
+        position: relative;
+        background: variables.$primary-color;
+        z-index: 0;
+        &.show-before {
+            &::before {
+                content: "";
+                position: absolute;
+                top: 2%;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url("../../assets/images/before_sobre_sec1.png")
+                    no-repeat left bottom;
+                background-size: contain;
+                opacity: 0.2;
+                z-index: -1;
+            }
+        }
+        &.show-after {
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 50%;
+                background: url("../../assets/images/before-section.png")
+                    no-repeat left bottom;
+                background-size: cover;
+                opacity: 0.07;
+                filter: invert(1);
+                -webkit-mask-image: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 1),
+                    rgba(0, 0, 0, 0)
+                );
+                -webkit-mask-repeat: no-repeat;
+                -webkit-mask-size: cover;
+                mask-image: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 1),
+                    rgba(0, 0, 0, 0)
+                );
+                mask-repeat: no-repeat;
+                mask-size: cover;
+                z-index: -2;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 20%;
+                background: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.5),
+                    transparent
+                );
+                z-index: -1;
+            }
+        }
+    }
+    #video {
+        background: #d9d9d9;
+        padding-bottom: 80px;
+    }
     &#page-sobre-nos {
         .container-sobre {
-            position: relative;
-            background: variables.$primary-color;
-            z-index: 0;
-            &.show-before {
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 2%;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: url("../../assets/images/before_sobre_sec1.png")
-                        no-repeat left bottom;
-                    background-size: contain;
-                    opacity: 0.2;
-                    z-index: -1;
-                }
-            }
-            &.show-after {
-                &::before {
-                    content: "";
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 50%;
-                    background: url("../../assets/images/before-section.png")
-                        no-repeat left bottom;
-                    background-size: cover;
-                    opacity: 0.07;
-                    filter: invert(1);
-                    -webkit-mask-image: linear-gradient(
-                        to top,
-                        rgba(0, 0, 0, 1),
-                        rgba(0, 0, 0, 0)
-                    );
-                    -webkit-mask-repeat: no-repeat;
-                    -webkit-mask-size: cover;
-                    mask-image: linear-gradient(
-                        to top,
-                        rgba(0, 0, 0, 1),
-                        rgba(0, 0, 0, 0)
-                    );
-                    mask-repeat: no-repeat;
-                    mask-size: cover;
-                    z-index: -2;
-                }
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 20%;
-                    background: linear-gradient(
-                        to top,
-                        rgba(0, 0, 0, 0.5),
-                        transparent
-                    );
-                    z-index: -1;
-                }
-            }
             .compromisso {
                 background-color: rgba(0, 0, 0, 0.22);
                 border-radius: 5px;
@@ -97,10 +104,6 @@
                     margin-bottom: 0;
                 }
             }
-        }
-        #video {
-            background: #d9d9d9;
-            padding-bottom: 80px;
         }
     }
     &#page-nossa-historia {
@@ -220,6 +223,38 @@
                 opacity: 0.03;
                 filter: invert(1);
                 z-index: -1;
+            }
+        }
+    }
+    &#page-areas-de-atuacao {
+        #engenharia-civil {
+            background-color: variables.$primary-color;
+            padding: 30px 0 80px;
+            h2 {
+                font-size: variables.$font-size-medium;
+                line-height: variables.$line-height-font-size-medium;
+                color: variables.$font-color;
+                span {
+                    color: variables.$secondary-color;
+                }
+            }
+            .lista-engenharia-civil {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 15px 60px;
+                .item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 15px;
+                    h3 {
+                        font-size: variables.$font-size-base;
+                        line-height: variables.$line-height-font-size-base;
+                        color: variables.$font-color;
+                        font-weight: lighter;
+                    }
+                }
             }
         }
     }
