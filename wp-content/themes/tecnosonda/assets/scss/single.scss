@@ -1,1 +1,13 @@
 @use "variables";
+
+.single {
+    .section-title {
+        height: max-content;
+        p {
+            font-weight: 300;
+        }
+        &:before {
+            height: 50%;
+        }
+    }
+}

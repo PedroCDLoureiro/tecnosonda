@@ -1,101 +1,12 @@
 @use "variables";
 
 .page {
-    #banner {
-        position: relative;
-        .texts {
-            position: absolute;
-            bottom: 20%;
-            font-weight: bold;
-            h1 {
-                font-size: variables.$font-size-large;
-                line-height: variables.$line-height-font-size-large;
-                color: variables.$font-color;
-                margin-bottom: 3px;
-                font-weight: bold;
-                span {
-                    color: variables.$secondary-color;
-                }
-            }
-            p {
-                font-size: variables.$font-size-medium;
-                line-height: variables.$line-height-font-size-medium;
-                color: variables.$font-color;
-            }
-        }
-    }
-
-    .container-sobre {
-        position: relative;
-        background: variables.$primary-color;
-        z-index: 0;
-        &.show-before {
-            &::before {
-                content: "";
-                position: absolute;
-                top: 2%;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: url("../../assets/images/before_sobre_sec1.png")
-                    no-repeat left bottom;
-                background-size: contain;
-                opacity: 0.2;
-                z-index: -1;
-            }
-        }
-        &.show-after {
-            &::before {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 50%;
-                background: url("../../assets/images/before-section.png")
-                    no-repeat left bottom;
-                background-size: cover;
-                opacity: 0.07;
-                filter: invert(1);
-                -webkit-mask-image: linear-gradient(
-                    to top,
-                    rgba(0, 0, 0, 1),
-                    rgba(0, 0, 0, 0)
-                );
-                -webkit-mask-repeat: no-repeat;
-                -webkit-mask-size: cover;
-                mask-image: linear-gradient(
-                    to top,
-                    rgba(0, 0, 0, 1),
-                    rgba(0, 0, 0, 0)
-                );
-                mask-repeat: no-repeat;
-                mask-size: cover;
-                z-index: -2;
-            }
-
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 20%;
-                background: linear-gradient(
-                    to top,
-                    rgba(0, 0, 0, 0.5),
-                    transparent
-                );
-                z-index: -1;
-            }
-        }
-    }
     #video {
         background: #d9d9d9;
         padding-bottom: 80px;
     }
     &#page-sobre-nos {
-        .container-sobre {
+        .container-text-image {
             .compromisso {
                 background-color: rgba(0, 0, 0, 0.22);
                 border-radius: 5px;
@@ -107,7 +18,7 @@
         }
     }
     &#page-nossa-historia {
-        .container-sobre {
+        .container-text-image {
             position: relative;
             background: variables.$primary-color;
             z-index: 0;

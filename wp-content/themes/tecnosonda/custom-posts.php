@@ -121,7 +121,7 @@ function create_nossos_servicos_post_type() {
         'has_archive' => true,
         'menu_icon' => 'dashicons-clipboard',
         'supports' => array( 'title', 'editor', 'thumbnail' ),
-        'rewrite' => array( 'slug' => 'nossos_servicos' ), 
+        'rewrite' => array( 'slug' => 'nossos-servicos' ), 
     );
 
     register_post_type( 'nossos_servicos', $args );
