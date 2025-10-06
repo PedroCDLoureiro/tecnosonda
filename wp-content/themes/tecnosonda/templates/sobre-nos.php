@@ -22,7 +22,7 @@
             <p class="mb-0"><?= $subtitulo_banner; ?></p>
         </div>
     </div>
-    <div class="container-fluid container-sobre show-before" style="background-image: url(<?= $imagem_topo['url']; ?>);background-repeat: no-repeat;background-position: right;">
+    <div class="container-fluid container-sobre show-before" style="background-image: url(<?= $imagem_topo['url']; ?>);background-repeat: no-repeat;background-position: top right;">
         <div class="container">
             <div class="col-6 d-flex flex-column justify-content-center text-white sobre" style="height: <?= $imagem_topo['height'] . 'px'; ?>">
                 <?= $texto_topo; ?>

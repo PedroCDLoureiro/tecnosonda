@@ -258,4 +258,18 @@
             }
         }
     }
+    &#page-nossos-servicos {
+        h3 {
+            font-size: variables.$font-size-base;
+            line-height: variables.$line-height-font-size-base;
+        }
+        a {
+            &:hover {
+                border-color: variables.$secondary-color;
+            }
+        }
+        .show-after {
+            padding-bottom: 80px;
+        }
+    }
 }

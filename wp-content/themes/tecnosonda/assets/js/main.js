@@ -342,7 +342,7 @@ jQuery(document).ready(function ($) {
     });
 
     // Formatação H1 páginas internas
-    $(".page h1").each(function () {
+    $(".page h1, .page .title_servico").each(function () {
         var texto = $(this).text().trim();
         var palavras = texto.split(/\s+/); // separa por espaços, considerando múltiplos
         var total = palavras.length;
