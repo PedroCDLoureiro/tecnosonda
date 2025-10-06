@@ -1,4 +1,15 @@
 jQuery(document).ready(function ($) {
+    // Container width
+    var containerWidth = $(".container").width();
+
+    // Define uma variável CSS global no :root
+    $(":root").css("--container-width", containerWidth + "px");
+
+    $(window).on("resize", function () {
+        var containerWidth = $(".container").width();
+        $(":root").css("--container-width", containerWidth + "px");
+    });
+
     // Menu header
     $("#icon-menu")
         .off("click")

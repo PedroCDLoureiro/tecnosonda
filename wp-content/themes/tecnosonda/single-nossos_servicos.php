@@ -20,13 +20,10 @@
             <h1><?= $titulo_pagina; ?></h1>
         </div>
     </div>
-    <div class="container-fluid container-text-image show-before" 
-        style="background-image: url('<?= esc_url($thumbnail_url); ?>');
-                background-repeat: no-repeat;
-                background-position: top right;">
-        <div class="container">
-            <?php if (have_rows('slider_de_imagens')): ?>
-                <div id="slider-imagens-servico">
+    <?php if (have_rows('slider_de_imagens')): ?>
+        <div class="container-fluid container-slider-imagens-servico">
+            <div class="container">
+                <div id="slider-imagens-servico" class="small-arrows py-5">
                     <?php 
                         while (have_rows('slider_de_imagens')): the_row(); 
                         $imagem_slider = get_sub_field("imagem_slider");
@@ -38,7 +35,14 @@
                         </div>
                     <?php endwhile; ?>
                 </div>
-            <?php endif; ?>
+            </div>
+        </div>
+    <?php endif; ?>
+    <div class="container-fluid container-text-image show-before" 
+        style="background-image: url('<?= esc_url($thumbnail_url); ?>');
+                background-repeat: no-repeat;
+                background-position: top right;">
+        <div class="container">
             <div class="col-6 offset-xxl-3 d-flex flex-column pt-5 text-white sobre" 
                 style="height: <?= esc_attr($altura_thumbnail); ?>px;">
                 <div class="section-title white-title mb-4">

@@ -10,4 +10,86 @@
             height: 50%;
         }
     }
+    &#single-nossos-servicos {
+        .container-slider-imagens-servico {
+            background-color: variables.$primary-color;
+            #slider-imagens-servico {
+                .slick-prev,
+                .slick-next {
+                    background-color: transparent;
+                    border: 1px solid #fff;
+                    svg {
+                        width: 16px;
+                        path {
+                            transition: all ease 0.3s;
+                        }
+                    }
+                    &::before {
+                        content: "";
+                    }
+                    &:hover {
+                        background-color: #fff;
+                        opacity: 1;
+                        svg {
+                            path {
+                                fill: variables.$primary-color;
+                            }
+                        }
+                    }
+                }
+                .slick-prev {
+                    left: -35px;
+                }
+                .slick-next {
+                    right: -35px;
+                }
+                .slick-track {
+                    display: flex;
+                    gap: 8px;
+                    .item {
+                        position: relative;
+                        height: 280px;
+                        transition: all ease 0.8s;
+                        img {
+                            object-fit: cover;
+                            height: 280px;
+                        }
+                        h3 {
+                            font-size: variables.$font-size-small;
+                            line-height: variables.$line-height-font-size-small;
+                            color: variables.$font-color;
+                            position: absolute;
+                            left: 15px;
+                            bottom: 15px;
+                            opacity: 0;
+                            transition: all ease 0.8s;
+                        }
+                        &.slick-active {
+                            width: calc(var(--container-width) / 4) !important;
+                            &.slick-current {
+                                width: calc(
+                                    var(--container-width) / 2
+                                ) !important;
+                                h3 {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgba(
+                                $color: #000000,
+                                $alpha: 0.48
+                            );
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
