@@ -200,4 +200,47 @@
         return $field;
     });
     
+    # Insere posts de Serviços no menu header em Nossos serviços
+
+    function add_servico_to_menu($post_id, $post, $update) {
+        // Garante que é um post tipo 'servicos'
+        if ($post->post_type !== 'servicos' || wp_is_post_revision($post_id)) {
+            return;
+        }
+
+        // ID do menu 
+        $menu_id = 2;
+
+        // Evita criar duplicado: verifica se já existe no menu
+        $menu_items = wp_get_nav_menu_items($menu_id);
+        foreach ($menu_items as $item) {
+            if ((int) $item->object_id === (int) $post_id && $item->object === 'servicos') {
+                return; // já existe, então não cria novamente
+            }
+        }
+
+        // Encontra o item pai "Nossos serviços"
+        $parent_id = 0;
+        foreach ($menu_items as $item) {
+            if (trim($item->title) === 'Nossos Serviços') {
+                $parent_id = $item->ID;
+                break;
+            }
+        }
+
+        // Só adiciona se o item pai existir
+        if ($parent_id) {
+            wp_update_nav_menu_item($menu_id, 0, array(
+                'menu-item-title'     => $post->post_title,
+                'menu-item-object'    => 'servicos',
+                'menu-item-object-id' => $post_id,
+                'menu-item-type'      => 'post_type',
+                'menu-item-status'    => 'publish',
+                'menu-item-parent-id' => $parent_id,
+            ));
+        }
+    }
+    add_action('wp_insert_post', 'add_servico_to_menu', 10, 3);
+
+
 ?>
