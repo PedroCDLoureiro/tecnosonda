@@ -30,6 +30,7 @@ h2 {
 }
 
 // Banner
+
 #banner {
     position: relative;
     .texts {
@@ -55,72 +56,66 @@ h2 {
 }
 
 // Container topo singles/pages
+
 .container-text-image {
     position: relative;
     background: variables.$primary-color;
     z-index: 0;
-    &.show-before {
-        &::before {
-            content: "";
-            position: absolute;
-            top: 2%;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("../../assets/images/before_sobre_sec1.png")
-                no-repeat left bottom;
-            background-size: contain;
-            opacity: 0.2;
-            z-index: -1;
-        }
-    }
-    &.show-after {
-        &::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background: url("../../assets/images/before-section.png") no-repeat
-                left bottom;
-            background-size: cover;
-            opacity: 0.07;
-            filter: invert(1);
-            -webkit-mask-image: linear-gradient(
-                to top,
-                rgba(0, 0, 0, 1),
-                rgba(0, 0, 0, 0)
-            );
-            -webkit-mask-repeat: no-repeat;
-            -webkit-mask-size: cover;
-            mask-image: linear-gradient(
-                to top,
-                rgba(0, 0, 0, 1),
-                rgba(0, 0, 0, 0)
-            );
-            mask-repeat: no-repeat;
-            mask-size: cover;
-            z-index: -2;
-        }
-
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 20%;
-            background: linear-gradient(
-                to top,
-                rgba(0, 0, 0, 0.5),
-                transparent
-            );
-            z-index: -1;
-        }
+}
+.show-before {
+    &::before {
+        content: "";
+        position: absolute;
+        top: 2%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("../../assets/images/before_sobre_sec1.png") no-repeat
+            left bottom;
+        background-size: contain;
+        opacity: 0.2;
+        z-index: -1;
     }
 }
+.show-after {
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: url("../../assets/images/before-section.png") no-repeat left
+            bottom;
+        background-size: cover;
+        opacity: 0.1;
+        filter: invert(1);
+        -webkit-mask-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 0)
+        );
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: cover;
+        mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+        mask-repeat: no-repeat;
+        mask-size: cover;
+        z-index: -2;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+        z-index: -1;
+    }
+}
+
 // Botões
+
 .btn {
     font-size: variables.$font-size-small;
     text-decoration: none;
@@ -188,6 +183,7 @@ h2 {
 }
 
 // Menu header
+
 .menu {
     margin: 0;
     padding: 0;
@@ -240,6 +236,7 @@ h2 {
         }
     }
 }
+
 // Titles
 
 .section-title {
@@ -281,6 +278,7 @@ h2 {
 }
 
 // Arrows slider
+
 .slick-next,
 .slick-prev {
     background-color: #fff;
@@ -354,7 +352,9 @@ h2 {
         left: 50%;
     }
 }
+
 // Controller slider
+
 .controls-slider {
     display: flex;
     align-items: center;
@@ -405,7 +405,9 @@ h2 {
         }
     }
 }
+
 // Scrollbar overflow slider
+
 .scroll-slider {
     &::-webkit-scrollbar {
         width: 8px;
@@ -417,7 +419,9 @@ h2 {
         border-radius: 4px;
     }
 }
+
 // Modal
+
 .modal {
     width: 100dvw;
     height: 100dvh;
@@ -596,5 +600,64 @@ h2 {
                 }
             }
         }
+    }
+}
+
+// Case item
+
+.lista-cases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+.case-item {
+    position: relative;
+    cursor: pointer;
+    .thumbnail {
+        position: relative;
+        border-radius: 5px;
+    }
+    .chapeu-case {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        background-color: variables.$secondary-color;
+        color: variables.$primary-color;
+        font-size: variables.$font-size-xsmall;
+        padding: 3px 12px;
+        border-radius: 30px;
+    }
+    .texts {
+        position: absolute;
+        bottom: 5%;
+        left: 5%;
+        color: #fff;
+        width: 90%;
+        z-index: 1;
+        h3 {
+            font-size: variables.$font-size-medium !important;
+            font-weight: bold;
+        }
+        svg {
+            width: 20px;
+        }
+        span {
+            font-size: variables.$font-size-base;
+        }
+        img {
+            max-width: 80px;
+            height: auto;
+            border-radius: 0;
+        }
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 100%);
+        border-radius: 5px;
     }
 }

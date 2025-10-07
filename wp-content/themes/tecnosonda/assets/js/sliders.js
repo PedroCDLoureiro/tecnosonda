@@ -29,4 +29,22 @@ jQuery(document).ready(function ($) {
             },
         ],
     });
+    $("#slider-nossos-clientes").slick({
+        autoplay: true,
+        slidesToShow: 10,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: false,
+        dots: false,
+        speed: 700,
+        cssEase: "ease",
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
+        ],
+    });
 });

@@ -199,9 +199,19 @@ jQuery(document).ready(function ($) {
 
     // Modal cases
     $(document).on("click", ".case-item", function () {
-        const postId = $(this).data("id");
-        const indice = $(this).data("indice");
-        const modal = $(`.caseModal[data-id="${postId}"]`);
+        const postId = $(this).data("id"); // opcional
+        const indice = $(this).data("indice") || 0;
+        let modal;
+
+        // Se existir postId, seleciona o modal com data-id, senão pega o modal genérico
+        if (postId) {
+            modal = $(`.caseModal[data-id="${postId}"]`);
+        } else {
+            modal = $(".caseModal").first(); // pega o primeiro modal disponível
+        }
+
+        if (!modal.length) return; // se não achar modal, aborta
+
         const slider = modal.find(".items-slider");
 
         modal.fadeIn(() => {
@@ -373,5 +383,20 @@ jQuery(document).ready(function ($) {
         var segundaParte = palavras.slice(inicioSegundaParte).join(" ");
 
         $(this).html(primeiraParte + " <span>" + segundaParte + "</span>");
+    });
+
+    // Botões Subserviços (interna)
+    jQuery(document).ready(function ($) {
+        $(".btn-subservico").on("click", function () {
+            const index = $(this).data("index");
+
+            // Atualiza botão ativo
+            $(".btn-subservico").removeClass("active");
+            $(this).addClass("active");
+
+            // Mostra conteúdo correspondente
+            $(".subservico-item").hide();
+            $('.subservico-item[data-index="' + index + '"]').fadeIn(300);
+        });
     });
 });

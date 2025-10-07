@@ -175,6 +175,29 @@
         }
     }
     add_action('pre_get_posts', 'limit_search_to_post_types');
-    
+
+    // Select Case modelo (Painel admin)
+
+    add_filter('acf/load_field/name=case_modelo', function ($field) {
+        // Limpa as opções existentes
+        $field['choices'] = [];
+
+        // Adiciona a opção "Nenhum" como primeira
+        $field['choices'][''] = 'Nenhum';
+
+        // Pega os cases do repeater (do post atual)
+        if (have_rows('cases')) {
+            while (have_rows('cases')) {
+                the_row();
+                $titulo = get_sub_field('titulo_case');
+                if ($titulo) {
+                    // Usa o título como chave e rótulo
+                    $field['choices'][$titulo] = $titulo;
+                }
+            }
+        }
+
+        return $field;
+    });
     
 ?>

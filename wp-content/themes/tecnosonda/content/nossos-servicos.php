@@ -87,12 +87,12 @@
                             </div>
                             <div class="subservicos-wrapper scroll-slider" data-id="<?= $post_id; ?>">
                                 <?php while (have_rows('subservicos')): the_row();
-                                    $imagem = get_sub_field('imagem_subservico');
+                                    $thumbnail = get_sub_field('thumbnail_subservico');
                                     $titulo = get_sub_field('titulo_subservico');
                                 ?>
                                     <div class="subservico-item">
-                                        <?php if ($imagem): ?>
-                                            <img src="<?= esc_url($imagem); ?>" alt="<?= esc_attr($titulo); ?>" class="w-100">
+                                        <?php if ($thumbnail): ?>
+                                            <img src="<?= esc_url($thumbnail); ?>" alt="<?= esc_attr($titulo); ?>" class="w-100">
                                         <?php endif; ?>
                                         <?php if ($titulo): ?>
                                             <h3><?= esc_html($titulo); ?></h3>
@@ -105,20 +105,10 @@
                     <!-- Cases -->
                     <?php if (have_rows('cases')): ?>
                         <div class="cases py-3">
-                            <div class="d-flex align-items-center justify-content-between top-cases mb-4">
+                            <div class="top-cases mb-4">
                                 <h2>Cases</h2>
-                                <?php if($cases && count($cases) > 3) : ?>
-                                    <div class="controls-slider">
-                                        <button class="prev-cases" data-id="<?= $post_id; ?>">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#ffffff" d="M201.4 297.4C188.9 309.9 188.9 330.2 201.4 342.7L361.4 502.7C373.9 515.2 394.2 515.2 406.7 502.7C419.2 490.2 419.2 469.9 406.7 457.4L269.3 320L406.6 182.6C419.1 170.1 419.1 149.8 406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3L201.3 297.3z"/></svg>
-                                        </button>
-                                        <button class="next-cases" data-id="<?= $post_id; ?>">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#ffffff" d="M439.1 297.4C451.6 309.9 451.6 330.2 439.1 342.7L279.1 502.7C266.6 515.2 246.3 515.2 233.8 502.7C221.3 490.2 221.3 469.9 233.8 457.4L371.2 320L233.9 182.6C221.4 170.1 221.4 149.8 233.9 137.3C246.4 124.8 266.7 124.8 279.2 137.3L439.2 297.3z"/></svg>
-                                        </button>
-                                    </div>
-                                <?php endif; ?>
                             </div>
-                            <div class="cases-wrapper scroll-slider" data-id="<?= $post_id; ?>">
+                            <div class="lista-cases" data-id="<?= $post_id; ?>">
                                 <?php 
                                     $indice = 0; 
                                 

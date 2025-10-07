@@ -83,8 +83,9 @@ header {
         }
         #div-search {
             position: absolute;
-            padding: 10px 0;
             width: 100%;
+            height: 0;
+            top: 110%;
             input {
                 color: variables.$primary-color;
                 background: rgba(255, 255, 255, 0.6);

@@ -40,11 +40,11 @@
 
             if ($i % 2 == 0) {
                 $posicao_background = 'top left';
-                $coluna_class = 'col-6 offset-xxl-3 offset-6 d-flex flex-column justify-content-center text-white sobre';
+                $coluna_class = 'col-6 offset-6 d-flex flex-column justify-content-center text-white sobre';
                 $container_class = 'container-fluid container-text-image py-5';
             } else {
                 $posicao_background = 'top right';
-                $coluna_class = 'col-6 offset-xxl-3 d-flex flex-column pt-5 text-white sobre';
+                $coluna_class = 'col-6 d-flex flex-column pt-5 text-white sobre';
                 $container_class = 'container-fluid container-text-image';
             }
 

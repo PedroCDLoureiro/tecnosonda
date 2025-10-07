@@ -5,9 +5,13 @@
         height: max-content;
         p {
             font-weight: 300;
+            margin-bottom: inherit;
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
         &:before {
-            height: 50%;
+            height: 45%;
         }
     }
     &#single-nossos-servicos {
@@ -88,6 +92,153 @@
                             );
                         }
                     }
+                }
+            }
+        }
+        #icones {
+            position: relative;
+            background-color: variables.$primary-color;
+            padding: 70px 0 140px;
+            z-index: 0;
+            #lista-icones {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, 220px);
+                gap: 10px;
+                justify-content: space-evenly;
+                background-color: rgba($color: #000000, $alpha: 0.22);
+                border-radius: 5px;
+                padding: 30px 15px;
+                width: 85%;
+                margin: 0 auto;
+                .item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 15px;
+                    color: variables.$font-color;
+                    text-align: center;
+                    img {
+                        max-width: max-content;
+                    }
+                    h3 {
+                        font-weight: 100;
+                        strong {
+                            font-weight: bold;
+                        }
+                        p {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+            &::before {
+                height: 100%;
+            }
+        }
+        #subservicos {
+            background-color: #d9d9d9;
+            padding: 60px 0 90px;
+            .section-title {
+                h2 {
+                    color: variables.$primary-color;
+                }
+                .options-subservicos {
+                    display: flex;
+                    justify-content: flex-start;
+                    gap: 15px;
+                    button {
+                        &:hover,
+                        &.active {
+                            background-color: #000;
+                            border-color: #000;
+                            color: #fff;
+                        }
+                    }
+                }
+                &::before {
+                    height: 100%;
+                }
+            }
+            .content-subservico {
+                .texto-subservico {
+                    width: 95%;
+                    margin: 0 auto;
+                    p {
+                        color: #636363;
+                    }
+                }
+                .case-modelo {
+                    position: relative;
+                    .chapeu-case {
+                        position: absolute;
+                        top: 89%;
+                        left: 3%;
+                        background-color: variables.$secondary-color;
+                        color: variables.$primary-color;
+                        font-size: variables.$font-size-base;
+                        padding: 3px 30px;
+                        border-radius: 30px;
+                    }
+                    .texts {
+                        position: absolute;
+                        left: 1%;
+                        top: 95%;
+                        display: flex;
+                        gap: 50px;
+                        background-color: #fff;
+                        border-radius: 5px;
+                        padding: 20px 30px 40px;
+                        width: 98%;
+                        h3 {
+                            font-size: variables.$font-size-medium !important;
+                            font-weight: bold;
+                        }
+                        svg {
+                            width: 20px;
+                        }
+                        span {
+                            font-weight: 500;
+                            gap: 8px;
+                        }
+                        .conteudo-item {
+                            font-size: variables.$font-size-small;
+                            line-height: variables.$line-height-font-size-small;
+                            flex: 1;
+                        }
+                    }
+                }
+                .cases {
+                    margin-top: 200px;
+                }
+            }
+        }
+        #nossos-clientes {
+            background-color: #fff;
+            #slider-nossos-clientes {
+                .slick-track {
+                    display: flex;
+                    align-items: center;
+                    gap: 30px;
+                }
+            }
+        }
+        #compromisso {
+            position: relative;
+            background-color: variables.$primary-color;
+            padding: 100px 0;
+            z-index: 0;
+            .section-title {
+                &::before {
+                    top: -70%;
+                    height: 240%;
+                }
+            }
+            .compromisso {
+                background-color: rgba(0, 0, 0, 0.22);
+                border-radius: 5px;
+                padding: 45px;
+                p {
+                    margin: 0;
                 }
             }
         }
