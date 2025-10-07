@@ -160,36 +160,36 @@ function create_nossos_clientes_post_type() {
 }
 add_action( 'init', 'create_nossos_clientes_post_type' );
 
-// Fale conosco
-function create_fale_conosco_post_type() {
+// Dados Fale conosco
+function create_dados_fale_conosco_post_type() {
     $args = array(
         'labels' => array(
-            'name'               => 'Fale conosco',
-            'singular_name'      => 'Fale conosco',
+            'name'               => 'Dados Fale conosco',
+            'singular_name'      => 'Dados Fale conosco',
             'add_new'            => 'Adicionar Novo',
             'add_new_item'       => 'Adicionar Novo',
-            'edit_item'          => 'Editar Fale conosco',
-            'new_item'           => 'Novo Fale conosco',
-            'view_item'          => 'Ver Fale conosco',
+            'edit_item'          => 'Editar Dados Fale conosco',
+            'new_item'           => 'Novo Dados Fale conosco',
+            'view_item'          => 'Ver Dados Fale conosco',
             'search_items'       => 'Procurar',
-            'not_found'          => 'Nenhum Fale conosco encontrado',
-            'not_found_in_trash' => 'Nenhum Fale conosco encontrado na lixeira',
+            'not_found'          => 'Nenhum Dados Fale conosco encontrado',
+            'not_found_in_trash' => 'Nenhum Dados Fale conosco encontrado na lixeira',
             'all_items'          => 'Todos',
-            'archives'           => 'Arquivos de Fale conosco',
-            'attributes'         => 'Atributos de Fale conosco',
-            'insert_into_item'   => 'Inserir no Fale conosco',
-            'uploaded_to_this_item' => 'Carregado para este Fale conosco',
-            'filter_items_list'  => 'Filtrar lista de Fale conosco',
+            'archives'           => 'Arquivos de Dados Fale conosco',
+            'attributes'         => 'Atributos de Dados Fale conosco',
+            'insert_into_item'   => 'Inserir no Dados Fale conosco',
+            'uploaded_to_this_item' => 'Carregado para este Dados Fale conosco',
+            'filter_items_list'  => 'Filtrar lista de Dados Fale conosco',
         ),
         'public' => true,
         'has_archive' => true,
         'menu_icon' => 'dashicons-clipboard',
         'supports' => array( 'title' ),
-        'rewrite' => array( 'slug' => 'fale-conosco' ), 
+        'rewrite' => array( 'slug' => 'dados-fale-conosco' ), 
     );
 
-    register_post_type( 'fale-conosco', $args );
+    register_post_type( 'dados-fale-conosco', $args );
 }
-add_action( 'init', 'create_fale_conosco_post_type' );
+add_action( 'init', 'create_dados_fale_conosco_post_type' );
 
 ?>

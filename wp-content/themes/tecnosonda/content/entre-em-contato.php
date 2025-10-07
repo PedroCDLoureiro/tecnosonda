@@ -4,7 +4,7 @@
             <h2 class="mb-0">Entre Em <span>Contato</span></h2>
             <?php
             $args = array(
-                'post_type' => 'fale-conosco',
+                'post_type' => 'dados-fale-conosco',
                 'posts_per_page' => 1,
             );
             $query_contato = new WP_Query($args);
