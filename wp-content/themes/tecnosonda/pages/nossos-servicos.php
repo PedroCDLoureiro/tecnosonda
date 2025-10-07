@@ -17,7 +17,7 @@
     </div>
     <?php
     $args = array(
-        'post_type' => 'nossos_servicos',
+        'post_type' => 'servicos',
         'posts_per_page' => -1,
     );
     $query = new WP_Query($args);
@@ -31,7 +31,7 @@
 
             $post_url = get_the_permalink();
             $titulo_servico = get_the_title();
-            $subtitulo_servico = get_field('subtitulo_nossos_servicos');
+            $subtitulo_servico = get_field('subtitulo_servico');
             $thumbnail_id = get_post_thumbnail_id();
             $thumbnail_servico = wp_get_attachment_image_src($thumbnail_id, 'full');
             $thumbnail_url = $thumbnail_servico[0];

@@ -20,7 +20,7 @@
             <div class="row row-items-servicos scroll-slider">
                 <?php
                 $args = [
-                    'post_type'      => 'nossos_servicos',
+                    'post_type'      => 'servicos',
                     'posts_per_page' => -1,
                 ];
                 $query = new WP_Query($args);
@@ -31,7 +31,7 @@
                         $post_url  = get_the_permalink();
                         $thumbnail = get_the_post_thumbnail_url($post_id, 'full');
                         $title     = get_the_title();
-                        $subtitle  = get_field('subtitulo_nossos_servicos');
+                        $subtitle  = get_field('subtitulo_servico');
                 ?>
                         <!-- Item -->
                         <div class="item" data-id="<?= $post_id ?>">
