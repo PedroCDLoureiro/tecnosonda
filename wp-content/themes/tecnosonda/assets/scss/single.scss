@@ -169,46 +169,56 @@
                 }
                 .case-modelo {
                     position: relative;
-                    .chapeu-case {
-                        position: absolute;
-                        top: 89%;
-                        left: 3%;
-                        background-color: variables.$secondary-color;
-                        color: variables.$primary-color;
-                        font-size: variables.$font-size-base;
-                        padding: 3px 30px;
-                        border-radius: 30px;
-                    }
-                    .texts {
+                    margin-bottom: 80px;
+                    .content-case {
                         position: absolute;
                         left: 1%;
-                        top: 95%;
-                        display: flex;
-                        gap: 50px;
-                        background-color: #fff;
-                        border-radius: 5px;
-                        padding: 20px 30px 40px;
+                        bottom: -15%;
                         width: 98%;
-                        h3 {
-                            font-size: variables.$font-size-medium !important;
-                            font-weight: bold;
+                        .chapeu-case {
+                            background-color: variables.$secondary-color;
+                            color: variables.$primary-color;
+                            font-size: variables.$font-size-base;
+                            padding: 3px 30px;
+                            border-radius: 30px;
+                            margin-left: 2%;
                         }
-                        svg {
-                            width: 20px;
-                        }
-                        span {
-                            font-weight: 500;
-                            gap: 8px;
-                        }
-                        .conteudo-item {
-                            font-size: variables.$font-size-small;
-                            line-height: variables.$line-height-font-size-small;
-                            flex: 1;
+                        .texts {
+                            display: flex;
+                            gap: 50px;
+                            background-color: #fff;
+                            border-radius: 5px;
+                            padding: 20px 30px 40px;
+                            h3 {
+                                font-size: variables.$font-size-medium !important;
+                                font-weight: bold;
+                            }
+                            svg {
+                                width: 20px;
+                            }
+                            span {
+                                font-weight: 500;
+                                gap: 8px;
+                            }
+                            .conteudo-item {
+                                font-size: variables.$font-size-small;
+                                line-height: variables.$line-height-font-size-small;
+                                flex: 1;
+                            }
                         }
                     }
                 }
-                .cases {
-                    margin-top: 200px;
+            }
+        }
+        #cases {
+            background-color: #d9d9d9;
+            padding: 0 0 90px;
+            .section-title {
+                h2 {
+                    color: variables.$primary-color;
+                }
+                &::before {
+                    height: 100%;
                 }
             }
         }
