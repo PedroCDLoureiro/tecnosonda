@@ -1,6 +1,15 @@
 @use "variables";
 
 .page {
+    .section-title {
+        p {
+            font-weight: 300;
+            margin-bottom: revert;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
     #video {
         background: #d9d9d9;
         padding-bottom: 80px;
@@ -181,6 +190,27 @@
         }
         .show-after {
             padding-bottom: 80px;
+        }
+    }
+    &#page-solucoes-integradas {
+        #descricao {
+            position: relative;
+            padding: 60px 0;
+            z-index: 0;
+            .container-text-image {
+                background-color: transparent;
+                .section-title {
+                    height: max-content;
+                    h2 {
+                        font-size: variables.$font-size-medium;
+                        line-height: variables.$line-height-font-size-medium;
+                    }
+                    &::before {
+                        top: 0;
+                        height: 20%;
+                    }
+                }
+            }
         }
     }
 }

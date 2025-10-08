@@ -21,12 +21,18 @@ h2 {
         font-weight: bold;
     }
 }
+strong {
+    font-weight: bold;
+}
 .container-fluid {
     padding-left: 0;
     padding-right: 0;
 }
 .w-max-content {
     width: max-content !important;
+}
+.bg-primary {
+    background-color: variables.$primary-color !important;
 }
 
 // Banner
@@ -66,10 +72,10 @@ h2 {
     &::before {
         content: "";
         position: absolute;
-        top: 2%;
+        top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 85%;
         background: url("../../assets/images/before_sobre_sec1.png") no-repeat
             left bottom;
         background-size: contain;
