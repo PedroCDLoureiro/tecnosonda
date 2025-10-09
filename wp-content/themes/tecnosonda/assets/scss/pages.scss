@@ -555,10 +555,51 @@
             .section-title {
                 width: 75%;
                 margin: 0 auto;
+                padding-left: 30px;
+                &::before {
+                    left: 0;
+                }
                 h2 {
                     font-size: variables.$font-size-medium;
                     line-height: 28px;
                 }
+            }
+        }
+    }
+    &#page-certificacoes {
+        #banner {
+            z-index: 0;
+            .section-title {
+                height: inherit;
+                max-width: 80%;
+                padding-top: 20px;
+                h1 {
+                    margin-bottom: 15px;
+                }
+                p {
+                    font-size: variables.$font-size-base;
+                    line-height: variables.$line-height-font-size-base;
+                }
+            }
+        }
+        #banner-certificacao {
+            position: relative;
+            .logo-banner {
+                position: absolute;
+                left: 5%;
+                top: 50%;
+                transform: translateY(-50%);
+                width: auto;
+                max-height: 90%;
+            }
+        }
+        #certificacoes {
+            position: relative;
+            padding: 20px 0 60px;
+            z-index: 0;
+            h2 {
+                font-size: variables.$font-size-medium;
+                line-height: variables.$line-height-font-size-medium;
             }
         }
     }

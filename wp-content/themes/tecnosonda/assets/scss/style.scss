@@ -39,6 +39,11 @@ strong {
 
 #banner {
     position: relative;
+    height: 80dvh;
+    img {
+        height: 100%;
+        object-fit: cover;
+    }
     .texts {
         position: absolute;
         bottom: 20%;
@@ -118,6 +123,23 @@ strong {
         background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
         z-index: -1;
     }
+    &.after-top {
+        &::before,
+        &::after {
+            top: 0;
+            bottom: inherit;
+        }
+        &::before {
+            transform: rotate(180deg);
+        }
+        &::after {
+            background: linear-gradient(
+                to top,
+                transparent,
+                rgba(0, 0, 0, 0.4)
+            );
+        }
+    }
 }
 
 // Botões
@@ -159,6 +181,16 @@ strong {
     color: variables.$font-color;
     &:hover {
         background-color: variables.$font-color;
+        color: variables.$primary-color;
+    }
+}
+.white-btn {
+    background-color: #fff;
+    border-color: #fff;
+    color: variables.$primary-color;
+    font-weight: 500;
+    &:hover {
+        background-color: variables.$secondary-color;
         color: variables.$primary-color;
     }
 }

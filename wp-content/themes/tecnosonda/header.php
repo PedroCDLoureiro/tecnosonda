@@ -51,7 +51,7 @@ if (!defined('ABSPATH')) exit;
                             ));
                         ?>
                     </nav>
-                    <a id="secondary-btn-header-orcamento" href="<?= WP_URL ?>/contato" class="btn secondary-btn">Solicite um orçamento</a>
+                    <a id="secondary-btn-header-orcamento" href="<?= WP_URL ?>/orcamento" class="btn secondary-btn">Solicite um orçamento</a>
                 </div>
                 <div id="icon-menu">
                     <span id="icon-menu-top"></span>
