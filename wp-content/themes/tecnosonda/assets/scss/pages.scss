@@ -537,7 +537,29 @@
     }
     &#page-orcamento {
         #container-form {
-            padding: 90px 0;
+            padding: 60px 0;
+            &.show-after {
+                &::before {
+                    height: 25%;
+                }
+                &::after {
+                    height: 25%;
+                }
+            }
+            .show-before {
+                &::before {
+                    top: 5%;
+                    height: 65%;
+                }
+            }
+            .section-title {
+                width: 75%;
+                margin: 0 auto;
+                h2 {
+                    font-size: variables.$font-size-medium;
+                    line-height: 28px;
+                }
+            }
         }
     }
 }

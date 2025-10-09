@@ -18,6 +18,9 @@
     <div id="container-form" class="container-fluid container-text-image show-after">
         <div class="container show-before">
             <div class="col-md-8 offset-md-2 col-12 d-flex flex-column justify-content-center text-white sobre">
+                <div class="section-title white-title mb-5">
+                    <h2>Preencha o formulário abaixo e solicite contato. <br> Em breve entraremos em contato com você!</h2>
+                </div>
                 <div id="form-orcamento">
                     <?= do_shortcode('[contact-form-7 id="d656771" title="Formulário de Orçamento"]'); ?>
                 </div>
