@@ -10,8 +10,10 @@
             }
         }
     }
+    #top-page {
+        padding-top: 150px;
+    }
     #video {
-        background: #d9d9d9;
         padding-bottom: 80px;
     }
     &#page-sobre-nos {
@@ -305,18 +307,6 @@
                             display: flex;
                             width: 50px;
                             height: 50px;
-                            border-radius: 50%;
-                            background: linear-gradient(
-                                180deg,
-                                #fff,
-                                #fafafa,
-                                #eeeeee,
-                                #d9d9d9,
-                                #c3c3c3
-                            );
-                            img {
-                                padding: 10px;
-                            }
                             &::before {
                                 content: "";
                                 position: absolute;
@@ -595,11 +585,171 @@
         }
         #certificacoes {
             position: relative;
-            padding: 20px 0 60px;
+            padding: 20px 0 80px;
             z-index: 0;
             h2 {
                 font-size: variables.$font-size-medium;
                 line-height: variables.$line-height-font-size-medium;
+            }
+        }
+    }
+    &#page-esg {
+        #banner {
+            position: relative;
+            z-index: 0;
+            .section-title {
+                height: max-content;
+                h1 {
+                    font-size: variables.$font-size-large;
+                    line-height: variables.$line-height-font-size-large;
+                    font-weight: bold;
+                }
+                .descricao {
+                    width: 80%;
+                }
+                #pdfs {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 30px;
+                    .pdf-item {
+                        a {
+                            font-size: variables.$font-size-base;
+                            line-height: variables.$line-height-font-size-base;
+                            color: variables.$font-color;
+                            gap: 15px;
+                            text-decoration: none;
+                            transition: all ease 0.3s;
+                            svg {
+                                min-width: 30px;
+                                width: 30px;
+                                path {
+                                    transition: all ease 0.3s;
+                                }
+                            }
+                        }
+                        &:hover {
+                            a {
+                                color: variables.$secondary-color;
+                                svg {
+                                    path {
+                                        fill: variables.$secondary-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &::before {
+                    top: -4%;
+                    height: 108%;
+                }
+            }
+        }
+        #container-listas {
+            position: relative;
+            z-index: 0;
+            padding: 40px 0 80px;
+            #listas {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+                width: 90%;
+                margin: 0 auto;
+                .lista {
+                    background-color: rgba($color: #000000, $alpha: 0.22);
+                    border-radius: 5px;
+                    padding: 25px 30px;
+                    .title-list {
+                        position: relative;
+                        line-height: 1;
+                        padding-left: 15px;
+                        h3 {
+                            font-size: variables.$font-size-medium;
+                            line-height: variables.$line-height-font-size-medium;
+                            font-weight: bold;
+                            span {
+                                color: variables.$secondary-color;
+                            }
+                        }
+                        .subtitulo {
+                            font-size: variables.$font-size-xsmall;
+                        }
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            width: 5px;
+                            height: 100%;
+                            background-color: variables.$secondary-color;
+                            border-radius: 5px;
+                        }
+                    }
+                    .itens_lista {
+                        gap: 15px;
+                        .item-list {
+                            position: relative;
+                            padding-left: 20px;
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                top: 7px;
+                                left: 0;
+                                width: 9px;
+                                height: 9px;
+                                background-color: #fff;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                    .icones_lista {
+                        gap: 10px;
+                    }
+                }
+            }
+        }
+        #container-images {
+            padding: 60px 0 70px;
+            .dados {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px 30px;
+                h3 {
+                    span {
+                        font-size: variables.$font-size-small;
+                        line-height: variables.$line-height-font-size-small;
+                        &:first-child {
+                            font-size: 40px;
+                            line-height: 49px;
+                            font-weight: bold;
+                            color: variables.$primary-color;
+                        }
+                    }
+                }
+            }
+        }
+        #banner-certificacao {
+            .content {
+                gap: 20px;
+                width: 50%;
+                .text {
+                    position: relative;
+                    p {
+                        font-size: variables.$font-size-large;
+                        line-height: variables.$line-height-font-size-large;
+                        margin: 0;
+                        font-weight: bold;
+                        strong {
+                            color: variables.$secondary-color;
+                        }
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: -10px;
+                        width: 50%;
+                        height: 5px;
+                        background-color: variables.$secondary-color;
+                        border-radius: 5px;
+                    }
+                }
             }
         }
     }

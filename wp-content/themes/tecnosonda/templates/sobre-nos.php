@@ -58,7 +58,7 @@
         $midia = get_field('imagem_video_sobre_nos');
     
         if( $midia ): ?>
-            <section id="video">
+            <section id="video" class="bg-gray">
                 <div class="container">
                     <div class="midia">
                         <?php if (strpos($midia['mime_type'], 'image') !== false): ?>

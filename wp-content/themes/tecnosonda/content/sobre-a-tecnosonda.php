@@ -138,8 +138,10 @@
 <section id="sobre-noticias">
     <div class="container">
         <div class="row">
-            <div class="col-6 section-title white-title">
-                <h2>Sobre A <span>Tecnosonda</span></h2>
+            <div class="col-6">
+                <div class="section-title white-title">
+                    <h2>Sobre A <span>Tecnosonda</span></h2>
+                </div>
             </div>
             <div class="col-6 controls-slider">
                 <button id="prev-sobre-noticias">

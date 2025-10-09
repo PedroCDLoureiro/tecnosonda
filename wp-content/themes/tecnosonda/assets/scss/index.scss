@@ -71,7 +71,6 @@
     }
 }
 #nossos-servicos {
-    background: #d9d9d9;
     padding: 80px 0 50px 0;
     #slider-nossos-servicos {
         padding-top: 60px;
@@ -335,7 +334,6 @@
     }
 }
 #nossos-clientes {
-    background-color: #d9d9d9;
     padding: 90px 0;
     .row-items-nossos-clientes {
         display: grid;
@@ -464,7 +462,7 @@
             content: "";
             position: absolute;
             top: -5%;
-            left: -42px;
+            left: var(--before-left, -30px);
             width: 5px;
             height: 110%;
             background-color: #fff;

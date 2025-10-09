@@ -76,7 +76,7 @@
     <?php endif; ?>
     <!-- Subserviços -->
     <?php if (have_rows('subservicos')): ?>
-        <div id="subservicos" class="container-fluid">
+        <div id="subservicos" class="container-fluid bg-gray">
             <div class="container">
                 <div class="section-title">
                     <h2 class="mb-4">Subserviços</h2>
@@ -166,7 +166,7 @@
     <?php endif; ?>
     <!-- Cases -->
     <?php if (have_rows('cases')): ?>
-        <div id="cases" class="container-fluid">
+        <div id="cases" class="container-fluid bg-gray">
             <div class="container">
                 <div class="section-title mb-5">
                     <h2>Cases</h2>

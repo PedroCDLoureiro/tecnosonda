@@ -1,4 +1,4 @@
-<section id="nossos-clientes">
+<section id="nossos-clientes" class="bg-gray">
     <?php
     $args = [
         'post_type'      => 'nossos_clientes',
@@ -14,8 +14,10 @@
     ?>
     <div class="container">
         <div class="row">
-            <div class="col-6 section-title">
-                <h2>Conheça Nossos <span>Clientes</span></h2>
+            <div class="col-6">
+                <div class="section-title">
+                    <h2>Conheça Nossos <span>Clientes</span></h2>
+                </div>
             </div>
             <?php if($clientes && count($clientes) > 6) : ?>
                 <div class="col-6 controls-slider">

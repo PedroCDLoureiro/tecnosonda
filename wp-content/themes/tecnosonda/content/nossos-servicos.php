@@ -1,9 +1,11 @@
-<section id="nossos-servicos">
+<section id="nossos-servicos" class="bg-gray">
     <div class="container">
         <div class="row">
-            <div class="col-6 section-title">
-                <h2>Nossos <span>Serviços</span></h2>
-                <p>Serviços entregados de engenharia</p>
+            <div class="col-6">
+                <div class="section-title">
+                    <h2>Nossos <span>Serviços</span></h2>
+                    <p>Serviços entregados de engenharia</p>
+                </div>
             </div>
             <div class="col-6 controls-slider">
                 <button id="prev-nossos-servicos">

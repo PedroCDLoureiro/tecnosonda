@@ -70,25 +70,16 @@ jQuery(document).ready(function ($) {
     $(window).on("load resize", fitTextToHeight);
 
     // Padding container fluid nossos serviços
-    function ajustarPadding() {
-        var marginLeft =
-            parseInt($("#nossos-servicos .container").css("margin-left"), 10) +
-            12;
-        $(
-            "#nossos-servicos .container-fluid, #sobre-noticias .container-fluid, #page-nossa-historia .container-marcos"
-        ).css("padding-left", marginLeft);
-    }
-
-    ajustarPadding();
-
-    $(window).on("resize", function () {
-        ajustarPadding();
-    });
 
     function ajustarPadding(seletorReferencia, seletorAlvo, offset = 0) {
-        var marginLeft =
-            parseInt($(seletorReferencia).css("margin-left"), 10) + offset;
-        $(seletorAlvo).css("padding-left", marginLeft);
+        if ($(seletorReferencia).length > 0) {
+            var marginLeft =
+                parseInt($(seletorReferencia).css("margin-left"), 10) + offset;
+            $(seletorAlvo).css("padding-left", marginLeft);
+
+            $(".section-title").css("--before-left", -marginLeft / 2 + "px");
+            $("#entre-em-contato").css("--before-left", -marginLeft / 2 + "px");
+        }
     }
 
     function atualizarTodos() {
@@ -363,27 +354,29 @@ jQuery(document).ready(function ($) {
     });
 
     // Formatação H1 páginas internas
-    $(".page h1, .page .title_servico, .single h1").each(function () {
-        var texto = $(this).text().trim();
-        var palavras = texto.split(/\s+/); // separa por espaços, considerando múltiplos
-        var total = palavras.length;
+    $(".page h1, .page .title_servico, .single h1, .title-list h3").each(
+        function () {
+            var texto = $(this).text().trim();
+            var palavras = texto.split(/\s+/); // separa por espaços, considerando múltiplos
+            var total = palavras.length;
 
-        if (total < 2) return; // só 1 palavra, não faz nada
+            if (total < 2) return; // só 1 palavra, não faz nada
 
-        var inicioSegundaParte;
-        if (total === 2) {
-            inicioSegundaParte = 1; // pega a última palavra
-        } else if (total === 3) {
-            inicioSegundaParte = 1; // pega as duas últimas palavras
-        } else {
-            inicioSegundaParte = Math.ceil(total / 2); // divide pela metade
+            var inicioSegundaParte;
+            if (total === 2) {
+                inicioSegundaParte = 1; // pega a última palavra
+            } else if (total === 3) {
+                inicioSegundaParte = 1; // pega as duas últimas palavras
+            } else {
+                inicioSegundaParte = Math.ceil(total / 2); // divide pela metade
+            }
+
+            var primeiraParte = palavras.slice(0, inicioSegundaParte).join(" ");
+            var segundaParte = palavras.slice(inicioSegundaParte).join(" ");
+
+            $(this).html(primeiraParte + " <span>" + segundaParte + "</span>");
         }
-
-        var primeiraParte = palavras.slice(0, inicioSegundaParte).join(" ");
-        var segundaParte = palavras.slice(inicioSegundaParte).join(" ");
-
-        $(this).html(primeiraParte + " <span>" + segundaParte + "</span>");
-    });
+    );
 
     // Botões Subserviços (interna)
     jQuery(document).ready(function ($) {
