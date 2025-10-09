@@ -675,9 +675,10 @@
                         &::before {
                             content: "";
                             position: absolute;
+                            top: -5%;
                             left: 0;
                             width: 5px;
-                            height: 100%;
+                            height: 110%;
                             background-color: variables.$secondary-color;
                             border-radius: 5px;
                         }
@@ -751,6 +752,75 @@
                         height: 5px;
                         background-color: variables.$secondary-color;
                         border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+    &#page-iso {
+        #banner {
+            position: relative;
+            z-index: 0;
+            .section-title {
+                height: max-content;
+                h1 {
+                    font-size: variables.$font-size-large;
+                    line-height: variables.$line-height-font-size-large;
+                    font-weight: bold;
+                }
+                .descricao {
+                    width: 80%;
+                }
+                &::before {
+                    top: -4%;
+                    height: 108%;
+                }
+            }
+        }
+        #container-listas {
+            position: relative;
+            z-index: 0;
+            padding-bottom: 100px;
+            #listas {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+                width: 90%;
+                margin: 0 auto;
+                .lista {
+                    background-color: rgba($color: #000000, $alpha: 0.22);
+                    border-radius: 5px;
+                    padding: 25px 30px;
+                    gap: 30px;
+                    .title-list {
+                        position: relative;
+                        line-height: 1;
+                        padding-left: 15px;
+                        h3 {
+                            font-size: variables.$font-size-medium;
+                            line-height: variables.$line-height-font-size-medium;
+                            font-weight: bold;
+                            span {
+                                color: variables.$secondary-color;
+                            }
+                        }
+                        .subtitulo {
+                            font-size: variables.$font-size-xsmall;
+                        }
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: -5%;
+                            left: 0;
+                            width: 5px;
+                            height: 110%;
+                            background-color: variables.$secondary-color;
+                            border-radius: 5px;
+                        }
+                    }
+                    p {
+                        font-size: variables.$font-size-small;
+                        line-height: variables.$line-height-font-size-small;
+                        margin: 0;
                     }
                 }
             }
