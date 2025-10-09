@@ -399,4 +399,15 @@ jQuery(document).ready(function ($) {
             $('.subservico-item[data-index="' + index + '"]').fadeIn(300);
         });
     });
+
+    // Botão Upload File
+    $("#upload-field").on("change", function () {
+        const fileName = $(this).val().split("\\").pop();
+        const label = $(".upload-archives label");
+        if (fileName) {
+            label.html("<strong>" + fileName + "</strong> incluído");
+        } else {
+            label.text("Incluir");
+        }
+    });
 });

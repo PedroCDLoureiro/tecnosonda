@@ -1,1 +1,13 @@
 @use "variables";
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+    .fields {
+        flex-direction: column;
+    }
+    .submit-button {
+        text-align: center;
+    }
+}

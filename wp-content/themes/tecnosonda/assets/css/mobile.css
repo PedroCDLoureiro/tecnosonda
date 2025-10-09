@@ -1,2 +1,2 @@
-@media (min-width:1200px){.container,.container-lg,.container-md,.container-sm,.container-xl{max-width:1200px}}
+@media (min-width:1200px){.container,.container-lg,.container-md,.container-sm,.container-xl{max-width:1200px}}@media (max-width:768px){.form-row{flex-direction:column}.fields{flex-direction:column}.submit-button{text-align:center}}
 /*# sourceMappingURL=mobile.css.map */

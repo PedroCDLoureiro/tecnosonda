@@ -138,29 +138,38 @@ strong {
     background-color: variables.$primary-color;
     border-color: variables.$primary-color;
     color: variables.$secondary-color;
-}
-.primary-btn:hover {
-    background-color: variables.$secondary-color;
-    border-color: variables.$secondary-color;
-    color: variables.$primary-color;
+    &:hover {
+        background-color: variables.$secondary-color;
+        border-color: variables.$secondary-color;
+        color: variables.$primary-color;
+    }
 }
 .secondary-btn {
     background-color: variables.$secondary-color;
     border-color: variables.$secondary-color;
     color: variables.$tertiary-color;
-}
-.secondary-btn:hover {
-    background-color: variables.$tertiary-color;
-    border-color: variables.$tertiary-color;
-    color: variables.$secondary-color;
+    &:hover {
+        background-color: variables.$tertiary-color;
+        border-color: variables.$tertiary-color;
+        color: variables.$secondary-color;
+    }
 }
 .transparent-btn {
     background-color: transparent;
     color: variables.$font-color;
+    &:hover {
+        background-color: variables.$font-color;
+        color: variables.$primary-color;
+    }
 }
-.transparent-btn:hover {
-    background-color: variables.$font-color;
+.submit-btn {
+    background-color: #fff;
     color: variables.$primary-color;
+    font-weight: 500;
+    &:hover {
+        background-color: variables.$primary-color;
+        color: #fff;
+    }
 }
 .midia {
     position: relative;
@@ -186,6 +195,17 @@ strong {
             opacity: 0.7;
         }
     }
+}
+.upload-archives {
+    position: relative;
+    input[type="file"] {
+        display: none;
+    }
+}
+input[type="checkbox"] {
+    accent-color: variables.$secondary-color;
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
 // Menu header
@@ -666,4 +686,110 @@ strong {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 100%);
         border-radius: 5px;
     }
+}
+
+// Formulários
+
+.wpcf7 {
+    form {
+        color: variables.$font-color;
+        .form-row {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 15px;
+            &.cols-1 {
+                grid-template-columns: 1fr;
+            }
+            &.cols-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+            &.cols-1-2 {
+                grid-template-columns: 0.5fr 1fr 2fr;
+            }
+            &.cols-3 {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            label {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                font-size: variables.$font-size-small;
+                font-weight: 100;
+                input,
+                select,
+                textarea {
+                    font-size: variables.$font-size-small;
+                    color: #333;
+                    background: #fff;
+                    width: 100%;
+                    border-radius: 20px;
+                    border: none;
+                    margin-top: 5px;
+                    padding: 10px 15px;
+                    box-sizing: border-box;
+                    outline: none;
+                }
+                textarea {
+                    min-height: 120px;
+                    resize: vertical;
+                }
+            }
+        }
+        .form-bottom {
+            background-color: rgba(0, 0, 0, 0.22);
+            padding: 20px;
+            border-radius: 5px;
+            color: variables.$font-color;
+            strong {
+                font-size: variables.$font-size-small;
+            }
+            .arquivos-permitidos {
+                font-size: variables.$font-size-xsmall;
+                opacity: 0.8;
+            }
+            .fields {
+                justify-content: space-between;
+                gap: 15px;
+                margin-top: 30px;
+                .checks {
+                    .wpcf7-list-item {
+                        margin: 0;
+                        label {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            font-size: variables.$font-size-small;
+                            a {
+                                color: variables.$font-color;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+            .btn {
+                font-weight: 500;
+            }
+        }
+        .submit-button {
+            text-align: right;
+            margin-top: 30px;
+        }
+    }
+}
+.wpcf7 form .wpcf7-response-output {
+    border-radius: 5px;
+    padding: 10px;
+}
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+    background-color: variables.$error-color;
+    color: variables.$error-font-color;
+    border: 1px solid variables.$error-font-color;
+}
+.wpcf7 form.sent .wpcf7-response-output {
+    background-color: variables.$secondary-color;
+    color: variables.$primary-color;
+    border: 1px solid variables.$primary-color;
 }

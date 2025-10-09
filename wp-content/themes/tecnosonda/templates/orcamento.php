@@ -18,7 +18,9 @@
     <div id="container-form" class="container-fluid container-text-image show-after">
         <div class="container show-before">
             <div class="col-md-8 offset-md-2 col-12 d-flex flex-column justify-content-center text-white sobre">
-                
+                <div id="form-orcamento">
+                    <?= do_shortcode('[contact-form-7 id="d656771" title="Formulário de Orçamento"]'); ?>
+                </div>
             </div>
         </div>
     </div>
