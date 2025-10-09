@@ -132,8 +132,8 @@
                             <span>+<?= $empregos_diretos_nivel_medias_liderancas; ?></span>
                             <span>empregos diretos <br> nível médias lideranças*</span>
                         </h3>
-                        <h3 class="d-flex flex-column destinados-a-comunidades">
-                            <span>+R$<?= $destinados_a_comunidades; ?></span>
+                        <h3 class="d-flex flex-column full destinados-a-comunidades">
+                            <span>+R$ <?= $destinados_a_comunidades; ?></span>
                             <span>destinados a comunidades</span>
                         </h3>
                     </div>

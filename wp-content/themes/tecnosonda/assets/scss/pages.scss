@@ -710,6 +710,9 @@
             .dados {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 50px 30px;
+                .full {
+                    grid-column: 1 / -1;
+                }
                 h3 {
                     span {
                         font-size: variables.$font-size-small;
