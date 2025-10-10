@@ -826,4 +826,25 @@
             }
         }
     }
+    &#page-politica-de-privacidade-cookies {
+        #banner {
+            z-index: 0;
+        }
+        .section-title {
+            height: max-content;
+            h1 {
+                font-size: variables.$font-size-large;
+                line-height: variables.$line-height-font-size-large;
+            }
+            &.black-title {
+                &::before {
+                    background-color: #000;
+                }
+            }
+            &::before {
+                top: -15%;
+                height: 130%;
+            }
+        }
+    }
 }
