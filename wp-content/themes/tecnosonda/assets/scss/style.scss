@@ -24,6 +24,26 @@ h2 {
 strong {
     font-weight: bold;
 }
+ol,
+ul {
+    padding-left: 1rem;
+}
+ul {
+    list-style: none;
+    li {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 7px;
+            left: -1rem;
+            width: 9px;
+            height: 9px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+    }
+}
 .container-fluid {
     padding-left: 0;
     padding-right: 0;
