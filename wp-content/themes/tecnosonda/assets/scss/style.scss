@@ -71,6 +71,10 @@ ul:not(#menu-menu-principal, .sub-menu) {
         z-index: -1;
     }
 }
+.stop-scroll {
+    overflow: hidden;
+}
+
 // Banner
 
 #banner {

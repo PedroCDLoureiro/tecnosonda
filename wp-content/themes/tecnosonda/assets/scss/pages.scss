@@ -927,4 +927,63 @@
             }
         }
     }
+    &#page-trabalhe-conosco {
+        #banner {
+            position: relative;
+            z-index: 0;
+            .section-title {
+                height: max-content;
+                h1 {
+                    font-size: variables.$font-size-large;
+                    line-height: variables.$line-height-font-size-large;
+                    font-weight: bold;
+                }
+                &::before {
+                    top: -20%;
+                    height: 140%;
+                }
+            }
+        }
+        #tecnosonda-valoriza {
+            position: relative;
+            background-color: rgba($color: #000000, $alpha: 0.22);
+            border-radius: 5px 0 0 5px;
+            padding: 35px 100px 45px 135px;
+            margin-top: 100px;
+            .section-title {
+                h2 {
+                    font-size: variables.$font-size-medium;
+                    line-height: variables.$line-height-font-size-medium;
+                    padding-left: 25px;
+                }
+                &::before {
+                    left: 0;
+                }
+            }
+            img {
+                position: absolute;
+                top: -50px;
+                right: calc(100% - 65px);
+                width: auto;
+                max-width: 50dvw;
+                min-height: inherit;
+                height: 380px;
+            }
+        }
+        #entrar-em-contato {
+            position: relative;
+            z-index: 0;
+            padding: 90px 0;
+            .box-contato {
+                background-color: rgba($color: #000000, $alpha: 0.22);
+                border-radius: 5px;
+                padding: 30px 130px;
+                margin: 0 auto;
+            }
+            &::before,
+            &::after {
+                height: 125%;
+            }
+        }
+    }
 }
