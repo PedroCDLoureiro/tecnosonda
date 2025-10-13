@@ -874,4 +874,57 @@
             }
         }
     }
+    &#page-fale-conosco {
+        #banner {
+            position: relative;
+            z-index: 0;
+            .section-title {
+                height: max-content;
+                h1 {
+                    font-size: variables.$font-size-large;
+                    line-height: variables.$line-height-font-size-large;
+                    font-weight: bold;
+                }
+                .descricao {
+                    width: 80%;
+                }
+                &::before {
+                    top: -4%;
+                    height: 108%;
+                }
+            }
+        }
+        .content-dados {
+            padding: 25px;
+            .title-dados {
+                position: relative;
+                padding-left: 12px;
+                height: 55px;
+                h3 {
+                    gap: 5px;
+                    font-size: variables.$font-size-medium;
+                    line-height: variables.$line-height-font-size-medium;
+                    color: variables.$primary-color;
+                    svg {
+                        width: 30px;
+                    }
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -4%;
+                    left: 0;
+                    width: 5px;
+                    height: 108%;
+                    background-color: variables.$primary-color;
+                    border-radius: 5px;
+                }
+            }
+        }
+        .localizacao {
+            .content-dados {
+                padding: 25px 45px 45px;
+            }
+        }
+    }
 }

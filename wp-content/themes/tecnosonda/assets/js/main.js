@@ -327,6 +327,14 @@ jQuery(document).ready(function ($) {
         ajustarTextsEDots();
     });
 
+    // Modal Contato
+    $(document).on("click", "#form-contato", function () {
+        const modal = $(".contactModal");
+        modal.fadeIn(() => {
+            $("body").addClass("stop-scroll");
+        });
+    });
+
     // Fechar modal
     $(document).on("click", ".close-modal", function () {
         const modal = $(".modal");

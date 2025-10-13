@@ -28,7 +28,7 @@ ol,
 ul {
     padding-left: 1rem;
 }
-ul {
+ul:not(#menu-menu-principal, .sub-menu) {
     list-style: none;
     li {
         position: relative;
@@ -688,6 +688,81 @@ input[type="checkbox"] {
                                 height: 100%;
                                 object-fit: cover;
                                 display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.contactModal {
+        .close-modal {
+            top: 10px;
+            right: 20px;
+            svg {
+                fill: #000;
+                width: 20px;
+            }
+            &:hover {
+                background: #fff;
+                svg {
+                    fill: variables.$secondary-color;
+                }
+            }
+        }
+        .modal-body {
+            padding: 40px 105px 60px;
+            overflow: auto;
+            .modal-title {
+                position: relative;
+                h3 {
+                    font-size: variables.$font-size-large;
+                    line-height: variables.$line-height-font-size-large;
+                    span {
+                        color: variables.$primary-color;
+                    }
+                }
+                span {
+                    color: #636363;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -15%;
+                    left: -50px;
+                    width: 5px;
+                    height: 130%;
+                    background-color: variables.$secondary-color;
+                    border-radius: 5px;
+                }
+            }
+            .formulario-contato {
+                .wpcf7 {
+                    form {
+                        color: #000;
+                        input[type="text"],
+                        input[type="email"],
+                        input[type="tel"],
+                        textarea {
+                            border: 1px solid #707070;
+                            border-radius: 30px;
+                            height: 30px;
+                        }
+                        textarea {
+                            border-radius: 15px;
+                        }
+                        .form-bottom {
+                            background-color: transparent;
+                            padding: 0;
+                            border-radius: 0;
+                            color: #000;
+                            .checks {
+                                a {
+                                    color: #000;
+                                }
+                            }
+                            .submit-button {
+                                margin-top: 0;
                             }
                         }
                     }
