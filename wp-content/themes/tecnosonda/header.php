@@ -60,7 +60,9 @@ if (!defined('ABSPATH')) exit;
             </div>
         </div> 
         <div id="div-search">
-            <input type="text" name="search" id="input-search" placeholder="Buscar...">
+            <form id="input-search" role="search" method="get" action="<?= esc_url(home_url('/')); ?>">
+                <input type="search" name="s" placeholder="Buscar..." />
+            </form>
         </div>
     </div>
 </header>

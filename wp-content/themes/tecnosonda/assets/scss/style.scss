@@ -28,7 +28,7 @@ ol,
 ul {
     padding-left: 1rem;
 }
-ul:not(#menu-menu-principal, .sub-menu) {
+ul:not(#menu-menu-principal, .sub-menu, .slick-dots) {
     list-style: none;
     li {
         position: relative;

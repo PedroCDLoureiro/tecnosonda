@@ -248,30 +248,29 @@
     // Máscaras formulários
     
     function enqueue_form_scripts() {
-    wp_enqueue_script('jquery');
-    wp_enqueue_script(
-        'jquery-mask',
-        'https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js',
-        ['jquery'],
-        null,
-        false // Carrega no head, não no footer
-    );
+        wp_enqueue_script('jquery');
+        wp_enqueue_script(
+            'jquery-mask',
+            'https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js',
+            ['jquery'],
+            null,
+            false // Carrega no head, não no footer
+        );
 
-    wp_add_inline_script('jquery-mask', "
-        jQuery(function($){
-            function aplicarMascaras() {
-                $('input[name=\"cnpj\"]').mask('00.000.000/0000-00');
-                $('input[name=\"telefone\"]').mask('(00) 0000-0000');
-                $('input[name=\"celular\"]').mask('(00) 00000-0000');
-            }
+        wp_add_inline_script('jquery-mask', "
+            jQuery(function($){
+                function aplicarMascaras() {
+                    $('input[name=\"cnpj\"]').mask('00.000.000/0000-00');
+                    $('input[name=\"telefone\"]').mask('(00) 0000-0000');
+                    $('input[name=\"celular\"]').mask('(00) 00000-0000');
+                }
 
-            aplicarMascaras();
+                aplicarMascaras();
 
-            $(document).on('wpcf7init wpcf7submit wpcf7invalid', aplicarMascaras);
-        });
-    ");
-}
-add_action('wp_enqueue_scripts', 'enqueue_form_scripts');
-
+                $(document).on('wpcf7init wpcf7submit wpcf7invalid', aplicarMascaras);
+            });
+        ");
+    }
+    add_action('wp_enqueue_scripts', 'enqueue_form_scripts');
 
 ?>

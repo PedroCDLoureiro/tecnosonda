@@ -1,29 +1,34 @@
 <?php 
+    // Taxonomia "Destaques" para posts
+    function taxonomia_destaques() {
 
-function portfolio_register_taxonomy() {
-    register_taxonomy(
-        'categoria',
-        'portfolio',
-        array(
-            'labels' => array(
-                'name'              => 'Categorias',
-                'singular_name'     => 'Categoria',
-                'search_items'      => 'Buscar Categorias',
-                'all_items'         => 'Todas as Categorias',
-                'parent_item'       => 'Categoria Pai',
-                'parent_item_colon' => 'Categoria Pai:',
-                'edit_item'         => 'Editar Categoria',
-                'update_item'       => 'Atualizar Categoria',
-                'add_new_item'      => 'Adicionar Nova Categoria',
-                'new_item_name'     => 'Novo Nome da Categoria',
-                'menu_name'         => 'Categorias',
-            ),
-            'hierarchical' => true,
-            'show_ui' => true,
+        $labels = array(
+            'name'              => 'Destaques',
+            'singular_name'     => 'Destaque',
+            'search_items'      => 'Buscar Destaques',
+            'all_items'         => 'Todos os Destaques',
+            'edit_item'         => 'Editar Destaque',
+            'update_item'       => 'Atualizar Destaque',
+            'add_new_item'      => 'Adicionar Novo Destaque',
+            'new_item_name'     => 'Novo Destaque',
+            'menu_name'         => 'Destaques',
+        );
+
+        $args = array(
+            'hierarchical'      => true,
+            'labels'            => $labels,
+            'show_ui'           => true,
+            'show_in_menu'      => true,
+            'show_in_nav_menus' => true,
             'show_admin_column' => true,
-            'query_var' => true,
-            'rewrite' => array('slug' => 'portfolio-categoria'),
-        )
-    );
-}
-add_action('init', 'portfolio_register_taxonomy');
+            'show_tagcloud'     => false,
+            'query_var'         => true,
+            'rewrite'           => array('slug' => 'destaque'),
+            'show_in_rest'      => true,
+        );
+
+        register_taxonomy('destaque', array('post'), $args);
+    }
+    add_action('init', 'taxonomia_destaques');
+
+?>
