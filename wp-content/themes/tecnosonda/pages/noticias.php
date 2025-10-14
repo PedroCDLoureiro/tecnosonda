@@ -130,7 +130,7 @@
         </div>
     </div>
 
-    <div class="container-fluid bg-primary show-before others-categories">
+    <div class="container-fluid bg-primary show-before section-category">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-5 top-category">
                 <div class="section-title white-title">
@@ -189,7 +189,7 @@
         </div>
     </div>
 
-    <div class="container-fluid bg-primary show-before others-categories">
+    <div class="container-fluid bg-primary show-before section-category">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-5 top-category">
                 <div class="section-title white-title">
@@ -265,7 +265,7 @@
         </div>
     </div>
 
-    <div id="outras-noticias" class="container-fluid bg-primary show-after others-categories">
+    <div id="outras-noticias" class="container-fluid bg-primary show-after section-category">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-5 top-category">
                 <div class="section-title white-title">

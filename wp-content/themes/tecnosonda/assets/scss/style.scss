@@ -940,3 +940,82 @@ input[type="checkbox"] {
     color: variables.$primary-color;
     border: 1px solid variables.$primary-color;
 }
+
+// Seção de posts
+
+.section-category {
+    padding-bottom: 80px;
+    a {
+        text-decoration: none;
+    }
+    .top-category {
+        .section-title {
+            height: max-content;
+            h2 {
+                padding-left: 50px;
+            }
+            &::before {
+                left: 0;
+            }
+        }
+        a {
+            font-size: variables.$font-size-small;
+            line-height: variables.$line-height-font-size-small;
+            color: variables.$font-color;
+            text-decoration: none;
+            transition: all ease 0.3s;
+            &:hover {
+                color: variables.$secondary-color;
+            }
+        }
+    }
+    .row {
+        gap: 30px 0;
+        article {
+            position: relative;
+            figure {
+                overflow: hidden;
+                border-radius: 5px;
+                margin-bottom: -15px;
+                img {
+                    aspect-ratio: 275/216;
+                    object-fit: cover;
+                    border-radius: 5px;
+                    transition: all ease 0.3s;
+                }
+            }
+            .content-post {
+                margin-left: 2%;
+                width: 96%;
+                background: #dbdbdb;
+                box-shadow: 0px 3px 6px #00000029;
+                border-radius: 5px;
+                padding: 10px;
+                height: 120px;
+                z-index: 1;
+                transition: all ease 0.3s;
+                h2 {
+                    font-size: variables.$font-size-small;
+                    line-height: variables.$line-height-font-size-small;
+                    color: variables.$secondary-font-color;
+                    font-weight: lighter;
+                }
+                span {
+                    font-size: variables.$font-size-xsmall;
+                    line-height: variables.$line-height-font-size-xsmall;
+                    color: #9f9f9f;
+                }
+            }
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+                .content-post {
+                    margin-left: 0;
+                    padding: 10px 15px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

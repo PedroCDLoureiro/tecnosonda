@@ -362,29 +362,29 @@ jQuery(document).ready(function ($) {
     });
 
     // Formatação H1 páginas internas
-    $(".page h1, .page .title_servico, .single h1, .title-list h3").each(
-        function () {
-            var texto = $(this).text().trim();
-            var palavras = texto.split(/\s+/); // separa por espaços, considerando múltiplos
-            var total = palavras.length;
+    $(
+        ".page h1, .page .title_servico, .single h1, .title-list h3, #page-category h1"
+    ).each(function () {
+        var texto = $(this).text().trim();
+        var palavras = texto.split(/\s+/); // separa por espaços, considerando múltiplos
+        var total = palavras.length;
 
-            if (total < 2) return; // só 1 palavra, não faz nada
+        if (total < 2) return; // só 1 palavra, não faz nada
 
-            var inicioSegundaParte;
-            if (total === 2) {
-                inicioSegundaParte = 1; // pega a última palavra
-            } else if (total === 3) {
-                inicioSegundaParte = 1; // pega as duas últimas palavras
-            } else {
-                inicioSegundaParte = Math.ceil(total / 2); // divide pela metade
-            }
-
-            var primeiraParte = palavras.slice(0, inicioSegundaParte).join(" ");
-            var segundaParte = palavras.slice(inicioSegundaParte).join(" ");
-
-            $(this).html(primeiraParte + " <span>" + segundaParte + "</span>");
+        var inicioSegundaParte;
+        if (total === 2) {
+            inicioSegundaParte = 1; // pega a última palavra
+        } else if (total === 3) {
+            inicioSegundaParte = 1; // pega as duas últimas palavras
+        } else {
+            inicioSegundaParte = Math.ceil(total / 2); // divide pela metade
         }
-    );
+
+        var primeiraParte = palavras.slice(0, inicioSegundaParte).join(" ");
+        var segundaParte = palavras.slice(inicioSegundaParte).join(" ");
+
+        $(this).html(primeiraParte + " <span>" + segundaParte + "</span>");
+    });
 
     // Botões Subserviços (interna)
     jQuery(document).ready(function ($) {
