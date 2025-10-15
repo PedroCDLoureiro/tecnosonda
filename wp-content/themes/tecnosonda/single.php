@@ -4,7 +4,7 @@
     $categories = get_the_category();
     $category_post = !empty($categories) ? $categories[0]->name : 'Tecnosonda';
 ?>
-<section id="single" class="container-fluid bg-primary show-after after-top">
+<section id="single-page" class="container-fluid bg-primary show-after after-top single">
     <div class="container-fluid show-before">
         <div class="container">
             <div id="banner" class="mb-5">
