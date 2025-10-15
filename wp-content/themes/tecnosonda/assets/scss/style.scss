@@ -1015,7 +1015,8 @@ input[type="checkbox"] {
                 height: 120px;
                 z-index: 1;
                 transition: all ease 0.3s;
-                h2 {
+                h2,
+                h3 {
                     font-size: variables.$font-size-small;
                     line-height: variables.$line-height-font-size-small;
                     color: variables.$secondary-font-color;

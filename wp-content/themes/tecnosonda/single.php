@@ -32,6 +32,53 @@
                 </div>
                 <?php the_content(); ?>
             </div>
+            <?php 
+                $category_id = !empty($categories) ? $categories[0]->term_id : 0;
+
+                $args = array(
+                    'post_type'      => 'post',
+                    'posts_per_page' => 3,
+                    'post__not_in'   => array(get_the_ID()),
+                    'cat'            => $category_id,
+                    'orderby'        => 'date',
+                    'order'          => 'DESC'
+                );
+
+                $other_posts = new WP_Query($args);
+
+                if ($other_posts->have_posts()) : ?>
+                    <section id="outras-noticias" class="container section-category show-after py-5">
+                        <div class="section-title white-title mb-5">
+                            <h2 class="fw-bold">Outras Notícias</h2>
+                        </div>
+                        <div class="row">
+                            <?php while ($other_posts->have_posts()) : $other_posts->the_post();
+                                $post_id      = $post->ID;
+                                $post_url     = get_the_permalink();
+                                $post_title   = get_the_title();
+                                $thumbnail    = get_the_post_thumbnail_url($post_id, 'full');
+                                $data_formatada = get_the_date('d/m/Y');
+                            ?>
+                                <div class="col-3">
+                                    <a href="<?= esc_url($post_url); ?>">
+                                        <article class="d-flex flex-column">
+                                            <figure>
+                                                <img src="<?= esc_url($thumbnail); ?>" alt="<?= $post_title; ?>" class="w-100">
+                                            </figure>
+                                            <div class="d-flex flex-column justify-content-between content-post">
+                                                <h3 class="mb-0"><?= esc_html($post_title); ?></h3>
+                                                <span class="post-time"><?= $data_formatada ?></span>
+                                            </div>
+                                        </article>
+                                    </a>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                    </section>
+                <?php 
+                endif; 
+                wp_reset_postdata();
+            ?>
         </div>
     </div>
 </section>

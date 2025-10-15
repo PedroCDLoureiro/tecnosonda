@@ -293,4 +293,13 @@
             }
         }
     }
+    #outras-noticias {
+        .section-title {
+            padding-left: 25px;
+            &::before {
+                left: 0;
+                height: 100%;
+            }
+        }
+    }
 }
