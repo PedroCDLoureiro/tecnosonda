@@ -1359,3 +1359,19 @@
         }
     }
 }
+.search {
+    #banner {
+        position: relative;
+        min-height: 50dvh;
+        z-index: 0;
+    }
+    h1 {
+        span {
+            color: variables.$secondary-color;
+        }
+    }
+    #todas-as-noticias {
+        position: relative;
+        z-index: 0;
+    }
+}

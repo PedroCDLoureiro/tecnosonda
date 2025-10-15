@@ -46,6 +46,7 @@ jQuery(document).ready(function ($) {
         .off("click")
         .on("click", function () {
             $("#div-search").toggleClass("active");
+            $("#input-search input").focus();
         });
 
     // Tamanho textos cards nossos serviços
