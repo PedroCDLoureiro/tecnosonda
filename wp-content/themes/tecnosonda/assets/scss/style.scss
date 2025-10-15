@@ -291,6 +291,9 @@ input[type="checkbox"] {
     color: variables.$font-color;
     text-decoration: none;
     font-weight: bold;
+    border: none;
+    background: transparent;
+    padding: 0;
     svg {
         width: 20px;
     }

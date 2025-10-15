@@ -411,4 +411,16 @@ jQuery(document).ready(function ($) {
             label.text("Incluir");
         }
     });
+
+    // Botão voltar
+    $(".btn-voltar").on("click", function (e) {
+        e.preventDefault();
+        console.log("clique");
+
+        if (document.referrer && document.referrer !== window.location.href) {
+            window.history.back();
+        } else {
+            window.location.href = "/";
+        }
+    });
 });
