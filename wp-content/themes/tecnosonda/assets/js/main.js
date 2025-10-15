@@ -363,7 +363,7 @@ jQuery(document).ready(function ($) {
 
     // Formatação H1 páginas internas
     $(
-        ".page h1, .page .title_servico, .single h1, .title-list h3, #page-category h1"
+        ".page h1, .page .title_servico, .single h1, .single h2, .title-list h3, #page-category h1"
     ).each(function () {
         var texto = $(this).text().trim();
         var palavras = texto.split(/\s+/); // separa por espaços, considerando múltiplos

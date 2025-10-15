@@ -105,6 +105,9 @@ ul:not(#menu-menu-principal, .sub-menu, .slick-dots) {
         }
     }
 }
+#top-page {
+    padding-top: 150px;
+}
 
 // Container topo singles/pages
 
@@ -279,7 +282,19 @@ input[type="checkbox"] {
     transform: scale(1.2);
     cursor: pointer;
 }
-
+.btn-voltar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: variables.$font-size-small;
+    line-height: variables.$line-height-font-size-small;
+    color: variables.$font-color;
+    text-decoration: none;
+    font-weight: bold;
+    svg {
+        width: 20px;
+    }
+}
 // Menu header
 
 .menu {

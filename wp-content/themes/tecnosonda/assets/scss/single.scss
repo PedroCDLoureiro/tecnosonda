@@ -1,8 +1,37 @@
 @use "variables";
 
-.single {
+#single {
+    position: relative;
+    z-index: 0;
+    .show-before {
+        &::before {
+            top: 50%;
+        }
+    }
+    #banner {
+        min-height: unset;
+        h2 {
+            span {
+                color: variables.$secondary-color;
+            }
+        }
+    }
+    #thumbnail {
+        img {
+            height: auto;
+            max-height: 525px;
+            object-fit: cover;
+        }
+    }
     .section-title {
         height: max-content;
+        h1 {
+            font-size: variables.$font-size-medium;
+            line-height: variables.$line-height-font-size-medium;
+            span {
+                color: variables.$font-color !important;
+            }
+        }
         p {
             font-weight: 300;
             margin-bottom: inherit;
@@ -12,6 +41,19 @@
         }
         &:before {
             height: 45%;
+        }
+    }
+    .content-post {
+        .section-title {
+            padding-left: 18px;
+            .data-publicacao {
+                font-size: variables.$font-size-small;
+                line-height: variables.$line-height-font-size-small;
+            }
+            &::before {
+                left: 0;
+                height: 100%;
+            }
         }
     }
     &#single-nossos-servicos {
