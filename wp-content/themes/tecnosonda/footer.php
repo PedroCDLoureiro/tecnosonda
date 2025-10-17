@@ -58,7 +58,7 @@
                                 </div>
                             <?php endif; ?>
                         </div>
-                        <div class="col-md-3 offset-md-1 col-12 d-flex flex-column links">
+                        <div class="col-md-3 offset-md-1 col-12 d-flex flex-md-column flex-row links">
                             <div class="institucional">
                                 <h3>Institucional</h3>
                                 <?php
