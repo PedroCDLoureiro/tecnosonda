@@ -10,14 +10,37 @@
     .submit-button {
         text-align: center;
     }
+    .section-title {
+        padding-left: 15px;
+    }
+}
+
+// Modal
+@media (max-width: 768px) {
+    .modal {
+        .modal-content {
+            .modal-body {
+                .items-slider {
+                    .slider-item {
+                        .texts {
+                            bottom: initial !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 // Header
 
-@media (min-width: 768px) {
-    #menu-mobile {
-        &.active {
-            left: -24px !important;
+@media (max-width: 991px) {
+    header {
+        #menu-mobile {
+            display: block;
+            &.active {
+                left: -24px !important;
+            }
         }
     }
 }
@@ -40,13 +63,13 @@
             #menu-mobile {
                 position: absolute;
                 top: 0;
-                left: 0;
+                left: 0 !important;
                 background: variables.$secondary-color;
                 width: 100dvw;
                 height: 100dvh;
                 padding: 15px 30px;
                 overflow: auto;
-                transform: translateX(-600px);
+                transform: translateX(-1200px);
                 transition: all ease 0.5s;
                 #menu-menu-principal-1 {
                     display: flex;
@@ -101,10 +124,115 @@
 
 // Banner
 
-#slider-topo {
-    .container {
-        .slider-text {
-            width: 75%;
+@media (max-width: 768px) {
+    #slider-topo {
+        .container {
+            .slider-text {
+                width: 75%;
+            }
+        }
+    }
+}
+
+// Nossos serviços
+
+@media (max-width: 768px) {
+    #nossos-servicos {
+        padding: 50px 0 20px 0;
+        #slider-nossos-servicos {
+            padding-top: 40px;
+            .row-items-servicos {
+                .item {
+                    &.active {
+                        width: 100%;
+                    }
+                    &.desactive {
+                        width: 75%;
+                    }
+                }
+            }
+        }
+        .content-servico {
+            .subservicos-wrapper {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+                grid-auto-columns: unset;
+                grid-auto-flow: row;
+                .subservico-item {
+                    h3 {
+                        font-size: variables.$font-size-small;
+                        line-height: variables.$line-height-font-size-small;
+                    }
+                }
+            }
+        }
+        .lista-cases {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+
+// Sobre a Tecnosonda
+
+@media (max-width: 768px) {
+    #sobre-anos-mercados {
+        .mercados-de-atuacao {
+            .item {
+                h3 {
+                    font-size: variables.$font-size-base;
+                    line-height: variables.$line-height-font-size-base;
+                }
+            }
+        }
+    }
+    #sobre-noticias {
+        padding: 50px 0;
+        #slider-sobre-noticias {
+            .row-items-noticias {
+                .item {
+                    width: 100%;
+                    height: 350px;
+                    a {
+                        .content-item {
+                            figure {
+                                height: 230px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Nossos valores
+
+@media (max-width: 768px) {
+    #nossos-valores {
+        .dados {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+
+            > *:nth-child(3) {
+                grid-column: 1 / -1;
+            }
+        }
+        .missao,
+        .valores,
+        .visao {
+            padding: 20px;
+        }
+    }
+}
+
+// Nossos clientes
+
+@media (max-width: 768px) {
+    #nossos-clientes {
+        padding: 50px 0;
+        .row-items-nossos-clientes {
+            grid-auto-columns: 30%;
         }
     }
 }

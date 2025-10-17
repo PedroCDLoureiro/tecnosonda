@@ -111,8 +111,9 @@ jQuery(document).ready(function ($) {
             12
         );
     }
-
-    atualizarTodos();
+    if ($(window).width() > 991) {
+        atualizarTodos();
+    }
 
     $(window).on("resize", function () {
         clearTimeout(window._ajusteTimeout);

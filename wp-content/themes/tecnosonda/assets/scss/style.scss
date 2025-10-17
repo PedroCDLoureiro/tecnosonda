@@ -405,7 +405,7 @@ input[type="checkbox"] {
     height: 60px;
     border-radius: 50%;
     transition: all ease 0.3s;
-    z-index: 0;
+    z-index: 1;
 }
 .slick-next:focus,
 .slick-prev:focus {

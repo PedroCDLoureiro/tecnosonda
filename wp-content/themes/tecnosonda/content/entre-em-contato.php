@@ -1,6 +1,6 @@
 <section id="entre-em-contato">
     <div class="container">
-        <div class="col-3 d-flex flex-column texts">
+        <div class="col-md-3 col-12 d-flex flex-column texts">
             <h2 class="mb-0">Entre Em <span>Contato</span></h2>
             <?php
             $args = array(
