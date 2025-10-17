@@ -28,7 +28,7 @@ ol,
 ul {
     padding-left: 1rem;
 }
-ul:not(#menu-menu-principal, .sub-menu, .slick-dots) {
+ul:not(#menu-menu-principal, #menu-menu-principal-1, .sub-menu, .slick-dots) {
     list-style: none;
     li {
         position: relative;
@@ -405,7 +405,7 @@ input[type="checkbox"] {
     height: 60px;
     border-radius: 50%;
     transition: all ease 0.3s;
-    z-index: 1;
+    z-index: 0;
 }
 .slick-next:focus,
 .slick-prev:focus {

@@ -11,3 +11,100 @@
         text-align: center;
     }
 }
+
+// Header
+
+@media (min-width: 768px) {
+    #menu-mobile {
+        &.active {
+            left: -24px !important;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #btn-header-orcamento {
+        display: none;
+    }
+    header {
+        .container {
+            #div-search {
+                left: 0;
+                padding: 0 15px;
+            }
+            .menu-header {
+                #secondary-menu-header {
+                    display: none;
+                }
+            }
+            #menu-mobile {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: variables.$secondary-color;
+                width: 100dvw;
+                height: 100dvh;
+                padding: 15px 30px;
+                overflow: auto;
+                transform: translateX(-600px);
+                transition: all ease 0.5s;
+                #menu-menu-principal-1 {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    li {
+                        a {
+                            font-size: variables.$font-size-base;
+                            color: variables.$primary-color;
+                            font-weight: bold;
+                        }
+                        ul {
+                            display: block;
+                            position: relative;
+                            background: transparent;
+                            padding: 5px 0;
+                            li {
+                                padding: 0;
+                            }
+                            &.sub-menu {
+                                a {
+                                    font-weight: lighter;
+                                }
+                            }
+                        }
+                        &::after {
+                            color: variables.$secondary-color;
+                        }
+                    }
+                }
+                #close-menu-mobile {
+                    position: fixed;
+                    top: 15px;
+                    right: 20px;
+                    z-index: 101;
+                    svg {
+                        width: 25px;
+                        path {
+                            fill: variables.$primary-color;
+                        }
+                    }
+                }
+                &.active {
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+}
+
+// Home
+
+// Banner
+
+#slider-topo {
+    .container {
+        .slider-text {
+            width: 75%;
+        }
+    }
+}

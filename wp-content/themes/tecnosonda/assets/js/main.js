@@ -14,17 +14,30 @@ jQuery(document).ready(function ($) {
     $("#icon-menu")
         .off("click")
         .on("click", function () {
-            $(".menu-header").toggleClass("active");
+            if ($(window).width() > 991) {
+                // DESKTOP
+                $(".menu-header").toggleClass("active");
 
-            if ($(".menu-header").hasClass("active")) {
-                $("#btn-header-orcamento").fadeOut(300, function () {
-                    $("#secondary-menu-header").fadeIn(300);
-                });
+                if ($(".menu-header").hasClass("active")) {
+                    $("#btn-header-orcamento").fadeOut(300, function () {
+                        $("#secondary-menu-header").fadeIn(300);
+                    });
+                } else {
+                    $("#secondary-menu-header").fadeOut(300, function () {
+                        $("#btn-header-orcamento").fadeIn(300);
+                    });
+                }
             } else {
-                $("#secondary-menu-header").fadeOut(300, function () {
-                    $("#btn-header-orcamento").fadeIn(300);
-                });
+                // MOBILE
+                $("#menu-mobile").toggleClass("active");
+                $("body").toggleClass("stop-scroll");
             }
+        });
+    $("#close-menu-mobile")
+        .off("click")
+        .on("click", function () {
+            $("#menu-mobile").toggleClass("active");
+            $("body").toggleClass("stop-scroll");
         });
 
     $(window).on("scroll", function () {
