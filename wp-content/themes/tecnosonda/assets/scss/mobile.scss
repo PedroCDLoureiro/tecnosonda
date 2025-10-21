@@ -273,9 +273,30 @@
     }
 }
 
-// Page Sobre Nós
+// Page Nossa história
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
+    #page-nossa-historia {
+        .container-marcos {
+            .marcos {
+                .marcos-wrapper {
+                    grid-auto-columns: 120% !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #page-nossa-historia {
+        .container-marcos {
+            .marcos {
+                .marcos-wrapper {
+                    grid-auto-columns: 200% !important;
+                }
+            }
+        }
+    }
 }
 
 // Footer
