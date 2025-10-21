@@ -299,6 +299,29 @@
     }
 }
 
+// Page Áreas de Atuação
+
+@media (max-width: 991px) {
+    #page-areas-de-atuacao {
+        #engenharia-civil {
+            .lista-engenharia-civil {
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 30px !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #page-areas-de-atuacao {
+        #engenharia-civil {
+            .lista-engenharia-civil {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+    }
+}
+
 // Footer
 
 @media (max-width: 768px) {
@@ -311,6 +334,9 @@
         .certificacoes {
             align-items: center;
             margin: 30px 0;
+        }
+        .links {
+            gap: 20px !important;
         }
     }
 }
