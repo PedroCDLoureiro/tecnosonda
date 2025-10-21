@@ -91,8 +91,16 @@ jQuery(document).ready(function ($) {
                 parseInt($(seletorReferencia).css("margin-left"), 10) + offset;
             $(seletorAlvo).css("padding-left", marginLeft);
 
-            $(".section-title").css("--before-left", -marginLeft / 2 + "px");
-            $("#entre-em-contato").css("--before-left", -marginLeft / 2 + "px");
+            if ($(window).width() > 767) {
+                $(".section-title").css(
+                    "--before-left",
+                    -marginLeft / 2 + "px"
+                );
+                $("#entre-em-contato").css(
+                    "--before-left",
+                    -marginLeft / 2 + "px"
+                );
+            }
         }
     }
 
@@ -111,9 +119,8 @@ jQuery(document).ready(function ($) {
             12
         );
     }
-    if ($(window).width() > 991) {
-        atualizarTodos();
-    }
+
+    atualizarTodos();
 
     $(window).on("resize", function () {
         clearTimeout(window._ajusteTimeout);

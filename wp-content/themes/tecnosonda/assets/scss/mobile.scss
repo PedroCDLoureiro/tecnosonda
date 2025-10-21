@@ -11,7 +11,25 @@
         text-align: center;
     }
     .section-title {
-        padding-left: 15px;
+        padding-left: 25px;
+        &::before {
+            left: 0 !important;
+        }
+    }
+    .black-mask-mob {
+        position: relative;
+        z-index: 0;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: #000000, $alpha: 0.54);
+            z-index: -1;
+        }
     }
 }
 
@@ -71,6 +89,7 @@
                 overflow: auto;
                 transform: translateX(-1200px);
                 transition: all ease 0.5s;
+                z-index: 1000;
                 #menu-menu-principal-1 {
                     display: flex;
                     flex-direction: column;
@@ -245,6 +264,11 @@
             padding-left: 15px;
         }
     }
+}
+
+// Page Sobre Nós
+
+@media (max-width: 768px) {
 }
 
 // Footer
