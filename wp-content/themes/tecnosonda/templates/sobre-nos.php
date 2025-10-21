@@ -30,14 +30,16 @@
         </div>
     </div>
     <div class="container-fluid container-text-image" style="background-image: url(<?= $imagem_diferenciais_compromisso['url']; ?>);background-repeat: no-repeat;background-position: top right;">
-        <div class="container black-mask-mob">
-            <div class="col-md-6 col-12 d-flex flex-column justify-content-center text-white sobre" style="height: <?= $imagem_diferenciais_compromisso['height'] . 'px'; ?>">
-                <div class="section-title white-title mb-3">
-                    <h2>
-                        Nossos <span>Diferenciais</span>
-                    </h2>
+        <div class="container-fluid black-mask-mob">
+            <div class="container">
+                <div class="col-md-6 col-12 d-flex flex-column justify-content-center text-white sobre" style="height: <?= $imagem_diferenciais_compromisso['height'] . 'px'; ?>">
+                    <div class="section-title white-title mb-3">
+                        <h2>
+                            Nossos <span>Diferenciais</span>
+                        </h2>
+                    </div>
+                    <?= $nossos_diferenciais; ?>
                 </div>
-                <?= $nossos_diferenciais; ?>
             </div>
         </div>
     </div>
