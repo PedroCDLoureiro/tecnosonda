@@ -56,9 +56,6 @@
     header {
         #menu-mobile {
             display: block;
-            &.active {
-                left: -24px !important;
-            }
         }
     }
 }
@@ -81,7 +78,7 @@
             #menu-mobile {
                 position: absolute;
                 top: 0;
-                left: 0 !important;
+                left: 0;
                 background: variables.$secondary-color;
                 width: 100dvw;
                 height: 100dvh;
@@ -134,6 +131,16 @@
                 &.active {
                     transform: translateX(0);
                 }
+            }
+        }
+    }
+}
+
+@media (min-width: 575px) {
+    header {
+        #menu-mobile {
+            &.active {
+                left: -24px;
             }
         }
     }
