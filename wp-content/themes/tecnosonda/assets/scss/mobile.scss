@@ -492,6 +492,18 @@
 
 @media (max-width: 991px) {
     #page-noticias {
+        #banner {
+            form {
+                width: 100% !important;
+            }
+        }
+        #destaques {
+            .section-title {
+                h2 {
+                    padding-left: 0 !important;
+                }
+            }
+        }
         #post-mais-recente {
             .post-title {
                 width: 75% !important;
@@ -505,6 +517,22 @@
         #post-mais-recente {
             .post-title {
                 width: 100% !important;
+            }
+        }
+        .section-category {
+            .top-category {
+                .section-title {
+                    h2 {
+                        font-size: variables.$font-size-medium;
+                    }
+                }
+            }
+        }
+        #destaques {
+            .right-post {
+                margin-top: 15px;
+                gap: 15px !important;
+                height: 500px;
             }
         }
     }

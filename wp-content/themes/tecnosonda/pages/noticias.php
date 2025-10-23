@@ -260,8 +260,8 @@
 
     <div id="parallax" class="container-fluid py-5" style="background-image: url('<?= esc_url($bg_parallax['url']); ?>');">
         <div class="container d-flex flex-column justify-content-center align-items-center">
-            <h2 class="text-white mb-3"><?= $titulo_final ?></h2>
-            <p class="text-white mb-0"><?= $texto_final ?></p>
+            <h2 class="text-white text-center mb-3"><?= $titulo_final ?></h2>
+            <p class="text-white text-center mb-0"><?= $texto_final ?></p>
         </div>
     </div>
 
