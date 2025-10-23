@@ -538,6 +538,31 @@
     }
 }
 
+// Page Todas as Notícias
+
+@media (max-width: 991px) {
+    .page-todas-as-noticias {
+        #banner {
+            .box-category {
+                padding: 50px !important;
+                form {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .page-todas-as-noticias {
+        #banner {
+            .box-category {
+                padding: 20px !important;
+            }
+        }
+    }
+}
+
 // Formulários
 
 @media (max-width: 768px) {
