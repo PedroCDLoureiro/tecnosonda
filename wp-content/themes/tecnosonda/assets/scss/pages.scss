@@ -344,7 +344,7 @@
                                 }
                             }
                         }
-                        &:nth-child(2) {
+                        &.item-0 {
                             top: -40px;
                             right: calc(100% - 50px);
                             .icone-item {
@@ -359,7 +359,7 @@
                                 }
                             }
                         }
-                        &:nth-child(3) {
+                        &.item-1 {
                             top: -40px;
                             left: calc(100% - 50px);
                             .icone-item {
@@ -374,7 +374,7 @@
                                 }
                             }
                         }
-                        &:nth-child(4) {
+                        &.item-2 {
                             top: 75px;
                             right: calc(100% + 20px);
                             .icone-item {
@@ -391,7 +391,7 @@
                                 }
                             }
                         }
-                        &:nth-child(5) {
+                        &.item-3 {
                             top: 75px;
                             left: calc(100% + 20px);
                             .icone-item {
@@ -408,7 +408,7 @@
                                 }
                             }
                         }
-                        &:nth-child(6) {
+                        &.item-4 {
                             top: 185px;
                             right: calc(100% + 20px);
                             .icone-item {
@@ -426,7 +426,7 @@
                                 }
                             }
                         }
-                        &:nth-child(7) {
+                        &.item-5 {
                             top: 185px;
                             left: calc(100% + 20px);
                             .icone-item {
@@ -444,7 +444,7 @@
                                 }
                             }
                         }
-                        &:nth-child(8) {
+                        &.item-6 {
                             bottom: -35px;
                             right: calc(100% - 50px);
                             .icone-item {
@@ -462,7 +462,7 @@
                                 }
                             }
                         }
-                        &:nth-child(9) {
+                        &.item-7 {
                             bottom: -35px;
                             left: calc(100% - 50px);
                             .icone-item {

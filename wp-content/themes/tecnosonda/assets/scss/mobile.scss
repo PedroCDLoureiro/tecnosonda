@@ -373,7 +373,10 @@
     #single-nossos-servicos {
         #slider-imagens-servico {
             button {
-                display: none;
+                display: none !important;
+            }
+            .slick-track {
+                gap: 0 !important;
             }
         }
         .container-text-image {
@@ -411,6 +414,67 @@
     }
 }
 
+// Page Soluções Integradas
+
+@media (max-width: 991px) {
+    #page-solucoes-integradas {
+        #descricao {
+            padding: 0 !important;
+        }
+        .container-text-image {
+            background-size: cover !important;
+        }
+        .sobre {
+            min-height: max-content;
+        }
+        .show-after {
+            padding-bottom: 0 !important;
+        }
+        #container-circulo {
+            padding: 40px 0 80px !important;
+            #circulo {
+                .item-circulo {
+                    &.item-0 {
+                        top: -48px !important;
+                    }
+                    &.item-1 {
+                        top: -48px !important;
+                    }
+                    &.item-2 {
+                        right: calc(100% + 24px) !important;
+                    }
+                    &.item-3 {
+                        left: calc(100% + 24px) !important;
+                    }
+                    &.item-4 {
+                        top: 170px !important;
+                    }
+                    &.item-5 {
+                        top: 170px !important;
+                    }
+                    &.item-6 {
+                        bottom: -40px !important;
+                    }
+                    &.item-7 {
+                        bottom: -40px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    #page-solucoes-integradas {
+        #container-circulo {
+            #circulo-nossos-servicos {
+                transform: scale(0.55);
+                #circulo {
+                    width: 70% !important;
+                }
+            }
+        }
+    }
+}
 // Footer
 
 @media (max-width: 768px) {

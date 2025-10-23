@@ -1,4 +1,4 @@
-<section id="entre-em-contato">
+<section id="entre-em-contato" class="black-mask-mob">
     <div class="container">
         <div class="col-md-3 col-12 d-flex flex-column texts">
             <h2 class="mb-0">Entre Em <span>Contato</span></h2>

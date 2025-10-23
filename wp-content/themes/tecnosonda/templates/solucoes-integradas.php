@@ -23,9 +23,9 @@
         </div>
     </div>
     <div id="descricao" class="container-fluid bg-primary show-before">
-        <div class="container-fluid container-text-image" style="background-image: url(<?= $imagem_topo['url']; ?>);background-repeat: no-repeat;background-position: top right;">
+        <div class="container-fluid container-text-image black-mask-mob" style="background-image: url(<?= $imagem_topo['url']; ?>);background-repeat: no-repeat;background-position: top right;">
             <div class="container">
-                <div class="col-6 d-flex flex-column justify-content-center text-white sobre" style="height: <?= $imagem_topo['height'] . 'px'; ?>">
+                <div class="col-lg-6 col-12 d-flex flex-column justify-content-center text-white sobre py-4" style="height: <?= $imagem_topo['height'] . 'px'; ?>">
                     <div class="section-title white-title">
                         <h2 class="mb-3"><?= $titulo_topo; ?></h2>
                         <?= $texto_topo; ?>
@@ -37,7 +37,7 @@
     <div id="container-circulo" class="container-fluid" style="background-image: url(<?= $background_nossos_servicos; ?>);background-repeat: no-repeat;background-position: center;">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-12 d-flex flex-column justify-content-center text-white sobre">
+                <div class="col-lg-4 col-12 d-flex flex-column justify-content-center text-white sobre">
                     <div class="section-title white-title mb-3">
                         <h2>
                             Nossos <span>SERVIÇOS</span>
@@ -45,8 +45,8 @@
                     </div>
                     <?= $texto_nossos_servicos; ?>
                 </div>
-                <div id="circulo-nossos-servicos" class="col-md-8 col-12 d-flex align-items-center justify-content-center">
-                    <div id="circulo" class="d-flex flex-column align-items-center">
+                <div id="circulo-nossos-servicos" class="col-lg-8 col-12 pt-lg-0 pt-5 d-flex align-items-center justify-content-center">
+                    <div id="circulo" class="d-lg-flex flex-lg-column align-items-center">
                         <div class="d-flex flex-column align-items-center content-circulo">
                             <h2><?= $titulo_circulo; ?></h2>
                             <svg id="aspas-inicio" data-name="Aspas início" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12.641" height="10.865" viewBox="0 0 12.641 10.865">
@@ -80,7 +80,7 @@
                             $titulo_item_circulo = get_sub_field('titulo_item_circulo');
                             $icone_item_circulo = get_sub_field('icone_item_circulo');
                         ?>
-                            <div class='item-circulo item-$index'>
+                            <div class='item-circulo item-<?= $index; ?>'>
                                 <span><?= $titulo_item_circulo; ?></span>
                                 <span class='icone-item'><img src="<?= $icone_item_circulo; ?>" alt="<?= $titulo_item_circulo; ?>" class="w-100"></span>
                             </div>
