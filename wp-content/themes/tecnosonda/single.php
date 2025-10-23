@@ -23,7 +23,7 @@
             <div id="thumbnail">
                 <?php the_post_thumbnail('full', array('class' => 'w-100')); ?>
             </div>
-            <div class="col-8 offset-2 py-5 text-white content-post">
+            <div class="col-lg-8 offset-lg-2 col-12 py-5 text-white content-post">
                 <div class="section-title white-title mb-5">
                     <h1 class="text-white fw-bold mb-0"><?php the_title(); ?></h1>
                     <span class="mt-2 text-white data-publicacao">
@@ -47,9 +47,12 @@
                 $other_posts = new WP_Query($args);
 
                 if ($other_posts->have_posts()) : ?>
-                    <section id="outras-noticias" class="container section-category show-after py-5">
-                        <div class="section-title white-title mb-5">
-                            <h2 class="fw-bold">Outras Notícias</h2>
+                    <section id="outras-noticias" class="container section-category show-after px-0 py-5">
+                        <div class="d-flex justify-content-between align-items-center mb-5 top-category">
+                            <div class="section-title white-title">
+                                <h2>Outras <span>Notícias</span></h2>    
+                            </div>
+                            <a href="<?= WP_URL ?>/todas-as-noticias" class="fw-bold">Mostrar tudo</a>
                         </div>
                         <div class="row">
                             <?php while ($other_posts->have_posts()) : $other_posts->the_post();
@@ -59,7 +62,7 @@
                                 $thumbnail    = get_the_post_thumbnail_url($post_id, 'full');
                                 $data_formatada = get_the_date('d/m/Y');
                             ?>
-                                <div class="col-3">
+                                <div class="col-lg-3 col-md-6 col-12">
                                     <a href="<?= esc_url($post_url); ?>">
                                         <article class="d-flex flex-column">
                                             <figure>

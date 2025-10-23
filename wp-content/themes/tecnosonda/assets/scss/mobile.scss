@@ -563,6 +563,17 @@
     }
 }
 
+// Single Notícias
+@media (max-width: 768px) {
+    #single-page {
+        #outras-noticias {
+            h2 {
+                font-size: variables.$font-size-medium !important;
+            }
+        }
+    }
+}
+
 // Formulários
 
 @media (max-width: 768px) {
