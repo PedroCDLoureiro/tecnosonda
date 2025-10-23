@@ -2,7 +2,7 @@
     get_header();
 ?>
 
-<section id="page-category" class="page page-todas-as-noticias">    
+<section id="page-category" class="page">
     <div id="banner" class="container-fluid bg-primary show-after after-top">
         <div id="top-page" class="container">
             <div class="row">

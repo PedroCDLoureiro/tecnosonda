@@ -538,10 +538,10 @@
     }
 }
 
-// Page Todas as Notícias
+// Page Todas as Notícias e Categorias
 
 @media (max-width: 991px) {
-    .page-todas-as-noticias {
+    #page-category {
         #banner {
             .box-category {
                 padding: 50px !important;
@@ -554,7 +554,7 @@
 }
 
 @media (max-width: 767px) {
-    .page-todas-as-noticias {
+    #page-category {
         #banner {
             .box-category {
                 padding: 20px !important;

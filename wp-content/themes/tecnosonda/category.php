@@ -17,7 +17,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#636363" d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z"/></svg>
                             </button>
                         </form>
-                        <div class="d-flex mt-4 others-categories">
+                        <div class="d-flex flex-wrap mt-4 others-categories">
                             <?php
     
                             $categories = get_categories(array(
@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div id="todas-as-noticias" class="container-fluid bg-primary show-before section-category">
+    <div id="todas-as-noticias" class="container-fluid bg-primary pt-lg-0 pt-5 show-before section-category">
         <div class="container-fluid show-after">
             <div class="container">
                 <?php if (have_posts()) : ?>
@@ -50,7 +50,7 @@
                             $thumbnail    = get_the_post_thumbnail_url($post_id, 'full');
                             $data_formatada = get_the_date('d/m/Y');
                         ?>
-                            <div class="col-3">
+                            <div class="col-lg-3 col-md-6 col-12">
                                 <a href="<?= esc_url($post_url); ?>">
                                     <article class="d-flex flex-column">
                                         <figure>
