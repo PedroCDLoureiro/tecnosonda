@@ -488,6 +488,28 @@
     }
 }
 
+// Page Notícias
+
+@media (max-width: 991px) {
+    #page-noticias {
+        #post-mais-recente {
+            .post-title {
+                width: 75% !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #page-noticias {
+        #post-mais-recente {
+            .post-title {
+                width: 100% !important;
+            }
+        }
+    }
+}
+
 // Formulários
 
 @media (max-width: 768px) {

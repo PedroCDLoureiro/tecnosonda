@@ -1206,7 +1206,7 @@
                             line-height: variables.$line-height-font-size-base;
                             color: variables.$font-color;
                             font-weight: 500;
-                            padding-left: 15px;
+                            padding: 0 15px;
                         }
                     }
                     &::before {
@@ -1248,7 +1248,7 @@
                     font-size: variables.$font-size-small;
                     line-height: variables.$line-height-font-size-small;
                     color: variables.$font-color;
-                    padding-left: 15px;
+                    padding: 0 15px;
                 }
             }
             .right-post {

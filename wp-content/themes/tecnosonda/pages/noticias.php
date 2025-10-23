@@ -90,7 +90,7 @@
                         $tempo_correto = human_time_diff($post_time, $current_time);
                         
                         if ($index === 0): ?>
-                            <div class="col-5 left-post">
+                            <div class="col-lg-5 col-md-6 col-12 left-post">
                                 <a href="<?= esc_url($post_url); ?>">
                                     <article class="h-100" style="--bg-img: url('<?= esc_url($thumbnail); ?>');">
                                         <?php if ($category_name): ?>
@@ -106,7 +106,7 @@
                                     </article>
                                 </a>
                             </div>
-                            <div class="col-7 d-flex flex-column right-post">
+                            <div class="col-lg-7 col-md-6 col-12 d-flex flex-column right-post">
                         <?php else: ?>
                             <a href="<?= esc_url($post_url); ?>">
                                 <article class="h-100" style="--bg-img: url('<?= esc_url($thumbnail); ?>');">
@@ -167,7 +167,7 @@
                         $data_formatada = get_the_date('d/m/Y');
                         
                     ?>
-                        <div class="col-3">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <a href="<?= esc_url($post_url); ?>">
                                 <article class="d-flex flex-column">
                                     <figure>
@@ -226,7 +226,7 @@
                         $data_formatada = get_the_date('d/m/Y');
                         
                     ?>
-                        <div class="col-3">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <a href="<?= esc_url($post_url); ?>">
                                 <article class="d-flex flex-column">
                                     <figure>
@@ -291,7 +291,7 @@
                         $data_formatada = get_the_date('d/m/Y');
                         
                     ?>
-                        <div class="col-3">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <a href="<?= esc_url($post_url); ?>">
                                 <article class="d-flex flex-column">
                                     <figure>
