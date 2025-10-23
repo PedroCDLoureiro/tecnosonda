@@ -41,17 +41,17 @@
         </div>
     <?php endif; ?>
     <!-- Descrição -->
-    <div class="container-fluid container-text-image show-before" 
+    <div class="container-fluid container-text-image show-before black-mask-mob" 
         style="background-image: url('<?= esc_url($thumbnail_url); ?>');
                 background-repeat: no-repeat;
                 background-position: top right;">
         <div class="container">
-            <div class="col-6 offset-xxl-3 d-flex flex-column pt-5 text-white sobre" 
+            <div class="col-lg-6 col-12 offset-xxl-3 d-flex flex-column pt-5 text-white sobre" 
                 style="height: <?= esc_attr($altura_thumbnail); ?>px;">
                 <div class="section-title white-title mb-4">
                     <?= wpautop(the_content()); ?>
                 </div>
-                <a href="<?= WP_URL; ?>/orcamento" class="btn btn-large secondary-btn mt-4 w-max-content">Saber mais</a>
+                <a href="<?= WP_URL; ?>/orcamento" class="btn btn-large secondary-btn mt-lg-2 mb-lg-0 mb-4 w-max-content">Saber mais</a>
             </div>
         </div>
     </div>

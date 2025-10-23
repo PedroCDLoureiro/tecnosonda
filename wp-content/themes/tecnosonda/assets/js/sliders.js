@@ -42,7 +42,13 @@ jQuery(document).ready(function ($) {
             {
                 breakpoint: 991,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 5,
+                },
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 3,
                 },
             },
         ],

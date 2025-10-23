@@ -84,10 +84,10 @@
                     }
                 }
                 .slick-prev {
-                    left: -35px;
+                    left: -28px;
                 }
                 .slick-next {
-                    right: -35px;
+                    right: -28px;
                 }
                 .slick-track {
                     display: flex;
@@ -111,13 +111,19 @@
                             transition: all ease 0.8s;
                         }
                         &.slick-active {
-                            width: calc(var(--container-width) / 4) !important;
                             &.slick-current {
-                                width: calc(
-                                    var(--container-width) / 2
-                                ) !important;
                                 h3 {
                                     opacity: 1;
+                                }
+                            }
+                            @media (min-width: 991px) {
+                                width: calc(
+                                    var(--container-width) / 4
+                                ) !important;
+                                &.slick-current {
+                                    width: calc(
+                                        var(--container-width) / 2
+                                    ) !important;
                                 }
                             }
                         }
@@ -185,6 +191,7 @@
                 }
                 .options-subservicos {
                     display: flex;
+                    flex-wrap: wrap;
                     justify-content: flex-start;
                     gap: 15px;
                     button {
