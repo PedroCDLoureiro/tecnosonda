@@ -43,6 +43,10 @@
             z-index: -1;
         }
     }
+    .btn-large {
+        font-size: variables.$font-size-small !important;
+        padding: 6px 24px !important;
+    }
 }
 
 // Modal
@@ -484,6 +488,24 @@
             .section-title {
                 width: 100% !important;
             }
+        }
+    }
+}
+
+// Page Certificações
+
+@media (max-width: 1100px) {
+    #page-certificacoes {
+        #banner {
+            min-height: 100dvh !important;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #page-certificacoes {
+        #banner {
+            min-height: 150dvh !important;
         }
     }
 }

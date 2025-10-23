@@ -556,16 +556,20 @@
     &#page-certificacoes {
         #banner {
             z-index: 0;
-            .section-title {
-                height: inherit;
-                max-width: 80%;
-                padding-top: 20px;
-                h1 {
-                    margin-bottom: 15px;
-                }
-                p {
-                    font-size: variables.$font-size-base;
-                    line-height: variables.$line-height-font-size-base;
+            .texts {
+                top: 115px;
+                bottom: initial !important;
+                .section-title {
+                    height: inherit;
+                    max-width: 80%;
+                    padding-top: 20px;
+                    h1 {
+                        margin-bottom: 15px;
+                    }
+                    p {
+                        font-size: variables.$font-size-base;
+                        line-height: variables.$line-height-font-size-base;
+                    }
                 }
             }
         }
@@ -587,6 +591,11 @@
             h2 {
                 font-size: variables.$font-size-medium;
                 line-height: variables.$line-height-font-size-medium;
+            }
+            .image-esg {
+                img {
+                    max-width: 100%;
+                }
             }
         }
     }
