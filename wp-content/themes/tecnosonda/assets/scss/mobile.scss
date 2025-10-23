@@ -475,6 +475,34 @@
         }
     }
 }
+
+// Page Orçamento
+
+@media (max-width: 768px) {
+    #page-orcamento {
+        #container-form {
+            .section-title {
+                width: 100% !important;
+            }
+        }
+    }
+}
+
+// Formulários
+
+@media (max-width: 768px) {
+    .wpcf7 {
+        form {
+            .form-row {
+                &.cols-1-2,
+                &.cols-3 {
+                    grid-template-columns: repeat(1, 1fr) !important;
+                }
+            }
+        }
+    }
+}
+
 // Footer
 
 @media (max-width: 768px) {

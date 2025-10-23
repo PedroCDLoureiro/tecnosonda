@@ -428,7 +428,11 @@ jQuery(document).ready(function ($) {
         const fileName = $(this).val().split("\\").pop();
         const label = $(".upload-archives label");
         if (fileName) {
-            label.html("<strong>" + fileName + "</strong> incluído");
+            let displayName = fileName;
+            if (displayName.length > 20) {
+                displayName = displayName.slice(0, 20) + "...";
+            }
+            label.html("<strong>" + displayName + "</strong> incluído");
         } else {
             label.text("Incluir");
         }
