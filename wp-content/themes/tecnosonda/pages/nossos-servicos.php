@@ -40,12 +40,12 @@
 
             if ($i % 2 == 0) {
                 $posicao_background = 'top left';
-                $coluna_class = 'col-6 offset-6 d-flex flex-column justify-content-center text-white sobre';
-                $container_class = 'container-fluid container-text-image py-5';
+                $coluna_class = 'col-lg-6 offset-lg-6 col-12 d-flex flex-column justify-content-center text-white sobre';
+                $container_class = 'container-fluid container-text-image pt-5 black-mask-mob';
             } else {
                 $posicao_background = 'top right';
-                $coluna_class = 'col-6 d-flex flex-column pt-5 text-white sobre';
-                $container_class = 'container-fluid container-text-image';
+                $coluna_class = 'col-lg-6 col-12 d-flex flex-column pt-5 text-white sobre';
+                $container_class = 'container-fluid container-text-image black-mask-mob';
             }
 
             if ($i === 1) {
@@ -58,6 +58,9 @@
                 style="background-image: url('<?= esc_url($thumbnail_url); ?>');
                         background-repeat: no-repeat;
                         background-position: <?= esc_attr($posicao_background); ?>;">
+                <?php if($i === $total_posts) : ?>
+                    <div class="container-fluid black-mask-mob">
+                <?php endif; ?>
                 <div class="container">
                     <div class="<?= esc_attr($coluna_class); ?>" 
                         style="height: <?= esc_attr($altura_thumbnail); ?>px;">
@@ -66,9 +69,12 @@
                             <h3 class="mb-0"><?= esc_html($subtitulo_servico); ?></h3>
                         </div>
                         <?= wp_kses_post(wpautop($texto_servico)); ?>
-                        <a href="<?= esc_url($post_url); ?>" class="btn btn-large secondary-btn mt-4 w-max-content">Saber mais</a>
+                        <a href="<?= esc_url($post_url); ?>" class="btn btn-large secondary-btn mt-lg-2 mb-lg-0 mb-4 w-max-content">Saber mais</a>
                     </div>
                 </div>
+                <?php if($i === $total_posts) : ?>
+                    </div>
+                <?php endif; ?>
             </div>
     <?php
         endwhile;
