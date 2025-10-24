@@ -510,6 +510,77 @@
     }
 }
 
+// Page ESG
+
+@media (max-width: 991px) {
+    #page-esg {
+        #banner {
+            .section-title {
+                .descricao {
+                    width: 100% !important;
+                }
+            }
+        }
+        #container-listas {
+            #listas {
+                width: 100% !important;
+                .lista {
+                    padding: 25px 15px !important;
+                }
+            }
+        }
+        #container-images {
+            .images-dados {
+                img {
+                    max-width: 300px;
+                }
+            }
+        }
+        #banner-certificacao {
+            .content {
+                width: 100% !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #page-esg {
+        #container-listas {
+            #listas {
+                grid-template-columns: repeat(2, 1fr) !important;
+                .item-list {
+                    font-size: variables.$font-size-small !important;
+                    line-height: variables.$line-height-font-size-small !important;
+                }
+            }
+        }
+        #container-images {
+            .dados {
+                h3 {
+                    text-align: center;
+                }
+            }
+            .images-dados {
+                img {
+                    max-width: 150px;
+                }
+            }
+        }
+        #banner-certificacao {
+            .content {
+                .text {
+                    text-align: center;
+                    &::before {
+                        left: 50% !important;
+                        transform: translateX(-50%);
+                    }
+                }
+            }
+        }
+    }
+}
+
 // Page Notícias
 
 @media (max-width: 991px) {

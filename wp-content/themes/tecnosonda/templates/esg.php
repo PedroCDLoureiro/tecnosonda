@@ -24,7 +24,7 @@
     <div id="banner" class="container-fluid bg-primary show-after after-top">
         <div id="top-page" class="container">
             <div class="row">
-                <div class="col-md-7 col-12 left-top">
+                <div class="col-lg-7 col-md-6 col-12 left-top">
                     <div class="section-title white-title">
                         <h1 class="mb-4"><?= $titulo_pagina; ?></h1>
                         <div class="descricao">
@@ -57,7 +57,7 @@
                         <?php endif; ?>
                     </div>
                 </div>
-                <div class="col-md-5 col-12 right-top">
+                <div class="col-lg-5 col-md-6 col-12 right-top">
                     <?php if($imagem_topo) : ?>
                         <img src="<?= $imagem_topo ?>" alt="<?= $titulo_pagina ?>">
                     <?php endif; ?>
@@ -114,8 +114,8 @@
                 <div class="col-md-6 col-12 image">
                     <img src="<?= $imagem_dados; ?>" class="w-100">
                 </div>
-                <div class="col-md-5 offset-md-1 col-12 d-flex align-items-center">
-                    <div class="d-grid dados">
+                <div class="col-lg-5 offset-lg-1 col-md-6 col-12 d-flex align-items-center">
+                    <div class="d-grid mt-md-0 mt-3 dados">
                         <h3 class="d-flex flex-column empregos-diretos">
                             <span>+<?= $empregos_diretos; ?></span>
                             <span>empregos diretos</span>
@@ -147,7 +147,7 @@
     </div>
     <div id="banner-certificacao" class="container-fluid black-mask" style="background-image: url(<?= $banner_final['url']; ?>);background-repeat: no-repeat;background-position: top center;background-size: cover;">
         <div class="container d-flex align-items-center justify-content-center" style="height: <?= $banner_final['height'] . 'px'; ?>">
-            <div class="d-flex align-items-center justify-content-center text-white content">
+            <div class="d-flex flex-md-row flex-column align-items-center justify-content-center text-white content">
                 <img src="<?= $logo_banner_final ?>">
                 <div class="text">
                     <?= $texto_banner_final; ?>

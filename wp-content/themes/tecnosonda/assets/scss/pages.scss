@@ -649,6 +649,10 @@
                     height: 108%;
                 }
             }
+            img {
+                max-width: 100%;
+                object-fit: contain;
+            }
         }
         #container-listas {
             position: relative;
@@ -717,6 +721,7 @@
             .dados {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 50px 30px;
+                width: 100%;
                 .full {
                     grid-column: 1 / -1;
                 }
