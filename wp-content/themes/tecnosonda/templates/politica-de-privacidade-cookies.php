@@ -16,7 +16,7 @@
                 <div class="section-title white-title">
                     <h1 class="mb-0 text-uppercase fw-bold">Política de <span>Privacidade</span></h1>
                 </div>
-                <div class="text-white mt-3">
+                <div class="text-white mt-lg-3 mt-4">
                     <?= $texto_politica_de_privacidade; ?>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                 <div class="section-title black-title">
                     <h2 class="mb-0 text-uppercase fw-bold">Política de <span>Cookies</span></h1>
                 </div>
-                <div class="text-black mt-3">
+                <div class="text-black mt-lg-3 mt-4">
                     <?= $texto_politica_de_cookies; ?>
                 </div>
             </div>
