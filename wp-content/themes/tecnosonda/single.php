@@ -31,6 +31,19 @@
                     </span>
                 </div>
                 <?php the_content(); ?>
+                <div class="d-flex justify-content-end mt-4 share-post">
+                    <button id="btn-share-post">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22">
+                            <g id="Group_263" data-name="Group 263" transform="translate(-2 -1)">
+                                <circle id="Ellipse_33" data-name="Ellipse 33" cx="3" cy="3" r="3" transform="translate(15 2)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                <circle id="Ellipse_34" data-name="Ellipse 34" cx="3" cy="3" r="3" transform="translate(3 9)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                <circle id="Ellipse_35" data-name="Ellipse 35" cx="3" cy="3" r="3" transform="translate(15 16)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                <line id="Line_8" data-name="Line 8" x2="6.83" y2="3.98" transform="translate(8.59 13.51)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                <line id="Line_9" data-name="Line 9" x1="6.82" y2="3.98" transform="translate(8.59 6.51)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
             </div>
             <?php 
                 $category_id = !empty($categories) ? $categories[0]->term_id : 0;

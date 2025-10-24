@@ -28,7 +28,13 @@ ol,
 ul {
     padding-left: 1rem;
 }
-ul:not(#menu-menu-principal, #menu-menu-principal-1, .sub-menu, .slick-dots) {
+ul:not(
+        #menu-menu-principal,
+        #menu-menu-principal-1,
+        #menu-menu-principal-2,
+        .sub-menu,
+        .slick-dots
+    ) {
     list-style: none;
     li {
         position: relative;
@@ -56,6 +62,13 @@ input {
 }
 .bg-primary {
     background-color: variables.$primary-color !important;
+}
+.bg-primary-degrad {
+    background: linear-gradient(
+        180deg,
+        #2b4a3b 0%,
+        variables.$primary-color 100%
+    ) !important;
 }
 .bg-gray {
     background-color: #d9d9d9 !important;
@@ -242,11 +255,12 @@ input {
 }
 .submit-btn {
     background-color: #fff;
+    border-color: #fff;
     color: variables.$primary-color;
     font-weight: 500;
     &:hover {
-        background-color: variables.$primary-color;
-        color: #fff;
+        background-color: variables.$secondary-color;
+        color: variables.$primary-color;
     }
 }
 .midia {
@@ -301,6 +315,11 @@ input[type="checkbox"] {
         width: 20px;
     }
 }
+#btn-share-post {
+    border: none;
+    background: none;
+}
+
 // Menu header
 
 .menu {
@@ -405,7 +424,7 @@ input[type="checkbox"] {
     height: 60px;
     border-radius: 50%;
     transition: all ease 0.3s;
-    z-index: 1;
+    z-index: 0;
 }
 .slick-next:focus,
 .slick-prev:focus {

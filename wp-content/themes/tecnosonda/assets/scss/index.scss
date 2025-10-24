@@ -12,7 +12,7 @@
             width: 100%;
             height: 100vh;
             object-fit: cover;
-            object-position: top;
+            object-position: center;
         }
     }
     .container {
@@ -261,7 +261,7 @@
 }
 #nossos-valores {
     background-color: #2b4a3b;
-    padding: 40px 0 60px 0;
+    padding: 40px 0 0 0;
     .dados {
         display: flex;
         justify-content: space-evenly;
@@ -285,51 +285,59 @@
             }
         }
     }
-    .missao,
-    .visao,
-    .valores {
-        background-color: rgba(0, 0, 0, 0.22);
-        color: #fff;
-        padding: 30px 40px;
-        border-radius: 5px;
-        flex: 1;
-        h3 {
-            font-size: variables.$font-size-large;
-            line-height: variables.$line-height-font-size-large;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-bottom: 25px;
-            span {
-                color: variables.$secondary-color;
+    #missao-e-valores {
+        position: relative;
+        z-index: 0;
+        padding-bottom: 60px;
+        .missao,
+        .visao,
+        .valores {
+            background-color: rgba(0, 0, 0, 0.22);
+            color: #fff;
+            padding: 30px 40px;
+            border-radius: 5px;
+            flex: 1;
+            h3 {
+                font-size: variables.$font-size-large;
+                line-height: variables.$line-height-font-size-large;
+                text-transform: uppercase;
+                font-weight: bold;
+                margin-bottom: 25px;
+                span {
+                    color: variables.$secondary-color;
+                }
             }
         }
-    }
-    .missao-visao {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 16px;
-    }
-    .nossos-valores {
-        display: flex;
-        .valores {
-            .lista-nossos-valores {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                .item {
+        .missao-visao {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .nossos-valores {
+            display: flex;
+            .valores {
+                .lista-nossos-valores {
+                    display: flex;
+                    flex-direction: column;
                     gap: 10px;
-                    svg {
-                        min-width: 15px;
-                        width: 15px;
-                    }
-                    h4 {
-                        font-size: variables.$font-size-base;
-                        line-height: variables.$line-height-font-size-base;
-                        font-weight: lighter;
+                    .item {
+                        gap: 10px;
+                        svg {
+                            min-width: 15px;
+                            width: 15px;
+                        }
+                        h4 {
+                            font-size: variables.$font-size-base;
+                            line-height: variables.$line-height-font-size-base;
+                            font-weight: lighter;
+                        }
                     }
                 }
             }
+        }
+        &::after {
+            display: none;
         }
     }
 }

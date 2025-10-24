@@ -42,20 +42,16 @@ jQuery(document).ready(function ($) {
 
     $(window).on("scroll", function () {
         if ($(this).scrollTop() > 100) {
+            $("#menu-scroll").addClass("active");
             $("header").addClass("menu-scroll");
-            $("#btn-header-orcamento")
-                .removeClass("transparent-btn")
-                .addClass("secondary-btn");
         } else {
+            $("#menu-scroll").removeClass("active");
             $("header").removeClass("menu-scroll");
-            $("#btn-header-orcamento")
-                .removeClass("secondary-btn")
-                .addClass("transparent-btn");
         }
     });
 
     // Barra busca
-    $("#icon-search svg")
+    $(".icon-search svg")
         .off("click")
         .on("click", function () {
             $("#div-search").toggleClass("active");
@@ -387,25 +383,38 @@ jQuery(document).ready(function ($) {
     $(
         ".page h1, .page .title_servico, .single h1, .single h2, .title-list h3, #page-category h1"
     ).each(function () {
-        var texto = $(this).text().trim();
-        var palavras = texto.split(/\s+/); // separa por espaços, considerando múltiplos
+        var $el = $(this);
+        var texto = $el.text().trim();
+        var palavras = texto.split(/\s+/);
         var total = palavras.length;
 
         if (total < 2) return; // só 1 palavra, não faz nada
 
-        var inicioSegundaParte;
-        if (total === 2) {
-            inicioSegundaParte = 1; // pega a última palavra
-        } else if (total === 3) {
-            inicioSegundaParte = 1; // pega as duas últimas palavras
+        // Se o título tiver a classe .broken-title
+        if ($el.is(".page h1.broken-title, .single h1.broken-title")) {
+            // Divide as palavras pela metade
+            var metade = Math.floor(total / 2);
+            // Se for ímpar, a segunda parte fica maior
+            var inicioSegundaParte = metade;
+
+            // Se for ímpar, dá a palavra "extra" para a segunda metade
+            if (total % 2 !== 0) {
+                inicioSegundaParte = metade; // a divisão natural já deixa a segunda parte maior
+            }
+
+            var primeiraParte = palavras.slice(0, inicioSegundaParte).join(" ");
+            var segundaParte = palavras.slice(inicioSegundaParte).join(" ");
+
+            $el.html(primeiraParte + "<br><span>" + segundaParte + "</span>");
         } else {
-            inicioSegundaParte = Math.ceil(total / 2); // divide pela metade
+            // Comportamento normal para outros títulos
+            var inicioSegundaParte = total === 3 ? 1 : Math.ceil(total / 2);
+
+            var primeiraParte = palavras.slice(0, inicioSegundaParte).join(" ");
+            var segundaParte = palavras.slice(inicioSegundaParte).join(" ");
+
+            $el.html(primeiraParte + " <span>" + segundaParte + "</span>");
         }
-
-        var primeiraParte = palavras.slice(0, inicioSegundaParte).join(" ");
-        var segundaParte = palavras.slice(inicioSegundaParte).join(" ");
-
-        $(this).html(primeiraParte + " <span>" + segundaParte + "</span>");
     });
 
     // Botões Subserviços (interna)
@@ -447,6 +456,50 @@ jQuery(document).ready(function ($) {
             window.history.back();
         } else {
             window.location.href = "/";
+        }
+    });
+
+    // Botão compartilhar post
+
+    $(document).on("click", "#btn-share-post", function () {
+        const postTitle = $("h1").first().text().trim();
+        const postUrl = window.location.href;
+
+        // Se o navegador suporta o Web Share API (mobile, Safari, Chrome, Edge modernos)
+        if (navigator.share) {
+            navigator
+                .share({
+                    title: postTitle,
+                    text: "Confira esta notícia:",
+                    url: postUrl,
+                })
+                .then(() => {
+                    console.log("Post compartilhado com sucesso!");
+                })
+                .catch((err) => {
+                    console.error("Erro ao compartilhar:", err);
+                });
+        }
+        // Fallback para desktop ou navegadores sem suporte
+        else {
+            // Cria um input temporário para copiar o link
+            const tempInput = $("<input>");
+            $("body").append(tempInput);
+            tempInput.val(postUrl).select();
+            document.execCommand("copy");
+            tempInput.remove();
+
+            // Feedback visual (você pode ajustar o estilo)
+            const $btn = $("#btn-share-post");
+            const originalSvg = $btn.html();
+
+            $btn.html(
+                '<span style="color:#fff;font-size:12px;">Link copiado!</span>'
+            );
+
+            setTimeout(() => {
+                $btn.html(originalSvg);
+            }, 2000);
         }
     });
 });

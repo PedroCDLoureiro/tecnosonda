@@ -12,7 +12,7 @@
     <div id="banner" class="container-fluid">
         <img src="<?= $banner; ?>" alt="<?= $titulo_pagina; ?>" class="w-100">
         <div class="texts">
-            <h1><?= $titulo_pagina; ?></h1>
+            <h1 class="broken-title"><?= $titulo_pagina; ?></h1>
         </div>
     </div>
     <?php

@@ -1,7 +1,7 @@
 @use "variables";
 
 header {
-    position: absolute;
+    position: fixed;
     z-index: 1;
     left: 50%;
     transform: translateX(-50%);
@@ -20,7 +20,7 @@ header {
             #btn-header-orcamento {
                 margin-right: 15px;
             }
-            #icon-search {
+            .icon-search {
                 width: 20px;
                 border-right: 1px solid #ffffff30;
                 padding: 30px 25px 30px 0;
@@ -107,12 +107,14 @@ header {
             }
         }
     }
-    &.menu-scroll {
+    #menu-scroll {
         position: fixed;
-        top: 0;
+        top: -90px;
         background-color: #fff;
         color: variables.$primary-color;
+        width: 100%;
         z-index: 100;
+        transition: all ease 0.3s;
         svg {
             path {
                 fill: variables.$primary-color;
@@ -120,14 +122,12 @@ header {
         }
         .container {
             .menu-header {
-                #icon-search {
-                    border-color: variables.$primary-color;
-                }
-                #icon-menu {
-                    #icon-menu-top,
-                    #icon-menu-bottom {
-                        &:before {
-                            background-color: variables.$primary-color;
+                .icon-search {
+                    border: none;
+                    padding: 20px 25px 20px 0;
+                    svg {
+                        path {
+                            fill: variables.$secondary-color;
                         }
                     }
                 }
@@ -148,10 +148,34 @@ header {
                         color: variables.$primary-color;
                     }
                 }
+                .button-orcamento {
+                    position: relative;
+                    padding: 0 19.5px;
+                    margin-right: 19.5px;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: -10%;
+                        right: 0;
+                        width: 1px;
+                        height: 120%;
+                        background-color: variables.$secondary-color;
+                    }
+                }
             }
+        }
+        &.active {
+            top: 0;
         }
     }
     #menu-mobile {
         display: none;
+    }
+    &.menu-scroll {
+        border: none;
+        .row-menu-header {
+            opacity: 0;
+            z-index: -1;
+        }
     }
 }
