@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div id="tecnosonda-valoriza" class="col-md-6 offset-md-6 col-12">
+        <div id="tecnosonda-valoriza" class="col-lg-6 offset-lg-6 col-12">
             <?php if($imagem_topo) : ?>
                 <img src="<?= $imagem_topo ?>" alt="<?= $titulo_pagina ?>">
             <?php endif; ?>
@@ -38,7 +38,7 @@
     </div>
     <div id="entrar-em-contato" class="container-fluid bg-primary show-after">
         <div class="container">
-            <div class="col-md-7 col-12 d-flex flex-column justify-content-center align-items-center box-contato">
+            <div class="col-lg-7 col-12 d-flex flex-column justify-content-center align-items-center box-contato">
                 <?php if($texto_final) : ?>
                     <div class="text-white text-center mb-1">
                         <?= $texto_final ?>

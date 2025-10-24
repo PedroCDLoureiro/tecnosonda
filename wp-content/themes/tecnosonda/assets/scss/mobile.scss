@@ -654,6 +654,39 @@
     }
 }
 
+// Page Trabalhe Conosco
+
+@media (max-width: 991px) {
+    #page-trabalhe-conosco {
+        #tecnosonda-valoriza {
+            padding: 15px !important;
+            margin-top: 50px !important;
+            h2 {
+                padding-left: 0 !important;
+            }
+            img {
+                position: relative !important;
+                top: initial !important;
+                right: initial !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #page-trabalhe-conosco {
+        #entrar-em-contato {
+            padding-top: 40px !important;
+            .box-contato {
+                padding: 30px !important;
+            }
+        }
+    }
+}
+
 // Page Notícias
 
 @media (max-width: 991px) {
