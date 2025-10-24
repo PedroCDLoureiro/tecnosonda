@@ -581,6 +581,43 @@
     }
 }
 
+// Page ISO
+
+@media (max-width: 991px) {
+    #page-iso {
+        #banner {
+            .section-title {
+                .descricao {
+                    width: 100% !important;
+                }
+            }
+        }
+        #container-listas {
+            #listas {
+                grid-template-columns: repeat(2, 1fr) !important;
+                width: 100% !important;
+                .lista {
+                    padding: 25px 15px !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #page-esg {
+        #container-listas {
+            #listas {
+                grid-template-columns: repeat(1, 1fr) !important;
+                .item-list {
+                    font-size: variables.$font-size-small !important;
+                    line-height: variables.$line-height-font-size-small !important;
+                }
+            }
+        }
+    }
+}
+
 // Page Notícias
 
 @media (max-width: 991px) {

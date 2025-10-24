@@ -26,7 +26,7 @@
     <div id="container-listas" class="container-fluid bg-primary">
         <div class="container">
             <?php if (have_rows('isos')) : ?>
-                <div id="listas" class="d-grid">
+                <div id="listas" class="d-grid pt-lg-0 pt-5">
                     <?php while (have_rows('isos')) : the_row(); 
                         $titulo_lista = get_sub_field('titulo_lista');
                         $subtitulo_lista = get_sub_field('subtitulo_lista');

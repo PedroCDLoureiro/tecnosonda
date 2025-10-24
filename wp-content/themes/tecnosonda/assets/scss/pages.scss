@@ -833,6 +833,9 @@
                         line-height: variables.$line-height-font-size-small;
                         margin: 0;
                     }
+                    img {
+                        max-width: 100%;
+                    }
                 }
             }
         }
