@@ -29,14 +29,14 @@
         </div>
         <div id="seja-nosso-parceiro">
             <div class="d-grid images-text">
-                <div class="image1 pt-5">
+                <div class="image1 pt-lg-5">
                     <img src="<?= $imagem_1_topo ?>" alt="<?= $titulo_pagina ?>" class="w-100">
                 </div>
                 <div class="d-flex flex-column image23">
                     <img src="<?= $imagem_2_topo ?>" alt="<?= $titulo_pagina ?>" class="w-100 pb-3">
                     <img src="<?= $imagem_3_topo ?>" alt="<?= $titulo_pagina ?>" class="w-100">
                 </div>
-                <div class="text mt-4">
+                <div class="text mt-lg-4">
                     <div class="section-title white-title">
                         <h2 class="text-uppercase mb-0">Seja nosso parceiro: Torne-se <span>um fornecedor de excelência</span></h2>
                     </div>
@@ -72,7 +72,7 @@
     </div>
     <div id="proximos-passos" class="container-fluid" style="background-image: url('<?= esc_url($background_proximos_passos); ?>'); background-repeat: no-repeat; background-position: center; background-size: cover;">
         <div class="container">
-            <div class="col-md-8 col-12 passos">
+            <div class="col-lg-8 col-12 passos">
                 <div class="section-title">
                     <h2 class="text-uppercase mb-0">Próximos <span>passos</span></h2>
                 </div>
