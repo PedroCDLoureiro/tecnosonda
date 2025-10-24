@@ -23,7 +23,7 @@
         <div id="banner" class="container-fluid bg-primary show-after after-top">
             <div id="top-page" class="container">
                 <div class="row">
-                    <div class="col-md-7 col-12 left-top">
+                    <div class="col-lg-7 col-12 left-top">
                         <div class="section-title white-title">
                             <h1 class="mb-4"><?= $titulo_pagina; ?></h1>
                             <div class="descricao">
@@ -32,7 +32,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-12 email mt-5 mb-4">
+                    <div class="col-md-6 col-12 email mt-5 mb-md-4 mb-0">
                         <div class="content-dados bg-gray">
                             <div class="d-flex flex-column title-dados">
                                 <h3 class="d-flex align-items-center mb-1 fw-bold">
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-12 telefone mt-5 mb-4">
+                    <div class="col-md-6 col-12 telefone mt-md-5 mt-4 mb-4">
                         <div class="content-dados bg-gray">
                             <div class="d-flex flex-column justify-content-between title-dados">
                                 <h3 class="d-flex align-items-center mb-1 fw-bold">

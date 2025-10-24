@@ -63,6 +63,15 @@
                 }
             }
         }
+        &.contactModal {
+            .modal-content {
+                width: 90dvw;
+                left: 5dvw;
+                .modal-body {
+                    padding: 15px;
+                }
+            }
+        }
     }
 }
 
@@ -612,6 +621,33 @@
                 .item-list {
                     font-size: variables.$font-size-small !important;
                     line-height: variables.$line-height-font-size-small !important;
+                }
+            }
+        }
+    }
+}
+
+// Page Fale Conosco
+
+@media (max-width: 991px) {
+    #page-fale-conosco {
+        #top-page {
+            .descricao {
+                width: 100% !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #page-fale-conosco {
+        .content-dados {
+            padding: 15px !important;
+        }
+        .localizacao {
+            .content-dados {
+                .title-dados {
+                    height: max-content;
                 }
             }
         }
