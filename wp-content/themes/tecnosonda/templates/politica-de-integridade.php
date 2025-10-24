@@ -15,7 +15,7 @@
                 <div class="section-title white-title">
                     <h1 class="mb-0 text-uppercase fw-bold">Política de <span>Integridade</span></h1>
                 </div>
-                <div class="text-white mt-3">
+                <div class="text-white mt-lg-3 mt-4">
                     <?= $texto_politica_de_integridade; ?>
                 </div>
             </div>
