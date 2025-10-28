@@ -82,6 +82,30 @@
         #menu-mobile {
             display: block;
         }
+        #menu-scroll {
+            display: none;
+        }
+        &.menu-scroll {
+            background: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1882352941);
+            svg {
+                path {
+                    fill: variables.$primary-color;
+                }
+            }
+            #icon-menu {
+                span {
+                    &::before {
+                        background-color: variables.$primary-color !important;
+                    }
+                }
+            }
+            .row-menu-header {
+                position: relative;
+                opacity: 1;
+                z-index: 1;
+            }
+        }
     }
 }
 
