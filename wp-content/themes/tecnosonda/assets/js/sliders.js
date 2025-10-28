@@ -6,6 +6,14 @@ jQuery(document).ready(function ($) {
         speed: 1000,
         fade: true,
         cssEase: "linear",
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    arrows: false,
+                },
+            },
+        ],
     });
     $("#slider-imagens-servico").slick({
         autoplay: false,

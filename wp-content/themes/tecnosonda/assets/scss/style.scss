@@ -508,7 +508,13 @@ input[type="checkbox"] {
         width: 30px;
         height: 30px;
         transition: all ease 0.3s;
+        -webkit-appearance: none;
+        appearance: none;
         svg {
+            display: block;
+            width: 16px;
+            fill: variables.$primary-color;
+            transition: all ease 0.3s;
             path {
                 fill: variables.$primary-color;
                 transition: all ease 0.3s;
@@ -516,6 +522,7 @@ input[type="checkbox"] {
         }
         &:hover {
             background: variables.$primary-color;
+            fill: variables.$font-color;
             svg {
                 path {
                     fill: variables.$font-color;
@@ -602,6 +609,10 @@ input[type="checkbox"] {
             .items-slider {
                 visibility: hidden;
                 height: 90dvh;
+                .slick-next,
+                .slick-prev {
+                    z-index: 1;
+                }
                 .slider-item {
                     height: 90dvh;
                     .thumbnail {

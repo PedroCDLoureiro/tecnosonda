@@ -34,7 +34,7 @@
                                 <h2 class="slider-title"><?php the_title(); ?></h2>
                                 <div class="slider-content"><?php the_content(); ?></div>
                             </div>
-                            <a href="<?= site_url('/servicos'); ?>" class="btn btn-large primary-btn">Conheça nossos serviços</a>
+                            <a href="<?= site_url('/nossos-servicos'); ?>" class="btn btn-large primary-btn">Conheça nossos serviços</a>
                         </div>
                     </div>
                 <?php endwhile; ?>
