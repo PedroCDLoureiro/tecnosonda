@@ -62,21 +62,34 @@
     <?php
                 
         $midia = get_field('imagem_video_sobre_nos');
+        $thumb = get_field('thumbnail_video');
     
         if( $midia ): ?>
             <section id="video" class="bg-gray">
                 <div class="container">
-                    <div class="midia">
-                        <?php if (strpos($midia['mime_type'], 'image') !== false): ?>
-                            <img src="<?php echo esc_url($midia['url']); ?>" alt="<?php echo esc_attr($midia['alt']); ?>" class="img-fluid w-100" />
-                        <?php
-                        elseif (strpos($midia['mime_type'], 'video') !== false): ?>
-                            <video id="video-nossos-valores" class="w-100">
-                                <source src="<?php echo esc_url($midia['url']); ?>" type="<?php echo esc_attr($midia['mime_type']); ?>">
+                    <div class="col-12 midia">
+                        <div class="video-wrapper" style="position: relative;">
+                            <video 
+                                id="video-nossos-valores"
+                                class="w-100"
+                                playsinline
+                                muted
+                                preload="metadata"
+                                <?php if ($thumb): ?>
+                                    poster="<?php echo esc_url($thumb); ?>"
+                                <?php endif; ?>
+                            >
+                                <source 
+                                    src="<?php echo esc_url($midia['url']); ?>" 
+                                    type="<?php echo esc_attr($midia['mime_type']); ?>"
+                                >
                                 Seu navegador não suporta vídeos.
                             </video>
-                            <button id="play-midia"></button>
-                        <?php endif; ?>
+                            <button 
+                                id="play-midia"
+                                aria-label="Reproduzir vídeo"
+                            ></button>
+                        </div>
                     </div>
                 </div>
             </section>

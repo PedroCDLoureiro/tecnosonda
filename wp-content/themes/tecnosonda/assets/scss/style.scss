@@ -893,6 +893,7 @@ input[type="checkbox"] {
         color: variables.$font-color;
         .form-row {
             display: grid;
+            align-items: baseline;
             gap: 15px;
             margin-bottom: 15px;
             &.cols-1 {
@@ -1000,6 +1001,7 @@ input[type="checkbox"] {
         text-decoration: none;
     }
     .top-category {
+        gap: 15px;
         .section-title {
             height: max-content;
             &::before {
@@ -1011,6 +1013,7 @@ input[type="checkbox"] {
             line-height: variables.$line-height-font-size-small;
             color: variables.$font-color;
             text-decoration: none;
+            text-align: center;
             transition: all ease 0.3s;
             &:hover {
                 color: variables.$secondary-color;
@@ -1040,7 +1043,7 @@ input[type="checkbox"] {
                 border-radius: 5px;
                 padding: 10px;
                 height: 120px;
-                z-index: 1;
+                z-index: 0;
                 transition: all ease 0.3s;
                 h2,
                 h3 {

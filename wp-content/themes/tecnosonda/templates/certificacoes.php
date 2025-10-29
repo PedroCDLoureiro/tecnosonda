@@ -47,11 +47,14 @@
                 <div id="esg" class="col-12 pt-4">
                     <div class="row">
                         <div class="col-md-6 col-12 d-flex flex-column justify-content-end pb-4 text-esg">
-                            <h2 class="text-white mb-5">ESG</h2>
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h2 class="text-white mb-0">ESG</h2>
+                                <a href="<?= WP_URL ?>/esg" class="btn btn-large white-btn d-lg-none d-block">Mais informações</a>
+                            </div>
                             <div class="text-white mb-4">
                                 <?= $texto_esg; ?>
                             </div>
-                            <a href="<?= WP_URL ?>/esg" class="btn btn-large white-btn w-max-content">Mais informações</a>
+                            <a href="<?= WP_URL ?>/esg" class="btn btn-large white-btn w-max-content d-lg-block d-none">Mais informações</a>
                         </div>
                         <?php if($imagem_esg) : ?>
                             <div class="col-md-6 col-12 text-end image-esg">

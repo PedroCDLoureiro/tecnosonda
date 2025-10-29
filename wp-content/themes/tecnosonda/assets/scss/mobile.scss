@@ -109,6 +109,19 @@
     }
 }
 
+// Seção de posts
+
+@media (max-width: 768px) {
+    .section-category {
+        .top-category {
+            a {
+                font-size: variables.$font-size-xsmall !important;
+                line-height: variables.$line-height-font-size-xsmall !important;
+            }
+        }
+    }
+}
+
 // Header
 
 @media (max-width: 991px) {
@@ -433,9 +446,6 @@
 @media (max-width: 991px) {
     #single-nossos-servicos {
         #slider-imagens-servico {
-            button {
-                display: none !important;
-            }
             .slick-track {
                 gap: 0 !important;
             }
@@ -448,7 +458,7 @@
         }
         #icones {
             #lista-icones {
-                grid-template-columns: repeat(auto-fit, 150px) !important;
+                grid-template-columns: repeat(2, 1fr) !important;
             }
         }
     }
@@ -470,6 +480,30 @@
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #single-nossos-servicos {
+        .container-slider-imagens-servico {
+            #slider-imagens-servico {
+                .slick-prev,
+                .slick-next {
+                    z-index: 1;
+                }
+                .slick-prev {
+                    left: 10px !important;
+                }
+                .slick-next {
+                    right: 10px !important;
+                }
+            }
+        }
+        #icones {
+            #lista-icones {
+                grid-template-columns: repeat(1, 1fr) !important;
             }
         }
     }
@@ -538,6 +572,16 @@
 }
 
 // Page Orçamento
+
+@media (max-width: 991px) {
+    #page-orcamento {
+        #banner {
+            img {
+                object-position: right;
+            }
+        }
+    }
+}
 
 @media (max-width: 768px) {
     #page-orcamento {
@@ -825,6 +869,9 @@
                 width: 75% !important;
             }
         }
+        #parallax {
+            background-attachment: unset !important;
+        }
     }
 }
 
@@ -834,6 +881,7 @@
             min-height: 40dvh !important;
         }
         #post-mais-recente {
+            height: 400px !important;
             .post-title {
                 width: 100% !important;
             }
