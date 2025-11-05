@@ -178,4 +178,10 @@ header {
             z-index: -1;
         }
     }
+    &.active-modal {
+        top: -90px !important;
+        #menu-scroll {
+            top: -90px !important;
+        }
+    }
 }

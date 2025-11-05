@@ -66,7 +66,7 @@
                         $texto_icone_servico = get_sub_field("texto_icone_servico");
                     ?>
                         <div class="item">
-                            <img src="<?= esc_url($imagem_icone_servico); ?>" alt="<?= esc_attr($texto_icone_servico); ?>" class="thumbnail w-100">
+                            <img src="<?= esc_url($imagem_icone_servico); ?>" alt="<?= esc_attr($texto_icone_servico); ?>" class="thumbnail">
                             <h3 class="mb-0"><?= $texto_icone_servico; ?></h3>
                         </div>
                     <?php endwhile; ?>

@@ -221,6 +221,10 @@ jQuery(document).ready(function ($) {
 
         if (!modal.length) return; // se não achar modal, aborta
 
+        if ($("header").hasClass("menu-scroll")) {
+            $("header").addClass("active-modal");
+        }
+
         const slider = modal.find(".items-slider");
 
         modal.fadeIn(() => {
@@ -357,6 +361,11 @@ jQuery(document).ready(function ($) {
     $(document).on("click", ".close-modal", function () {
         const modal = $(".modal");
         modal.fadeOut();
+
+        if ($("header").hasClass("active-modal")) {
+            $("header").removeClass("active-modal");
+        }
+
         $("body").removeClass("stop-scroll");
     });
 

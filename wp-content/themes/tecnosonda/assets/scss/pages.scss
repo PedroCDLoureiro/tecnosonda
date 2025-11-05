@@ -1120,6 +1120,15 @@
         }
     }
     &#page-noticias {
+        .section-title {
+            height: max-content;
+            h2 {
+                padding-left: 50px;
+            }
+            &::before {
+                left: 0;
+            }
+        }
         #banner {
             position: relative;
             z-index: 0;
@@ -1183,15 +1192,6 @@
             position: relative;
             padding: 90px 0;
             z-index: 0;
-            .section-title {
-                height: max-content;
-                h2 {
-                    padding-left: 50px;
-                }
-                &::before {
-                    left: 0;
-                }
-            }
             a {
                 article {
                     position: relative;
