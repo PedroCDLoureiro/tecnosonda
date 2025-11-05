@@ -10,6 +10,13 @@
 * {
     font-family: "Montserrat", sans-serif;
 }
+body {
+    &.stop-sroll {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+}
 p {
     font-size: variables.$font-size-base;
     line-height: variables.$line-height-font-size-base;

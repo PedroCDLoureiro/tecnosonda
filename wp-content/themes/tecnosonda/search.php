@@ -28,7 +28,7 @@
                         $thumbnail    = get_the_post_thumbnail_url($post_id, 'full');
                         $data_formatada = get_the_date('d/m/Y');
                     ?>
-                        <div class="col-3">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <a href="<?= esc_url($post_url); ?>">
                                 <article class="d-flex flex-column">
                                     <figure>
