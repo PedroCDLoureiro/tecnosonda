@@ -454,7 +454,8 @@
             background-size: cover !important;
         }
         .sobre {
-            min-height: max-content;
+            min-height: auto;
+            height: auto !important;
         }
         #icones {
             #lista-icones {
@@ -520,7 +521,8 @@
             background-size: cover !important;
         }
         .sobre {
-            min-height: max-content;
+            min-height: auto;
+            height: auto !important;
         }
         .show-after {
             padding-bottom: 0 !important;
