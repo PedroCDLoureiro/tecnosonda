@@ -22,15 +22,18 @@
             <p class="mb-0"><?= $subtitulo_banner; ?></p>
         </div>
     </div>
-    <div class="container-fluid container-text-image show-before black-mask-mob" style="background-image: url(<?= $imagem_topo['url']; ?>);background-repeat: no-repeat;background-position: top right;">
+    <div class="container-fluid container-text-image show-before" style="background-image: url(<?= $imagem_topo['url']; ?>);background-repeat: no-repeat;background-position: top right;">
         <div class="container">
             <div class="col-md-6 col-12 d-flex flex-column justify-content-center text-white sobre" style="height: <?= $imagem_topo['height'] . 'px'; ?>">
                 <?= $texto_topo; ?>
             </div>
         </div>
     </div>
+    <div class="container-fluid d-lg-none col-12 img-mobile">
+        <img src="<?= esc_url($imagem_topo['url']); ?>" alt="<?= $titulo_pagina; ?>" class="w-100">
+    </div>
     <div class="container-fluid container-text-image" style="background-image: url(<?= $imagem_diferenciais_compromisso['url']; ?>);background-repeat: no-repeat;background-position: top right;">
-        <div class="container-fluid black-mask-mob">
+        <div class="container-fluid">
             <div class="container">
                 <div class="col-md-6 col-12 d-flex flex-column justify-content-center text-white sobre" style="height: <?= $imagem_diferenciais_compromisso['height'] . 'px'; ?>">
                     <div class="section-title white-title mb-3">
@@ -42,6 +45,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container-fluid d-lg-none col-12 img-mobile">
+        <img src="<?= esc_url($imagem_diferenciais_compromisso['url']); ?>" alt="<?= $titulo_pagina; ?>" class="w-100">
     </div>
     <div class="container-fluid container-text-image show-after pt-4" style="padding-bottom: 100px;">
         <div class="container">

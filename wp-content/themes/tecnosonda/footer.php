@@ -85,7 +85,7 @@
             </div>
         </footer>
         <div id="copyright">
-            Criação e Desenvolvimento Agência Chleba | Plataforma Add Suite - Tecnologia e Comunicação para Transformação Digital
+            Criação e Desenvolvimento <a href="https://www.newhumans.com.br/" target="_blank">Agência New Humans</a> | Plataforma <a href="https://addsuite.com.br/" target="_blank">Add Suite</a> - Tecnologia e Comunicação para Transformação Digital
         </div>
     </body>
 </html>

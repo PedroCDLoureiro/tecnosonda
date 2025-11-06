@@ -41,7 +41,7 @@
         </div>
     <?php endif; ?>
     <!-- Descrição -->
-    <div class="container-fluid container-text-image show-before black-mask-mob" 
+    <div class="container-fluid container-text-image show-before" 
         style="background-image: url('<?= esc_url($thumbnail_url); ?>');
                 background-repeat: no-repeat;
                 background-position: top right;">
@@ -54,6 +54,9 @@
                 <a href="<?= WP_URL; ?>/orcamento" class="btn btn-large secondary-btn mt-lg-2 mb-lg-0 mb-4 w-max-content">Saber mais</a>
             </div>
         </div>
+    </div>
+    <div class="container-fluid d-lg-none col-12 img-mobile">
+        <img src="<?= esc_url($thumbnail_url); ?>" alt="<?= $titulo_pagina; ?>" class="w-100">
     </div>
     <!-- Ícones -->
     <?php if (have_rows('icones_servico')): ?>

@@ -31,6 +31,12 @@
             z-index: -1;
         }
     }
+    .img-mobile {
+        img {
+            max-height: 400px;
+            object-fit: cover;
+        }
+    }
 }
 
 @media (max-width: 767px) {
@@ -255,6 +261,7 @@
             padding-top: 40px;
             .row-items-servicos {
                 .item {
+                    width: 100%;
                     &.active {
                         width: 75%;
                     }
@@ -344,7 +351,6 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-
             > *:nth-child(3) {
                 grid-column: 1 / -1;
             }
@@ -353,6 +359,17 @@
         .valores,
         .visao {
             padding: 20px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    #nossos-valores {
+        .dados {
+            h3 {
+                font-size: 50px;
+                line-height: 1;
+            }
         }
     }
 }
@@ -378,10 +395,35 @@
     }
 }
 
+// Page Sobre Nós
+
+@media (max-width: 991px) {
+    #page-sobre-nos {
+        .container-text-image {
+            background-image: none !important;
+            .sobre {
+                padding: 30px 0;
+                min-height: auto;
+                height: auto !important;
+                max-height: max-content !important;
+            }
+        }
+    }
+}
+
 // Page Nossa história
 
 @media (max-width: 991px) {
     #page-nossa-historia {
+        .container-text-image {
+            background-image: none !important;
+            .sobre {
+                padding: 30px 0;
+                min-height: auto;
+                height: auto !important;
+                max-height: max-content !important;
+            }
+        }
         .container-marcos {
             .marcos {
                 .marcos-wrapper {
@@ -451,11 +493,12 @@
             }
         }
         .container-text-image {
-            background-size: cover !important;
+            background-image: none !important;
         }
         .sobre {
             min-height: auto;
             height: auto !important;
+            max-height: max-content !important;
         }
         #icones {
             #lista-icones {

@@ -88,4 +88,9 @@
     text-align: center;
     font-size: variables.$font-size-xsmall;
     line-height: variables.$line-height-font-size-xsmall;
+    a {
+        color: variables.$primary-color;
+        font-weight: bold;
+        text-decoration: none;
+    }
 }
