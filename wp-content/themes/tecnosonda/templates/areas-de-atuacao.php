@@ -20,13 +20,16 @@
         </div>
     </div>
     <div class="container-fluid container-text-image show-before" style="background-image: url(<?= $imagem_topo['url']; ?>);background-repeat: no-repeat;background-position: top right;">
-        <div class="container-fluid black-mask-mob">
+        <div class="container-fluid">
             <div class="container">
                 <div class="col-md-6 col-12 d-flex flex-column justify-content-center text-white sobre" style="height: <?= $imagem_topo['height'] . 'px'; ?>">
                     <?= $texto_topo; ?>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container-fluid d-lg-none col-12 img-mobile">
+        <img src="<?= esc_url($imagem_topo['url']); ?>" alt="<?= $titulo_pagina; ?>" class="w-100">
     </div>
     <div id="engenharia-civil" class="container-fluid">
         <div class="container">
