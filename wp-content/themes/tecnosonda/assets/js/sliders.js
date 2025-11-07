@@ -61,4 +61,14 @@ jQuery(document).ready(function ($) {
             },
         ],
     });
+    $("#slider-nossa-historia").slick({
+        autoplay: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: true,
+        dots: false,
+        speed: 700,
+        cssEase: "ease",
+    });
 });

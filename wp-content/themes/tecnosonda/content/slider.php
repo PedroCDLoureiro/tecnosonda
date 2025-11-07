@@ -10,10 +10,12 @@
         <div class="container-fluid">
             <div id="slider-topo" class="slider">
                 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-                    <div class="slider-item">
-                        <?php 
-                            $midia = get_field('midia_slider_topo');
-
+                    <?php 
+                        $midia = get_field('midia_slider_topo'); 
+                        $mascara_preta = get_field('mascara_preta'); 
+                    ?>
+                    <div class="slider-item<?= $mascara_preta ? ' black-mask' : '' ?>">
+                        <?php
                             if ($midia) : 
                                 $extensao = pathinfo($midia['url'], PATHINFO_EXTENSION);
                                 if (in_array(strtolower($extensao), ['mp4','webm','ogg'])) : ?>

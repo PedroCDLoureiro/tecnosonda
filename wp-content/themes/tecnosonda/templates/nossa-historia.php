@@ -37,7 +37,7 @@
                     <div class="section-title white-title">
                         <h2>Marcos Dos <span>Últimos 25 Anos:</span></h2>
                     </div>
-                    <div class="controls-slider controls-white">
+                    <div class="d-lg-block d-none controls-slider controls-white">
                         <button id="prev-marcos">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#ffffff" d="M201.4 297.4C188.9 309.9 188.9 330.2 201.4 342.7L361.4 502.7C373.9 515.2 394.2 515.2 406.7 502.7C419.2 490.2 419.2 469.9 406.7 457.4L269.3 320L406.6 182.6C419.1 170.1 419.1 149.8 406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3L201.3 297.3z"/></svg>
                         </button>
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="marcos">
-                <div class="marcos-wrapper scroll-slider">
+                <div class="d-lg-grid d-none marcos-wrapper scroll-slider">
                     <?php 
                         $indice = 0; 
                     
@@ -84,6 +84,43 @@
                         </div>
                         <?php $indice++; ?>
                     <?php endwhile; ?>
+                </div>
+                <div class="container d-lg-none d-block">
+                    <div id="slider-nossa-historia">
+                        <?php 
+                            $indice = 0; 
+                        
+                            while (have_rows('marcos_dos_ultimos_anos')): the_row();
+                            $imagem = get_sub_field('imagem_marco');
+                            $periodo = get_sub_field('periodo_marco');
+                            $texto_completo = get_sub_field('texto_completo_marco');
+                        ?>
+                            <div class="d-flex marco-item">
+                                <div class="d-flex flex-column gap-2 content-marco" data-indice="<?= $indice; ?>">
+                                    <img src="<?= esc_url($imagem); ?>" alt="<?= esc_attr($periodo); ?>" class="thumbnail w-100">
+                                    <div class="d-flex flex-column texts">
+                                        <h3 class="text-white fw-bold"><?= esc_html($periodo); ?></h3>
+                                        <div class="d-flex flex-column mb-4 itens-marco">
+                                            <?php while (have_rows('itens_marco')): the_row();
+                                                $titulo_item = get_sub_field('titulo_item_marco');
+                                            ?>
+                                                <span class="text-white">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="11.791" height="10.05" viewBox="0 0 11.791 10.05">
+                                                        <path id="icon_valores" data-name="Icon Valores" d="M119.075,1080.594v8.7c5.193,3.885,4.708,4.259,10.05.223v-6.351c-5.6,1.275-7.809-.182-10.049-2.574Z" transform="translate(-1080.594 129.125) rotate(-90)" fill="#cae098" fill-rule="evenodd"/>
+                                                    </svg>
+                                                    <?= esc_html($titulo_item); ?>
+                                                </span>
+                                            <?php endwhile; ?>
+                                        </div>
+                                        <p class="text-white">
+                                            <?= $texto_completo; ?>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php $indice++; ?>
+                        <?php endwhile; ?>
+                    </div>
                 </div>
             </div>
         </div>

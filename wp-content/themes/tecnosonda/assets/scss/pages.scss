@@ -134,6 +134,21 @@
                         }
                     }
                 }
+                #slider-nossa-historia {
+                    .slick-next,
+                    .slick-prev {
+                        top: 200px;
+                        width: 30px;
+                        height: 30px;
+                        z-index: 1;
+                    }
+                    .content-marco {
+                        img {
+                            height: 400px;
+                            object-fit: cover;
+                        }
+                    }
+                }
             }
             &::before {
                 content: "";

@@ -426,8 +426,17 @@
         }
         .container-marcos {
             .marcos {
-                .marcos-wrapper {
-                    grid-auto-columns: 120% !important;
+                padding-left: 0 !important;
+                #slider-nossa-historia {
+                    .slick-next,
+                    .slick-prev {
+                        top: 150px !important;
+                    }
+                    .content-marco {
+                        img {
+                            height: 300px !important;
+                        }
+                    }
                 }
             }
         }

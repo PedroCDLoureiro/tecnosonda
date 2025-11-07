@@ -247,37 +247,39 @@ jQuery(document).ready(function ($) {
 
     // Modal marcos
     $(document).on("click", ".content-marco", function () {
-        const indice = $(this).data("indice");
-        const modal = $(".marcoModal");
-        const slider = modal.find(".items-slider");
+        if ($(window).width() > 991) {
+            const indice = $(this).data("indice");
+            const modal = $(".marcoModal");
+            const slider = modal.find(".items-slider");
 
-        modal.fadeIn(() => {
-            $("body").addClass("stop-scroll");
+            modal.fadeIn(() => {
+                $("body").addClass("stop-scroll");
 
-            if (!slider.hasClass("slick-initialized")) {
-                slider.slick({
-                    autoplay: false,
-                    arrows: true,
-                    dots: true,
-                    infinite: false,
-                    speed: 1000,
-                    fade: true,
-                    cssEase: "linear",
-                    customPaging: function (slider, i) {
-                        var thumb = $(slider.$slides[i]).data("thumb");
-                        return (
-                            '<img src="' +
-                            thumb +
-                            '" alt="thumbnail ' +
-                            (i + 1) +
-                            '">'
-                        );
-                    },
-                });
-            }
+                if (!slider.hasClass("slick-initialized")) {
+                    slider.slick({
+                        autoplay: false,
+                        arrows: true,
+                        dots: true,
+                        infinite: false,
+                        speed: 1000,
+                        fade: true,
+                        cssEase: "linear",
+                        customPaging: function (slider, i) {
+                            var thumb = $(slider.$slides[i]).data("thumb");
+                            return (
+                                '<img src="' +
+                                thumb +
+                                '" alt="thumbnail ' +
+                                (i + 1) +
+                                '">'
+                            );
+                        },
+                    });
+                }
 
-            slider.slick("slickGoTo", indice, true);
-        });
+                slider.slick("slickGoTo", indice, true);
+            });
+        }
     });
 
     $(document).on("click", ".marcoModal .next-slide", function () {
@@ -311,37 +313,39 @@ jQuery(document).ready(function ($) {
 
     // Chamada inicial (após o modal e slider estarem visíveis)
     $(document).on("click", ".content-marco", function () {
-        const modal = $(".marcoModal");
+        if ($(window).width() > 991) {
+            const modal = $(".marcoModal");
 
-        modal.fadeIn(() => {
-            $("body").addClass("stop-scroll");
+            modal.fadeIn(() => {
+                $("body").addClass("stop-scroll");
 
-            const slider = modal.find(".items-slider");
-            if (!slider.hasClass("slick-initialized")) {
-                slider.slick({
-                    autoplay: false,
-                    arrows: true,
-                    dots: true,
-                    infinite: false,
-                    speed: 1000,
-                    fade: true,
-                    cssEase: "linear",
-                    customPaging: function (slick, i) {
-                        const thumb = $(slick.$slides[i]).data("thumb");
-                        return (
-                            '<img src="' +
-                            thumb +
-                            '" alt="thumbnail ' +
-                            (i + 1) +
-                            '">'
-                        );
-                    },
-                });
-            }
+                const slider = modal.find(".items-slider");
+                if (!slider.hasClass("slick-initialized")) {
+                    slider.slick({
+                        autoplay: false,
+                        arrows: true,
+                        dots: true,
+                        infinite: false,
+                        speed: 1000,
+                        fade: true,
+                        cssEase: "linear",
+                        customPaging: function (slick, i) {
+                            const thumb = $(slick.$slides[i]).data("thumb");
+                            return (
+                                '<img src="' +
+                                thumb +
+                                '" alt="thumbnail ' +
+                                (i + 1) +
+                                '">'
+                            );
+                        },
+                    });
+                }
 
-            // Ajusta textos e dots
-            ajustarTextsEDots();
-        });
+                // Ajusta textos e dots
+                ajustarTextsEDots();
+            });
+        }
     });
 
     // Também atualiza no resize da janela
