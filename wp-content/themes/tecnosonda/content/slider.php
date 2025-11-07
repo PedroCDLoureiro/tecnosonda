@@ -20,7 +20,7 @@
                                 $extensao = pathinfo($midia['url'], PATHINFO_EXTENSION);
                                 if (in_array(strtolower($extensao), ['mp4','webm','ogg'])) : ?>
                                     <div class="slider-video">
-                                        <video autoplay muted loop playsinline>
+                                        <video autoplay muted loop playsinline class="w-100">
                                             <source src="<?php echo esc_url($midia['url']); ?>" type="video/<?php echo esc_attr($extensao); ?>">
                                         </video>
                                     </div>
